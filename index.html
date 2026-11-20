@@ -180,6 +180,10 @@ function toggleMobileContents(){
 var contents=document.getElementById('mobileContents');
 contents.hidden=!contents.hidden;
 document.getElementById('mobileContentsToggle').setAttribute('aria-expanded',String(!contents.hidden));
+if(!contents.hidden){
+var behavior=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+contents.scrollIntoView({behavior:behavior,block:'start'});
+}
 }
 window.addEventListener('resize',fitMobilePage);
 window.addEventListener('orientationchange',fitMobilePage);
