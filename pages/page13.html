@@ -1,0 +1,107 @@
+﻿<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<style>
+button{width:130px}
+</style>
+
+</head>
+
+
+<h2> භාගයකට තුල්‍ය භාග ලබා ගනිමු.</h2>
+<p> &nbsp; &nbsp; ලැබෙන භාගයට හැකි තාක් තුල්‍ය භාග දී හරි ලකුණ ලබා ගන්න.</p>
+
+<span ></span>
+ <table border=0  style='font-size:20px;font-family:arial;text-align:center'>
+<tr><td id='no' style='font-size:18px;'>1).</td>
+<td style='border-bottom:solid thin;' id='fr1'>5</td>
+<td rowspan=2>&nbsp; &nbsp; = &nbsp; &nbsp;</td>
+<td style='border-bottom:solid thin;' contentEditable=true bgcolor='#fdd' id='txt1'>?</td><td rowspan=2 id='cw'>&nbsp </td>
+</tr>
+
+<tr><td></td>
+<td id='fr2' style='width:40px'>8</td><td style='width:40px' contentEditable=true bgcolor='#fdd' id='txt2'>?</td>
+</tr>
+</table>
+<br>
+
+
+<button class='btn2' onclick='fract1()'>වෙනත් භාගයක්</button>     &nbsp; &nbsp; &nbsp;   <button class='btn2' onclick='fract2()'>හරි වැරදි</button>
+
+<br>
+<script>
+var c,w; 
+c="<svg width='40px' height='40px'><g transform='translate(5,5)scale(1.3)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='40px' height='40px'><g transform='translate(5,5)scale(1.3)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>";
+
+var n=8;var m=5;var num=1;
+function fract1(){
+num++;
+no.innerHTML= num+").";
+n=2+Math.floor(Math.random()*15);
+m=1+Math.floor(Math.random()*(n-1));
+fr1.innerHTML=m;
+fr2.innerHTML=n;
+cw.innerHTML="";
+txt1.innerHTML='?';
+txt2.innerHTML='?';
+}
+
+function fract2(){
+
+if(((txt1.innerHTML)/(m))==((txt2.innerHTML)/(n))){cw.innerHTML=c;}else{cw.innerHTML=w;}
+if(txt1.innerHTML==m && txt2.innerHTML==n ){cw.innerHTML="";}
+}
+var n2=12;var m2=8; var ar=new Array(4,6,8,10);var rand=0;var num2=1;
+function fract21(){
+num2++;
+
+rand=Math.floor(Math.random()*4);
+n2=2+Math.floor(Math.random()*10);
+m2=1+Math.floor(Math.random()*(n2-1));
+fr21.innerHTML=m2*ar[rand];
+fr22.innerHTML=n2*ar[rand];
+no2.innerHTML=num2+").";
+txt21.innerHTML="?";
+txt22.innerHTML="?";
+cw2.innerHTML="";
+
+
+}
+function fact2() {
+var a, b, cc;
+b = fr21.innerHTML
+cc = fr22.innerHTML
+while (cc != 0) {
+a = b % cc;
+b = cc;
+cc = a;
+}
+return b;
+}
+function fract22(){
+var fact=fact2();
+if(txt21.innerHTML==(fr21.innerHTML/fact) && txt22.innerHTML==(fr22.innerHTML/fact)){cw2.innerHTML=c;}
+else if((fr21.innerHTML/txt21.innerHTML)==(fr22.innerHTML/txt22.innerHTML)){cw2.innerHTML="?";}
+else{cw2.innerHTML=w;}
+
+
+}
+
+</script>
+<br>
+<hr>
+<br>
+<p> භාගය හැකිතාක් සරල කරන්න(කුඩා කරන්න).</p>
+
+<table style='font-size:20px;font-family:arial;text-align:center'>
+<tr><td id='no2' style='font-size:18px;'>1).</td>
+<td style='border-bottom:solid thin;width:40px' id='fr21'>8</td>
+<td rowspan=2>&nbsp; &nbsp;=&nbsp; &nbsp;</td>
+<td style='border-bottom:solid thin;width:40px' contentEditable=true bgcolor='#fdd' id='txt21'>?</td><td rowspan=2 id='cw2'>&nbsp </td>
+</tr>
+<tr><td>&nbsp;</td>
+<td id='fr22' style='width:40px'>12</td><td style='width:40px' contentEditable=true bgcolor='#fdd' id='txt22'>?</td>
+</tr>
+</table>
+<br><br>
+<button class='btn2' onclick='fract21()'>වෙනත් භාගයක්</button>       <button class='btn2' onclick='fract22()'>හරි වැරදි</button>

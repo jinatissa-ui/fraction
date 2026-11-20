@@ -1,0 +1,124 @@
+﻿<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<style>
+</style>
+
+</head>
+
+
+<h2>භාග අඩු කරමු.</h2>
+<p>හිස්තැන් පුරවන්න. හරි වැරදි බලන්න.</p>
+
+
+ <table  style='font-size:16px;font-family:arial;text-align:center' >
+<tr><td id='no' width='50px' >1).</td>
+<td style='border-bottom:solid thin;width:40px' id='fr1'>1</td>
+<td rowspan=2 >
+-
+</td>
+<td style='border-bottom:solid thin;width:40px' id='txt1'>1</td><td rowspan=6 id='cw'>&nbsp </td>
+</tr>
+<tr><td>&nbsp;</td>
+<td id='fr2' style='width:40px'>2</td><td style='width:40px'  id='txt2'>4</td>
+</tr>
+<tr><td rowspan=2 style='text-align:right' >=</td>
+<td style='border-bottom:solid thin' contentEditable=true bgcolor='#fed' id='fr21'>?</td>
+<td rowspan=2 >
+-
+</td>
+<td style='border-bottom:solid thin;width:40px' id='txt21'>1</td>
+</tr>
+<tr>
+<td id='fr22' style='width:40px'>4</td><td style='width:40px'  id='txt22'>4</td>
+</tr>
+<tr><td rowspan=2 style='text-align:right' >=</td><td style='border-bottom:solid thin' contentEditable=true bgcolor='#fcc' id='ans1'>?</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td contentEditable=true bgcolor='#fcc' id='ans2' style='border-bottom-style:double'>?</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<br>
+
+<button class='btn2' onclick='fract1()'>වෙනත් භාග</button>       &nbsp; &nbsp; &nbsp; <button class='btn2' onclick='fract2()' id='but1' >හරි වැරදි</button>
+
+
+<script>
+var c,w; 
+c="<svg width='40px' height='40px'><g transform='translate(5,5)scale(1.3)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='40px' height='40px'><g transform='translate(5,5)scale(1.3)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>";
+
+
+var up1=1; var up2=1; var up3=2; var d1=2; var d2=4;var n=0;var s=""; 
+
+
+
+up1=new Array(1,1,1,3,3,5,2,2,2,3,3,4,5,5,5,3,7,3,7,3);
+d1=new Array(2,3,2,5,4,7,3,3,3,4,5,5,6,6,9,4,17,4,9,4);
+up2=new Array(1,1,1,3,5,5,7,5,1,5,1,7,5,1,7,5,5,3,5,7);
+
+
+d2=new Array(4,6,8,10,8,14,12,18,9,16,20,25,12,24,36,24,34,40,36,24);
+var num=0;var n=1;
+function fract1(){
+but1.disabled=false;
+ans1.innerHTML=" ";ans2.innerHTML=" ";
+num++;n++;if(num>19){num=0}
+if(n>10){
+n=1;
+mark.innerHTML="";
+box.innerHTML="";
+box2.innerHTML="";ma=0;
+}
+no.innerHTML= n+").";
+
+fr1.innerHTML=up1[num];
+fr2.innerHTML=d1[num];
+cw.innerHTML="";
+txt1.innerHTML=up2[num];
+txt2.innerHTML=d2[num];
+fr21.innerHTML="";
+fr22.innerHTML=d2[num];
+
+txt21.innerHTML=up2[num];
+txt22.innerHTML=d2[num];
+
+ }
+var s="";
+
+
+var c2,w2; 
+c2="<svg width='15px' height='15px'><g transform='translate(0,0)scale(0.4)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w2="<svg width='20px' height='20px'><g transform='translate(5,5)scale(0.5)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>";
+
+
+var cor=""; var ma=0;var fact;
+function fract2(){
+fact=d2[num]/d1[num];
+but1.disabled=true;
+if(ans1.innerHTML==((up1[num]*fact)-up2[num]) && ans2.innerHTML==d2[num]){cw.innerHTML=c;cor=c2;ma++;}else{cw.innerHTML=w;cor=w2;};
+
+if(n<6){
+box.innerHTML+= "<table border=0 cellpadding=0 style='text-align:center;font-size:16px'><tr><td rowspan=2>"+n+").</td><td style='border-bottom:solid thin'>"+up1[num]+"</td> <td rowspan=2>-</td><td style='border-bottom:solid thin'>"+up2[num]+"</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>"+ans1.innerHTML+"</td><td rowspan=2>"+cor+"</td> </tr><tr><td>"+d1[num]+"</td> <td >"+d2[num]+"</td><td>"+ans2.innerHTML+"</td></tr></table>";
+}
+if(n>5){
+box2.innerHTML+= "<table border=0 cellpadding=0 style='text-align:center;font-size:16px'><tr><td rowspan=2>"+n+").</td><td style='border-bottom:solid thin'>"+up1[num]+"</td> <td rowspan=2>-</td><td style='border-bottom:solid thin'>"+up2[num]+"</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>"+ans1.innerHTML+"</td><td rowspan=2>"+cor+"</td> </tr><tr><td>"+d1[num]+"</td> <td >"+d2[num]+"</td><td>"+ans2.innerHTML+"</td></tr></table>";
+
+}
+if(n==10){
+mark.innerHTML=ma*10+'%';
+}
+
+
+
+}
+
+//-------------------------
+
+
+
+
+
+</script>
+<br><br>
+<hr><div id='mark' style='float:right;color:red;font-size:30px'></div>
+<div style='width:230px'>
+<div id='box2' style='float:right'></div><div id='box'></div> 
+</div>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>td{vertical-align:top} span{font-size:16px}</style>
+  <body style='margin:20px' >
+
+
+<h2>ගණිතකර්ම අනුපිළිවෙල .</h2>
+<p>&nbsp; &nbsp; &nbsp; භාග සහිත ප්‍රකාශන සුළුකිරීමේදී  (වරහන්), න්,  &times; හා &divide;  , + හා  -  යන අනුපිළවෙලට කළ යුතු ය.</p>
+
+<script>
+
+
+</script>
+<table border=0 height=''>
+<tr><td>
+<span id='box'></span><span id='tx1'></span><span id='box1'></span>
+</td></tr><td>
+<span id='box2'></span><span id='tx2'></span><span id='box3'></span>&nbsp; &nbsp; <span id='msg1'></span>
+</td></tr><td>
+<span id='box4'></span><span id='tx3'></span><span id='box5'></span>&nbsp; &nbsp; <span id='msg2'></span>
+</td></tr><td>
+<span id='box6'></span><span id='tx4'></span><span id='box7'></span>&nbsp; &nbsp; <span id='msg3'></span>
+</td></tr><td>
+<span id='box8'></span>
+
+<span id='box9'></span>
+</td></tr><td>
+<span id='box10'></span>
+<span id='box11'></span>
+&nbsp; &nbsp; <span id='msg4'></span>
+</td></tr><td>
+<span id='box12'></span><span id='box13' style='color:blue'></span>
+&nbsp; &nbsp; <span id='msg5'></span>
+</td></tr>
+</table>
+<button onclick='frac()' id='btn'>අරඹන්න</button>
+<script>
+var n=0;
+function frac(){
+btn.innerHTML="නැවත";
+n++;if(n>8){n=1}
+if(n==1){
+katex.render(algebra.toTex('(1\\cfrac{2}{3}+2\\cfrac{1}{2})\\div 2\\cfrac{2}{3}'),box);
+tx1.innerHTML=" න් ";
+katex.render(algebra.toTex('1\\cfrac{1}{4} - \\cfrac{1}{2}'),box1);
+}
+if(n==2){
+katex.render(algebra.toTex('=(\\cfrac{5}{3}+\\cfrac{5}{2})\\div \\cfrac{8}{3}'),box2);
+tx2.innerHTML=" න් ";
+katex.render(algebra.toTex('\\cfrac{5}{4} - \\cfrac{1}{2}'),box3);
+msg1.innerHTML="විෂම භාග කිරීම";
+}
+if(n==3){
+katex.render(algebra.toTex('=(\\cfrac{10}{6}+\\cfrac{15}{6})\\div \\cfrac{8}{3}'),box4);
+tx3.innerHTML=" න් ";
+katex.render(algebra.toTex('\\cfrac{5}{4} - \\cfrac{1}{2}'),box5);
+msg2.innerHTML="වරහන තුළ  + ";
+}
+if(n==4){
+katex.render(algebra.toTex('=\\cfrac{25}{6}\\div \\cfrac{8}{3}'),box6);
+tx4.innerHTML=" න් ";
+katex.render(algebra.toTex('\\cfrac{5}{4} - \\cfrac{1}{2}'),box7);
+
+msg3.innerHTML="න්  සඳහා සුළුකිරීම";
+}
+if(n==5){
+katex.render(algebra.toTex('=\\cfrac{25}{6}\\div \\cfrac{8}{3}\\times \\cfrac{5}{4} - \\cfrac{1}{2}'),box8);
+
+katex.render(algebra.toTex('=\\cfrac{25}{6}\\div \\cfrac{40}{12} - \\cfrac{1}{2}'),box9);
+}
+if(n==6){
+katex.render(algebra.toTex('=\\cfrac{\\cancel{25} 5}{\\cancel{6} 1}\\times \\cfrac{\\cancel{12} 2}{\\cancel{40} 8} - \\cfrac{1}{2}'),box10);
+
+katex.render(algebra.toTex('=\\cfrac{5}{4}  - \\cfrac{1}{2}'),box11);
+msg4.innerHTML="පරස්පරය";
+}
+if(n==7){
+katex.render(algebra.toTex('=\\cfrac{5}{4}  - \\cfrac{2}{4}'),box12);
+
+katex.render(algebra.toTex('=\\cfrac{3}{4}  '),box13);
+msg5.innerHTML="අඩුකිරීම";
+}
+if(n==8){
+box.innerHTML='';box1.innerHTML='';box2.innerHTML='';
+box3.innerHTML='';box4.innerHTML='';box5.innerHTML='';
+box6.innerHTML='';box7.innerHTML='';box8.innerHTML='';
+box9.innerHTML='';box10.innerHTML='';box11.innerHTML='';
+box12.innerHTML='';box13.innerHTML='';msg1.innerHTML='';
+msg2.innerHTML='';msg3.innerHTML='';msg4.innerHTML='';
+msg5.innerHTML='';tx4.innerHTML='';
+tx1.innerHTML='';tx2.innerHTML='';tx3.innerHTML='';
+btn.innerHTML="අරඹන්න";
+}
+}
+</script>
+
+</body>

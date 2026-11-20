@@ -1,0 +1,115 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+<style>td{font-size:18px}</style>
+
+<h2>භාග නිරූපණයට පුහුණු වෙමු.</h2>
+<p>&nbsp; &nbsp; &nbsp; පහත රූප සමාන කොටස්වලට බෙදා ඇත. කොටස් මත ක්ලික් කරමින් භාග ගොඩ නගන්න.</p>
+<table border=1 width='350px' style='border-collapse:collapse'>
+<tr><td width='120'>
+<svg width='100px' height='100px' >
+
+
+<g transform='scale(0.6)'  id='g1'></g>
+
+<script>
+
+
+for(i=0;i<6;i++){
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');
+b.setAttribute("d",'M100,100 160,100 129,153Z');
+b.setAttribute("fill","gold");
+b.setAttribute("stroke","black");
+b.setAttribute("transform","rotate("+60*i+",100,100)");
+b.setAttribute("onclick","frac1(this)");
+b.setAttribute("cursor","pointer");
+g1.appendChild(b);
+}
+var n1=0;
+function frac1(me){
+if(me.getAttribute('fill')=="gold"){n1++;
+me.setAttribute("fill","red");
+}else{n1--;
+me.setAttribute("fill","gold");
+}
+box1.innerHTML=n1;
+box2.innerHTML=6;tx1.innerHTML=n1;
+if(n1==0){box1.innerHTML="";box2.innerHTML="";}
+}
+</script>
+</svg>
+</td><td>සමාන කොටස් 6කට බෙදා ඇත. <br>හරය = 6, ලවය = <span id='tx1'>0</span></td><th width='50px'>
+<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin' id='box1'></td></tr><tr><td id='box2'></td></tr></table>
+
+</th>
+</tr>
+<tr><td>
+<svg width='100px' height='100px' >
+<g transform='scale(0.6)'  id='g2'></g>
+<script>
+for(i=0;i<8;i++){
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');
+b.setAttribute("d",'M100,100 160,100 142,142Z ');
+b.setAttribute("fill","gold");
+b.setAttribute("stroke","black");
+b.setAttribute("transform","rotate("+45*i+",100,100)");
+b.setAttribute("onclick","frac2(this)");
+b.setAttribute("cursor","pointer");
+g2.appendChild(b);
+}
+var n2=0;
+function frac2(me){
+if(me.getAttribute('fill')=="gold"){n2++;
+me.setAttribute("fill","red");
+}else{n2--;
+me.setAttribute("fill","gold");
+}
+box3.innerHTML=n2;
+box4.innerHTML=8;tx2.innerHTML=n2;
+if(n2==0){box3.innerHTML="";box4.innerHTML="";}
+}
+</script>
+</svg>
+</td><td>සමාන කොටස් 8කට බෙදා ඇත. <br>හරය = 8, ලවය = <span id='tx2'>0</span></td>
+<th><table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin' id='box3'></td></tr><tr><td id='box4'></td></tr></table>
+</th></tr>
+</tr>
+<tr><td>
+<svg width='100px' height='100px' >
+<g transform='scale(0.6)'  id='g3'></g>
+<script>
+for(i=0;i<12;i++){
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');
+b.setAttribute("d",'M100,100 160,100 152,130Z ');
+b.setAttribute("fill","gold");
+b.setAttribute("stroke","black");
+b.setAttribute("transform","rotate("+30*i+",100,100)");
+b.setAttribute("onclick","frac3(this)");
+b.setAttribute("cursor","pointer");
+g3.appendChild(b);
+}
+var n3=0;
+function frac3(me){
+if(me.getAttribute('fill')=="gold"){n3++;
+me.setAttribute("fill","red");
+}else{n3--;
+me.setAttribute("fill","gold");
+}
+box5.innerHTML=n3;
+box6.innerHTML=12;tx3.innerHTML=n3;
+if(n3==0){box5.innerHTML="";box6.innerHTML="";}
+}
+</script>
+</svg>
+</td><td>සමාන කොටස් 12කට බෙදා ඇත. <br>හරය = 12, ලවය = <span id='tx3'>0</span></td>
+<th><table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin' id='box5'></td></tr><tr><td id='box6'></td></tr></table></th></tr>
+
+</table>
+
+
+
+
+
+</body>

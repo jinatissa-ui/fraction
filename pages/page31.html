@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style></style>
+  <body style='margin:20px' >
+
+
+<h2>විෂම භාග.</h2>
+
+
+<p> &nbsp;  හරයට වඩා  ලවය විශාල හෝ සමාන වූ භාග විෂම භාග යනුවෙන් හඳුන්වයි. </p>
+
+<center>
+
+<table height='265px'>
+<tr><td id='box1' height='60px'></td><th id='tt1'><th></tr>
+<tr><td id='box2' height='60px'></td><th id='tt2'><th></tr>
+<tr><td id='box3' height='60px'></td><th id='tt3'><th></tr>
+<tr><td id='tt4' height='40px' style='text-align:right;color:blue'></td><th id='tt5' style='color:blue'><th></tr>
+
+</table><br>
+<table border=1 style='border-collapse:collapse' height='85px'width='200px'>
+<tr><th height='25px' >මිශ්‍ර සංඛ්‍යාව</th><th>විෂම භාගය</th></tr>
+
+<tr><th id='t1'></th><th id='t2'></th></tr>
+
+</table>
+
+<br>
+
+<button class='btn2' onclick='frac2()' id='btn'>අරඹන්න</button>
+</center>
+
+<script>
+
+var n1=0;var m1=0;  var n2=0; var n3=0; var n4=0;var n5=1;
+var s1,s2,s3;
+function frac2(){
+btn.innerHTML=' නැවත ';
+n1=2+Math.floor(Math.random()*10);
+n2=n1-(1+Math.floor(Math.random()*8));
+if(n2<1){n2=1}
+n3=1+Math.floor(Math.random()*5);
+
+
+
+s1="";s2="";s3="";
+
+box1.innerHTML="";box2.innerHTML="";box3.innerHTML="";
+s1="<svg width='240px' height='60px'>";
+for(i=0;i<n1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=40 stroke='black' fill='none' />";
+}
+for(i=0;i<n1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=40 stroke='black' fill='gold' />";
+}
+n4=n3%2;if(n4==0){
+box1.innerHTML='&nbsp;';n5=1;tt1.innerHTML=''
+var ff4='\\cfrac{'+n1+'}{'+n1+'}+\\cfrac{'+n2+'}{'+n1+'} = ';
+katex.render(algebra.toTex(ff4),tt4);
+
+}else{
+box1.innerHTML=s1+"</svg>";n5=2;
+katex.render(algebra.toTex('\\cfrac{'+n1+'}{'+n1+'}'),tt1);
+var ff4='\\cfrac{'+n1+'}{'+n1+'}+\\cfrac{'+n1+'}{'+n1+'}+\\cfrac{'+n2+'}{'+n1+'} = ';
+katex.render(algebra.toTex(ff4),tt4);
+}
+
+s2="<svg width='240px' height='60px'>";
+for(i=0;i<n1;i++){
+s2+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=40 stroke='black' fill='none' />";
+}
+for(i=0;i<n1;i++){
+s2+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=40 stroke='black' fill='gold' />";
+}
+box2.innerHTML=s2+"</svg>";
+
+s3="<svg width='240px' height='60px'>";
+for(i=0;i<n1;i++){
+s3+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=40 stroke='black' fill='none' />";
+}
+for(i=0;i<n2;i++){
+s3+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=40 stroke='black' fill='gold' />";
+}
+box3.innerHTML=s3+"</svg>";
+
+var f1=n5+'\\cfrac{'+n2+'}{'+n1+'}';
+katex.render(algebra.toTex(f1),t1);
+var f2='\\cfrac{'+((n5*n1)+n2)+'}{'+n1+'}';
+katex.render(algebra.toTex(f2),t2);
+var ff1='\\cfrac{'+n1+'}{'+n1+'}';
+
+var ff2='\\cfrac{'+n1+'}{'+n1+'}';
+katex.render(algebra.toTex(ff2),tt2);
+var ff3='\\cfrac{'+n2+'}{'+n1+'}';
+katex.render(algebra.toTex(ff3),tt3);
+
+
+
+katex.render(algebra.toTex(f2),tt5);
+}
+
+</script>
+
+</body>

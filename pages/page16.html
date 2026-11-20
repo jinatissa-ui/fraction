@@ -1,0 +1,92 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+<style>button{width:130px}</style>
+
+
+<h2>භාග සංසන්දනය කරමු.</h2>
+
+<p >&nbsp; &nbsp; &nbsp; හරය සමාන වූ  භාග සංසන්දනය</p>
+
+
+<center>
+<table width='260px' height='120px'><tr><td width='220px'>
+<span id='box1'></span></td><td id='bx1' ></td></tr>
+<tr><td><span id='box2'></span></td><td id='bx2'></td></tr></table>
+
+<span id='box4' style='font-size:30'></span>
+<br>
+
+<button class='btn2' onclick='frac2()'>හරය සමාන භාග</button>
+</center>
+<table border=0 style='font-size:18px'>
+<tr>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='u1'></td></tr><tr><td id='d1'></td></tr></table></td>
+<td><span id='txt'></span></td>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='u2'></td></tr><tr><td id='d2'></td></tr></table></td>
+<td><span id='last'></span> </td>
+</tr>
+</table>
+<p style='color:blue'> හරය සමාන භාගවල විශාල ලවය ඇති භාගය අනෙකට වඩා විශාලය.</p>
+
+<span id='fract1' ></span>
+
+<script>
+
+var up1=0;var n2=0; var s1="";var s2="";var tx,tx2,t; var up2=0;var f1=""; var f2="";
+function frac2(){
+n2=4+Math.floor(Math.random()*10);
+up1=1+Math.floor(Math.random()*(n2-1));
+up2=1+Math.floor(Math.random()*(n2-1));
+f1="";fract1.innerHTML="";
+f2="";
+s1="";box1.innerHTML="";
+s1="<svg width='240px' height='40px'>";
+
+for(i=0;i<n2;i++){
+s1+="<rect x="+(((200/n2)*i)+10)+" y=10 width="+(200/n2)+" height=30 stroke='black' fill='none' />";
+}
+for(i=0;i<up1;i++){
+s1+="<rect x="+(((200/n2)*i)+10)+" y=10 width="+(200/n2)+" height=30 stroke='black' fill='gold' />";
+}
+box1.innerHTML=s1+"</svg>";
+//-----------------------
+s2="";box2.innerHTML="";
+s2="<svg width='240px' height='40px'>";
+
+for(i=0;i<n2;i++){
+s2+="<rect x="+(((200/n2)*i)+10)+" y=10 width="+(200/n2)+" height=30 stroke='black' fill='none' />";
+}
+for(i=0;i<up2;i++){
+s2+="<rect x="+(((200/n2)*i)+10)+" y=10 width="+(200/n2)+" height=30 stroke='black' fill='gold' />";
+}
+box2.innerHTML=s2+"</svg>";
+if(up1>up2){tx=">";tx2="විශාලයි"; t=" ට වඩා";}else if(up1<up2){tx="<";tx2="කුඩයි"; t=" ට වඩා";}else{tx="=";tx2="සමානයි"; t="";}
+
+box4.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>"+up1+"</td><td rowspan=2>"+tx+"</td><td style='border-bottom:solid thin'>"+up2+"</td> </tr><tr><td>"+n2+"</td> <td> "+n2+"</td></tr></table>";
+
+bx1.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>"+up1+"</td></tr><tr><td>"+n2+"</td></tr></table>" ;
+
+bx2.innerHTML= "<table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>"+up2+"</td></tr><tr><td>"+n2+"</td></tr></table>";
+
+
+
+
+
+d1.innerHTML=n2;d2.innerHTML=n2;txt.innerHTML=tx2; u1.innerHTML=up1;u2.innerHTML=up2;
+last.innerHTML=t;
+for(i=1;i<n2;i++){
+f1+="<table border=0 cellpadding=0 style='text-align:center;font-size:12px;float:left'><tr><td style='border-bottom:solid thin'>"+i+"</td><td rowspan=2>,  </td></tr><tr><td>"+n2+"</td></tr></table>";
+
+}
+
+
+
+fract1.innerHTML="<table><tr><th >ආරෝහණ පිළිවෙලට</th></tr><tr><td>"+f1+"  1</td></tr></table>";
+
+}
+</script>
+
+</body>

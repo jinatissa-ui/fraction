@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+div{font-size:18px;text-align:justify}
+table{font-size:18px;}
+
+
+</style>
+
+<h2>ගත් මිල සෙවීම පුහුණුවට.</h2>
+
+<table border=1 width='380px' style='border-collapse:collapse'>
+<tr><th colspan=4>ලාභය / අලාභය දුන් විට</th></tr>
+<tr><td>ලාභය </td><td>= D</td><th rowspan=2>ගත් මිල  =</th><td rowspan=2 style='color:blue' id='box1' bgcolor='#ffff88'></td></tr>
+<tr><td>ලාභ  ප්‍රතිශතය </td><td>= C%</td></tr>
+<tr><td>අලාභය </td><td>= D</td><th rowspan=2>ගත් මිල =</th><td rowspan=2 style='color:blue' id='box2' bgcolor='#ffffaa'></td></tr>
+<tr><td> අලාභ ප්‍රතිශතය </td><td>= C%</td></tr>
+
+</table>
+
+<br><br>
+<button  onclick='nxt()' style='' id='btn1'>වෙනත්</button> ----------&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; ---------
+
+<button  onclick='ans()' style=''    id='btn2'>සොයන්න</button>
+<br><br>
+<div>ඔබටද අගයන්  යෙදිය හැක. <br>ලාභ / අලාභ ප්‍රතිශතය තෝරන්න.</div><br>
+<script>
+katex.render(algebra.toTex('\\frac {100}{C}\\times D'),box1);
+katex.render(algebra.toTex('\\frac {100}{C}\\times D'),box2);
+</script>
+
+
+
+<script>
+
+
+
+
+//var n=0;
+function nxt(){
+//n++;if(n>10)n=1;
+var a = new Array(40,150,320,120,200,60,180,520,400,880)
+var p = new Array(10,15,30,20,12,50,40,16,25,8);
+
+var n= Math.floor(Math.random()*10);
+var m= Math.floor(Math.random()*10);
+
+t1.innerHTML=a[n];
+t2.innerHTML=p[m];
+sel.selectedIndex=0;
+ t4.innerHTML=''; t5.innerHTML='';
+ 
+  t5.style.borderBottom='';
+}
+function ans(){
+var a=eval(t1.innerHTML);var b=eval(t2.innerHTML);
+if(sel.selectedIndex==0){
+katex.render(algebra.toTex('\\frac {'+(100)+'}{'+(b)+'}\\times '+a),t4);
+
+t5.innerHTML="රු.  "+(((100)/b)*a).toFixed(2);
+
+
+la.innerHTML="&nbsp; ලාභය";
+
+}
+else{
+katex.render(algebra.toTex('\\frac {'+(100)+'}{'+(b)+'}\\times '+a),t4);
+
+t5.innerHTML="රු.  "+(((100)/b)*a).toFixed(2);
+la.innerHTML="&nbsp; අලාභය";
+}
+
+
+
+
+
+
+t5.style.borderBottom='double';
+}
+//-------------
+
+
+
+
+</script>
+<table border=0>
+<tr><td id='la'>&nbsp; ලාභය  රු.</td><td>=</td><td id='t1' contenteditable=true  style='background:#ccf ;text-align:right'> 50</td><td></td></tr>
+<tr><td>
+<select id='sel' style='font-size:18px'>
+<option>ලාභ ප්‍රතිශතය</option>
+<option>අලාභ ප්‍රතිශතය</option>
+</select></td><td>=</td><td id='t2' contenteditable=true  style='background:#ccf ;text-align:right'>10</td><td>%</td></tr>
+
+<tr><td id='msg2'>&nbsp;ගත් මිල</td><td>=</td><td id='t4' colspan=2></td></tr>
+<tr><td>&nbsp;</td><td>=</td><td id='t5' style='' colspan=2></td></tr>
+</table>
+
+
+</body>
+</body>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+span{font-size:18px; }
+
+
+</style>
+
+<h2> දශම සංඛ්‍යා ගුණකරමු.</h2>
+
+
+
+
+
+
+<p>දශම සංඛ්‍යාවක් දශම සංඛ්‍යාවකින් ගුණකරමු.</p>
+<table border=0 width='' height='' style='font-size:18px'> 
+
+<tr><th><button  onclick='nxt2()' style=''>වෙනත් </button>&nbsp; &nbsp; </th> <th id='box21' style='text-align:right' >12</th><th>.</th><th id='box22' style='text-align:left' >64</th><td>&times; &nbsp; <select id='sel2' onchange='change2()' style='font-size:16px'>
+<option>?</option>
+<option>2.6</option><option>0.45</option>
+<option>6.87</option><option>47.3</option>
+<option>0.158</option><option>0.063</option>
+<option>75.8</option>
+</select>
+</td></tr>
+<tr><th id='' style='text-align:right'></th> <th id='' style='text-align:right' ></th><th></th><th id='' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th id='nm1' style='text-align:right'></th> <th id='box23' style='text-align:right' ></th><th></th><th id='box24' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th id='nm2' style='text-align:right'></th> <th id='box25' style='text-align:right' ></th><th></th><th id='' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th id='nm3' style='text-align:right'></th> <th id='box26' style='text-align:right' ></th><th></th><th id='' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th></th> <th id='box273' style='text-align:right' ></th><th>.</th><th id='' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th></th> <th id='box27' style='text-align:right' ></th><th id='dot'>.</th><th id='box28' style='text-align:left' ></th><td>&nbsp; </td></tr>
+</table>
+<br><br>
+<p style='color:blue'>දශම ගැන නොසිතා ගුණකරන්න. <br>පසුව <u>ගුණ කළ සංඛ්‍යා දෙකේම ඇති දශමස්ථාන ගණන </u>පිළිතුරෙහි වෙන්කර ගන්න.</p>
+<script>
+function change2(){
+var t21=(box21.innerHTML);
+var t22=(box22.innerHTML);
+var t23=t21+''+t22;
+var num1=Number((sel2.value+"").split('.')[0]+(sel2.value+"").split('.')[1]);
+var num2=num1%10;
+var num3=(parseInt((num1%100)/10))*10;
+var num4=(parseInt(num1/100))*100;
+//if(num1>100){
+//num2=(num1%100);}else{num2=(num1%100)}
+//alert(num2)
+var t24=t23*num2;
+var t25=t23*num3;
+var t26=t23*num4;
+var d=(t22+"").length;var d2=((sel2.value+"").split('.')[1]).length;
+nm1.innerHTML=t23 +' &times;'+num2 +' =';
+nm2.innerHTML=t23 +' &times; '+num3 +' =';
+nm3.innerHTML=t23 +' &times; '+num4 +' =';
+box23.innerHTML=t24;
+box25.innerHTML=t25;
+box26.innerHTML=t26;
+if(num2==0){nm2.innerHTML='';box25.innerHTML='';}
+var ans=t24+t25+t26;
+box273.innerHTML=ans;
+var dd=d+d2;
+box27.innerHTML=parseInt(ans/Math.pow(10,dd));
+box28.innerHTML=(ans/Math.pow(10,dd)+'').split('.')[1];
+
+box27.style.borderBottom='double';
+box28.style.borderBottom='double';
+dot.style.borderBottom='double';
+//if(box24.innerHTML=='undefined'){box24.innerHTML=0;}
+}
+
+var n2=0;
+function nxt2(){
+n2++;if(n2>10){n2=1};
+var a21=new Array('5','24','33','8','56','235','100','508','870','2');
+var a22=new Array('3','05','134','041','472','483','0043','287','01','354');
+
+box21.innerHTML=a21[n2-1];box23.innerHTML='';
+box22.innerHTML=a22[n2-1];box24.innerHTML='';
+sel2.selectedIndex='0';
+box25.innerHTML='';
+box26.innerHTML='';box27.innerHTML='';box28.innerHTML='';box273.innerHTML='';
+nm1.innerHTML='';nm2.innerHTML='';nm3.innerHTML='';
+
+box27.style.borderBottom='';
+box28.style.borderBottom='';
+dot.style.borderBottom='';
+
+}
+
+
+
+
+</script>
+
+</body>

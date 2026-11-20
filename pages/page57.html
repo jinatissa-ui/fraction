@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+div{
+   
+   padding:10px;
+   text-align:center;
+   border-radius:10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+</style>
+
+<h2>භාග සුලුකිරීමේ පුහුණුවට.</h2>
+<p> &nbsp; &nbsp; පිළිතුර තෝරන්න. හරි වැරදි බලන්න.</p>
+
+
+ <table border=0  style='font-size:14px;' >
+ 
+<tr>
+<td id='no' width='50px' >1).</td>
+<td colspan=2 id='txt1' style='width:220px'></td>
+<td><button class='btn2' onclick='fract1()' id='but1' disabled=disabled   >ගැටළුව</button></td>
+</tr>
+
+<tr>
+<td  style='text-align:right;height:50px'>=</td>
+<td id='ans1'>&nbsp;</td>
+
+<td  id='cw' >&nbsp; </td>
+<td><button class='btn2' onclick='fract2()' id='but2' disabled=disabled  >හරි වැරදි</button></td>
+</tr>
+</table>
+
+<table border=0>
+<tr><td><button class='btn2' onclick='answer()' id='but3'  >පිළිතුරු</button></td><th id='mark' style='color:red;font-size:20px'></th></tr>
+<tr><th >
+<div id='answ' style='font-size:14px;color:blue;display:none;'>
+
+
+</div>
+
+</th><td  style='vertical-align:top;font-size:10px' >
+<span id='t1'></span><span id='cw1'></span><br>
+<span id='t2'></span><span id='cw2'></span><br>
+<span id='t3'></span><span id='cw3'></span><br>
+<span id='t4'></span><span id='cw4'></span><br>
+<span id='t5'></span><span id='cw5'></span><br>
+<span id='t6'></span><span id='cw6'></span><br>
+<span id='t7'></span><span id='cw7'></span><br>
+<span id='t8'></span><span id='cw8'></span><br>
+<span id='t9'></span><span id='cw9'></span><br>
+<span id='t10'></span><span id='cw10'></span><br>
+
+
+
+
+</td></tr></table>
+
+
+
+<script>
+
+var arr1=new Array('\\frac{4}{5}','\\frac{2}{5}','\\frac{1}{5}','2\\frac{1}{2}','1\\frac{1}{3}','\\frac{1}{4}','\\frac{3}{4}','\\frac{1}{3}','\\frac{2}{3}','2\\frac{2}{5}')
+window.onload=function(){
+var s1='';var c='';var s2='';
+for(i=1;i<11;i++){
+answ.innerHTML+="<span id='an"+i+"' style='cursor:pointer' onclick='aw(this)' title="+(i)+"></span><br>"
+
+katex.render(algebra.toTex(arr1[i-1]),eval('an'+i));
+}
+}
+function answer(){
+
+answ.style.display='block';
+}
+function aw(me){
+answ.style.display='none';
+katex.render(algebra.toTex(arr1[me.title-1]),ans1); 
+s1=eval(me.title);
+s2=arr1[me.title-1];
+but3.disabled=true;
+but2.disabled=false;
+}
+</script>
+
+    
+
+
+
+<script>
+var f="(\\cfrac{2}{5} + \\cfrac{3}{5})\\times \\cfrac{1}{5}";
+katex.render(algebra.toTex(f),txt1);
+var c,w; 
+c="<svg width='30px' height='30px'><g transform='translate(5,5)scale(1)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='30px' height='30px'><g transform='translate(5,5)scale(1)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>";
+
+
+var num1=1; var num4=4;
+
+
+
+
+var q1='(\\cfrac{2}{5}+\\cfrac{3}{5})\\times \\cfrac{1}{5}';
+var q2='(\\cfrac{3}{4}-\\cfrac{1}{4})\\times \\cfrac{2}{3}';
+var q3="\\cfrac{3}{5}න\\negthickspace^\\upharpoonright \\cfrac{1}{3}+ \\cfrac{3}{5}";
+var q4='\\cfrac{1}{6}\\div \\cfrac{2}{3}+ \\cfrac{1}{2}';
+var q5='(\\cfrac{1}{3}+\\cfrac{1}{3})\\div 1\\cfrac{2}{3}';
+var q6="(2\\cfrac{1}{4}+1\\cfrac{3}{4}) න\\negthickspace^\\upharpoonright \\cfrac{1}{6}";
+var q7='1\\cfrac{1}{3}\\times 1\\cfrac{1}{2}+ \\cfrac{2}{5}';
+var q8='(2\\cfrac{4}{5}-2\\cfrac{1}{2})\\div 1\\cfrac{1}{5}';
+var q9='3\\cfrac{1}{5}න\\negthickspace^\\upharpoonright(2\\cfrac{2}{3}-2\\cfrac{1}{4})';
+var q10='(2\\cfrac{1}{2}+1\\cfrac{2}{3})\\div (1\\cfrac{1}{4}\\times 1\\cfrac{1}{3})';
+
+ 
+num1=new Array(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10);
+num4=new Array(3,8,1,7,2,9,10,6,5,4);
+
+var m=0;var n=1;
+function fract1(){
+but1.disabled=true;
+but2.disabled=true;
+but3.disabled=false;
+ans1.innerHTML="&nbsp";
+m++;n++;if(m>9){m=0}
+if(n>10){
+n=1;
+mark.innerHTML="";ma=0;
+t1.innerHTML='';t2.innerHTML='';
+t3.innerHTML='';t4.innerHTML='';
+t5.innerHTML='';t6.innerHTML='';
+t7.innerHTML='';t8.innerHTML='';
+t9.innerHTML='';t10.innerHTML='';
+cw1.innerHTML='';cw2.innerHTML='';
+cw3.innerHTML='';cw4.innerHTML='';
+cw5.innerHTML='';cw6.innerHTML='';
+cw7.innerHTML='';cw8.innerHTML='';
+cw9.innerHTML='';cw10.innerHTML='';
+
+}
+no.innerHTML= (m+1)+").";
+
+var frac=num1[m]
+katex.render(algebra.toTex(frac),txt1);
+cw.innerHTML="";
+
+ }
+
+
+
+var c2,w2; 
+c2="<svg width='20px' height='20px'><g transform='translate(5,5)scale(0.5)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w2="<svg width='20px' height='20px'><g transform='translate(5,5)scale(0.5)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>";
+
+
+var cor=""; var ma=0;
+function fract2(){
+
+but3.disabled=true;
+but2.disabled=true;
+but1.disabled=false;
+
+var fr1=(m+1)+'). '+num1[m]+' = '+s2;
+var box=eval('t'+(m+1));
+var boxcw=eval('cw'+(m+1));
+
+
+
+if(num4[m]==s1){cw.innerHTML=c;cor=c2;ma++;
+
+katex.render(algebra.toTex(fr1),box);
+boxcw.innerHTML=cor;
+}else{cw.innerHTML=w;cor=w2;
+katex.render(algebra.toTex(fr1),box);
+boxcw.innerHTML=cor
+}
+
+
+if(n==10){
+mark.innerHTML=ma*10+'%';
+}
+
+}
+
+//-------------------------
+
+
+
+
+
+</script>
+
+

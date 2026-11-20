@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+div{font-size:20px;text-align:justify}
+table{font-size:20px;}
+td{text-align:center}
+
+</style>
+
+<h2> ප්‍රතිශතය සොයමු.</h2>
+
+<p> &nbsp; &nbsp; ලැබෙන ගැටළු හොඳින් කියවන්න. විසඳා ඇති ආකාරය ඉගෙන ගන්න.</p>
+<script>
+//katex.render(algebra.toTex('3\\frac {2}{9}'),tx4);
+</script>
+
+
+
+
+<button  onclick='nxt()' style='' id='btn1'>අරඹන්න</button>
+<br><br><br>
+<div id='box1'></div> 
+<br><br>
+<button  onclick='ans()' style='display:none'    id='btn2'>සොයන්න</button>
+<br>
+<span id='box2'></span> 
+
+
+
+
+<script>
+var q1="1). &nbsp; &nbsp; ප්‍රශ්න පත්‍රයක ප්‍රශ්න 40 කි. ඉන්  30 ක්  නිවැරදිව ලියා ඇත. ලකුණු ප්‍රතිශතය සොයන්න.";
+var q2="2). &nbsp; &nbsp; පන්තියක සිසුන්  40 කි.  අද දින ඉන් 10 ක් පැමිණ නැත. පැමිණි සිසු ප්‍රතිශතය සොයන්න.";
+var q3="3). &nbsp; &nbsp; මල්ලක ඇති අඹවලින් 5ක් නරක්වී තිබිණි. අමු අඹ 8කි. ඉඳුණු ගෙඩි 12කි. අඹ මල්ලේ නරක්වූ අඹ ගෙඩි ගණනේ ප්‍රතිශතය සොයන්න.";
+var q4="4). &nbsp; &nbsp; බෝංචි ඇට පැකැට්ටුවක ඇති ඇට සිටවූ පසු . ඉන් බීජ 6ක් පැළවුණි. 2ක් පැළවුණේ නැත.එම බීජවල පැළවීමේ ප්‍රතිශතය සොයන්න.";
+var q5="5). &nbsp; &nbsp; ගමක ජනගහණය 250 කි . සිංහළයින් 225ක් වන අතර ඉතිරි අය ද්‍රවිඩ ජාතීන්ය. ගමෙහි ද්‍රවිඩ ජන ප්‍රතිශතය සොයන්න.";
+var q6="6). &nbsp; &nbsp; තේ වෙළෙන්දෙක් හොඳ තේ කුඩු කොටස් දෙකකට බාල තේ කොටස් තුනක් යොදා එනම් 2:3 අනුපාතයට මිශ්‍ර කර විකුණයි. ඔහු විකුණන තේ කිලෝ ග්‍රෑමයක් සඳහා මිශ්‍ර කර ඇති හොඳ තේ ප්‍රතිශතය සොයන්න.";
+var q7="7). &nbsp; &nbsp; එක්තරා ඡන්ද ප්‍රදේශයක ඡන්ද දායකයින් ගණන 25200 කි. ඉන් 200ක් ඡන්දය ප්‍රකාශ කර නොතිබුණි. එක් ඡන්ද අපේක්ෂකයෙක් එයින් ඡන්ද 12000 ක් ලබා ගත්තේ නම් ඔහු ඡන්දය භාවිත කළ අයගෙන් ලබාගත් ඡන්ද ප්‍රතිශතය සොයන්න.";
+var q8="8). &nbsp; &nbsp; එක්තරා තැරැව්කරුවෙක් රු. 75000 ක් ගෙවිය යුතු ඉඩම් පර්චසයක් රු. 78000කට විකුණයි. පර්චසයක් විකිණීමෙන් ඔහු ලබන කොමිස් මුදලේ ප්‍රතිශතය කොපමණද?.";
+var q9="9). &nbsp; &nbsp; එක්තරා බැංකුවක් රු. 10000 ක් සඳහා අවුරුද්දක් අවසානයේ  රු. 11500 ක මුදලක් අයකර තිබුණි. අයකර ඇති වාර්ෂික පොළී ප්‍රතිශතය සොයන්න.";
+var q10="10). &nbsp; &nbsp; රු. 24000 ක් වටිනා රූපවාහිණියක් අත්පිට මුදලට විකුණා ඇත්තේ රු. 21600 කට ය. දී ඇති වට්ටමේ ප්‍රතිශතය සොයන්න.";
+
+
+var a1="<table border=0><tr><td rowspan=2>නිවැරදි භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>30</td><td></td></tr> <tr><td >40</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>30</td><td rowspan=2>&times; 100%</td></tr> <tr><td >40</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' >75%</td><td></td></tr>   </table>";
+
+var a2="<table border=0><tr><td rowspan=2>පැමිණි භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>40-10</td><td></td></tr> <tr><td >40</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>30</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >40</td><td>100</td></tr> <tr><td></td><td >=</td><td   style='border-bottom:double'>75%</td><td></td></tr>   </table>";
+
+var a3="<table border=0><tr><td >මුලු අඹ ගණන</td><td >=</td><td style=''>5+8+12</td><td></td></tr><tr><td rowspan=2>නරක්වූ භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>5</td><td></td></tr> <tr><td >25</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>5</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >25</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>20%</td><td></td></tr>   </table>";
+
+var a4="<table border=0><tr><td >මුලු ඇට ගණන</td><td >=</td><td style=''>6+2</td><td></td></tr><tr><td rowspan=2>පැළවූ භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>6</td><td></td></tr> <tr><td >8</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>6</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >8</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>75%</td><td></td></tr>   </table>";
+
+var a5="<table border=0><tr><td >ද්‍රවිඩ ගණන</td><td >=</td><td style=''>250 - 225</td><td></td></tr><tr><td rowspan=2>ද්‍රවිඩ භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>25</td><td></td></tr> <tr><td >250</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>25</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >250</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>10%</td><td></td></tr>   </table>";
+
+var a6="<table border=0><tr><td >කොටස් එකතුව</td><td >=</td><td style=''>2 + 3</td><td></td></tr><tr><td rowspan=2>හොඳ තේ  භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>2</td><td></td></tr> <tr><td >5</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>2</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >5</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>40%</td><td></td></tr>   </table>";
+
+var a7="<table border=0><tr><td >ප්‍රකාශිත ඡන්ද ගණන</td><td >=</td><td style=''>25200 - 200</td><td></td></tr><tr><td rowspan=2>ලැබූ ඡන්ද භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>12000</td><td></td></tr> <tr><td >25000</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>12000</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >25000</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>48%</td><td></td></tr>   </table>";
+
+var a8="<table border=0><tr><td >ලබා ගත් කොමිස් මුදල</td><td >=</td><td style=''>78000 - 75000</td><td></td></tr><tr><td rowspan=2>කොමිස් භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>3000</td><td></td></tr> <tr><td >75000</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>3000</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >75000</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>4%</td><td></td></tr>   </table>";
+
+var a9="<table border=0><tr><td >ලබා ගත් පොළී මුදල</td><td >=</td><td style=''>11500 - 10000</td><td></td></tr><tr><td rowspan=2>පොළී භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>1500</td><td></td></tr> <tr><td >10000</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>1500</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >10000</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>15%</td><td></td></tr>   </table>";
+
+var a10="<table border=0><tr><td >ලබා දුන් වට්ටම</td><td >=</td><td style=''>24000 - 21600</td><td></td></tr><tr><td rowspan=2>වට්ටමේ භාගය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>2400</td><td></td></tr> <tr><td >24000</td></tr>  <tr><td rowspan=2>ප්‍රතිශතය</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>2400</td><td rowspan=2 >&times; </td><td style='border-bottom:solid thin'>100</td></tr> <tr><td >24000</td><td>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double'>10%</td><td></td></tr>   </table>";
+
+
+var n=0;
+function nxt(){
+btn2.style.display='block';
+btn1.disabled=true;
+btn1.innerHTML="වෙනත්";
+box2.innerHTML='';
+n++;if(n>10)n=1;
+var ar=new Array(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10);
+box1.innerHTML= ar[n-1];
+
+}
+function ans(){
+btn1.disabled=false;
+btn2.style.display='none';
+var ar2=new Array(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
+box2.innerHTML=ar2[n-1];
+
+}
+//-------------
+
+ 
+
+
+</script>
+
+
+</body>
+</body>

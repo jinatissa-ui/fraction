@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+div{font-size:18px;text-align:justify}
+table{font-size:18px;}
+td{text-align:center}
+
+</style>
+
+<h2>විකුණූ මිල සෙවීම.</h2>
+
+<p> &nbsp; &nbsp; ලැබෙන ගැටළු හොඳින් කියවන්න. විසඳා ඇති ආකාරය ඉගෙන ගන්න.</p>
+<script>
+//katex.render(algebra.toTex('3\\frac {2}{9}'),tx4);
+</script>
+
+
+
+
+<button  onclick='nxt()' style='' id='btn1'>අරඹන්න</button>
+<br><br><br>
+<div id='box1'></div> 
+<br><br>
+<button  onclick='ans()' style='display:none'    id='btn2'>සොයන්න</button>
+<br>
+<span id='box2'></span> 
+
+
+
+
+<script>
+var q1="1). &nbsp; &nbsp; වෙළෙන්දෙක් රු.60කට ගත් භාණ්ඩයක් 50%  ක ලාභ ප්‍රතිශතයක් ලබා විකුණූ මිල සොයන්න .";
+var q2="2). &nbsp; &nbsp; අල්මාරියක් 25%  ක ලාභ ප්‍රතිශතයක් සහිතව විකුණා රු. 6 000 ක ලාභයක් ලබයි. එය විකුණූ  මිළ සොයන්න.";
+var q3="3). &nbsp; &nbsp; රු. 250ට ගත් භාණ්ඩයක්  20%ක අලාභ ප්‍රතිශතයකින් වික්කේ කීයටද?.";
+var q4="4). &nbsp; &nbsp; එකක් රු. 40 බැගින් ගත් පොල් ගෙඩි 50 ක් 75% ක ලාභ ප්‍රතිශතයක් සහිතව විකුණා ලද මුදල සොයන්න..";
+var q5="5). &nbsp; &nbsp; කිලෝග්‍රෑමයකින් රු. 30 ක ලාභයක් තබා විකුණූ මුං ඇට කිලෝග්‍රෑම් 20ක් සඳහා 25%ක ලාභ ප්‍රතිශතයක් ලබා ඇත් නම් කිලෝග්‍රෑමයක් විකුණා ඇත්තේ කීයටද? සියල්ල විකුණා ලද මුදලද සොයන්න. ";
+var q6="6). &nbsp; &nbsp; කිලෝග්‍රෑමයක් රු. 60 බැගින් ගත්  එළවලු කිලෝග්‍රෑම් 50 ක් නරක් වීම නිසා විකුණා ගත හැකි වූයේ කි.ග්‍රෑ. 30ක් පමණි. ඒවා විකිණීමෙන් ලැබූ අලාභ ප්‍රතිශතය  10% ක් විය. කිලෝග්‍රෑමයක් වික්කේ කීයටද?";
+var q7="7). &nbsp; &nbsp; රු. 4 500 000 කට මිළට ගත් පර්චස් 75ක ඉඩමක්  පර්චස් 15 කොටස්වලට කඩා විකිණීමෙන්   100% ක ලාභ ප්‍රතිශතයක් ලැබුවේය. පර්චස් 15 ක කොටසක් වික්ක මිළ සොයන්න.";
+var q8="8). &nbsp; &nbsp;  කෙසෙල් ගෙඩි  25kgක් විකුණා රු. 2250ක් ලාභ ලැබීය. ඒවා  150%ක ලාභ ප්‍රතිශතයක් තබා විකුණා ඇත් නම්  1kg ක් වික්ක මිළ සොයන්න.";
+var q9="9). &nbsp; &nbsp; වෙළෙන්දෙක් රු. 7500 කට මිලට ගත් ලීබඩුවක් ප්‍රවාහනය සඳහා රු. 500ක් ද ගෙවන ලදි. ඔහු  එය  62.5% ලාභ ප්‍රතිශතයක් ගැනීමට විකිණිය යුත්තේ කීයටද?.";
+var q10="10). &nbsp; &nbsp; ලී සඳහා රු. 12500 ක්ද,  වැඩ කුළිය සඳහා රු. 9500 ක්ද වෙනත් වියදම් වශයෙන් රු. 3000 ක්ද නිෂ්පාදන වියදම් වශයෙන් ගිය අල්මාරියක් 40% ලාභ ප්‍රතිශතයක් ගැනීමට විකිණිය යුත්තේ කීයටද?."
+
+
+var a1="<table border=0><tr><td>ලා. ප්‍ර. අනුව    ගත් මිල</td><td>=</td><td style='text-align:left'>100 ක් වන විට</td></tr> <tr><td>වික්ක මිල වන්නේ</td><td>=</td><td style='text-align:left'>150 කි.</td></tr><tr ><td rowspan=2>&there4; රු.60 බඩුව වික්ක මිල</td><td rowspan=2>=</td><td style='border-bottom:solid thin;color:blue'>150</td><td rowspan=2 style='color:blue'>&times; 60</td></tr> <tr ><td  style='color:blue'>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' > රු. 90</td><td></td></tr>   </table>";
+
+var a2="<table border=0><tr><td>ලා. ප්‍ර. අනුව    ලාභය</td><td>=</td><td style='text-align:left'>25 ක් වන විට</td></tr> <tr><td>වික්ක මිල වන්නේ</td><td>=</td><td style='text-align:left'>125 කි.</td></tr><tr><td rowspan=2>විකුණූ මිළ</td><td rowspan=2>=</td><td style='border-bottom:solid thin;color:blue'>125</td><td rowspan=2 style='color:blue'>&times; 6 000</td></tr> <tr><td style='color:blue'>25</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' >රු. 30 000</td><td></td></tr>   </table>";
+
+var a3="<table border=0><tr><td>ප්‍රතිශතයට අනුව    ගත් මිල</td><td>=</td><td style='text-align:left'>100 ක් වන විට</td></tr> <tr><td>වික්ක මිල වන්නේ</td><td>=</td><td style='text-align:left'>80 කි.</td></tr><tr ><td rowspan=2>&there4; රු.250  වික්ක මිල</td><td rowspan=2>=</td><td style='border-bottom:solid thin;color:blue'>80</td><td rowspan=2 style='color:blue'>&times; 250</td></tr> <tr ><td  style='color:blue'>100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' > රු. 200</td><td></td></tr>   </table>";
+
+var a4="<table border=0><tr><td>යෙදූ මුදල</td><td>=</td><td>40 &times; 50</td></tr> <tr><td></td><td>=</td><td style='text-align:left'>රු. 2000</td></tr><tr><td rowspan=2>විකුණා ලද මුදල</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>175</td><td rowspan=2>&times; 2000</td></tr> <tr><td >100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' >රු. 3500</td><td></td></tr>   </table>";
+
+var a5="<table border=0><tr><td rowspan=2>1kgක්  විකුණූ මිළ</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>125</td><td rowspan=2>&times; 30</td></tr> <tr><td >25</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' >රු. 150</td><td></td></tr> <tr><td>සියල්ල විකුණා ලද මුදල</td><td>=</td><td>150 &times; 20</td></tr> <tr><td></td><td>=</td><td style='text-align:left;border-bottom:double'>රු. 3 000</td></tr>  </table>";
+
+var a6="<table border=0><tr><td>මිල දී ගැනීමට ගිය මුදල</td><td>=</td><td>60 &times; 50</td></tr> <tr><td></td><td>=</td><td style='text-align:left'>රු. 3000</td></tr><tr><td rowspan=2>විකුණා ලද මුදල</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>90</td><td rowspan=2>&times; 3000</td></tr> <tr><td >100</td></tr> <tr><td></td><td >=</td><td  >රු. 2700</td><td></td></tr><tr><td>කිලෝග්‍රෑමයක් විකුණූ මිල</td><td>=</td><td>2700 &divide; 30</td></tr> <tr><td></td><td>=</td><td style='text-align:left;border-bottom:double'>රු. 90</td></tr>   </table>";
+
+var a7="<table border=0><tr><td>පර්චසයක් ගත්  මිල</td><td>=</td><td>4 500 000 &divide; 75</td></tr> <tr><td></td><td>=</td><td style='text-align:left'>රු. 60 000</td></tr><tr><td rowspan=2>පර්චසයක් විකුණූ මිල</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>200</td><td rowspan=2>&times; 60 000</td></tr> <tr><td >100</td></tr> <tr><td></td><td >=</td><td style='' > රු. 120 000</td><td></td></tr><tr><td>පර්චස් 15 විකුණූ මිල</td><td>=</td><td> 120 000 &times; 15 </td></tr> <tr><td></td><td>=</td><td style='text-align:left;border-bottom:double'>රු.  1 800 000</td></tr>   </table>";
+
+var a8="<table border=0><tr><td>1kg කින් ලාභය</td><td>=</td><td>2250 &divide; 25</td></tr> <tr><td></td><td>=</td><td style='text-align:left'>රු. 90</td></tr><tr><td rowspan=2>1kg වික්ක මිල</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>250</td><td rowspan=2>&times; 90</td></tr> <tr><td >150</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' > රු. 150</td><td></td></tr>   </table>";
+
+var a9="<table border=0><tr><td>මුලු වියදම</td><td>=</td><td>7500 + 500</td></tr> <tr><td></td><td>=</td><td style='text-align:left'>රු. 8 000</td></tr><tr><td rowspan=2>විකිණූ මිල</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>162.5</td><td rowspan=2>&times; 8 000</td></tr> <tr><td >100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' > රු. 13 000</td><td></td></tr>   </table>";
+
+var a10="<table border=0><tr><td>මුලු වියදම</td><td>=</td><td>12 500 + 9 500 + 3 000</td></tr> <tr><td></td><td>=</td><td style='text-align:left'>රු. 25 000</td></tr><tr><td rowspan=2>විකිණිය යුතු මිල</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>140</td><td rowspan=2>&times; 25 000</td></tr> <tr><td >100</td></tr> <tr><td></td><td >=</td><td style='border-bottom:double' > රු. 35 000</td><td></td></tr>   </table>";
+
+
+var n=0;
+function nxt(){
+btn2.style.display='block';
+btn1.disabled=true;
+btn1.innerHTML="වෙනත්";
+box2.innerHTML='';
+n++;if(n>10)n=1;
+var ar=new Array(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10);
+box1.innerHTML= ar[n-1];
+
+}
+function ans(){
+btn1.disabled=false;
+btn2.style.display='none';
+var ar2=new Array(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
+box2.innerHTML=ar2[n-1];
+
+}
+//-------------
+
+ 
+
+
+</script>
+
+
+</body>
+</body>

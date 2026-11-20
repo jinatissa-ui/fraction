@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:16px; text-align:justify}</style>
+
+<h2>දශම හඳුනා ගනිමු.</h2>
+
+<p>&nbsp; &nbsp; &nbsp;හරය 1000 වූ භාග. </p>
+<table width='370px' style='font-size:18px'>
+<tr><td id='tx1'></td><td>0.001</td><td>බිංදුවයි දශම බිංදුවයි බිංදුවයි එක</td></tr>
+<tr><td id='tx2'></td><td>0.02</td><td>බිංදුවයි දශම බිංදුවයි දෙක</td></tr>
+<tr><td id='tx3'></td><td>1.3</td><td>එකයි දශම තුන</td></tr>
+<tr><td id='tx4'></td><td>2.132</td><td>දෙකයි දශම එකයි තුනයි දෙක</td></tr></table>
+<script>
+
+katex.render(algebra.toTex('\\frac {1}{1000}'),tx1);
+katex.render(algebra.toTex('\\frac {20}{1000}'),tx2);
+katex.render(algebra.toTex('\\frac {1300}{1000}'),tx3);
+katex.render(algebra.toTex('2\\frac {132}{1000}'),tx4);
+</script>
+
+<p>පහත ලැබෙන දශම සංඛ්‍යා හඳුනාගන්න. කියවන්න.</p>
+
+
+<button class='btn2' onclick='frac1()'>දශම සංඛ්‍යා </button> <br>
+<br>
+<table width=''>
+<tr><td id='b1' width='50px'></td><td id='bb1' width='100px'></td><td id='b6' width='50px'></td><td id='bb6' width='100px'></td></tr>
+<tr><td id='b2'></td><td id='bb2'></td><td id='b7'></td><td id='bb7'></td></tr>
+<tr><td id='b3'></td><td id='bb3'></td><td id='b8'></td><td id='bb8'></td></tr>
+<tr><td id='b4'></td><td id='bb4'></td><td id='b9'></td><td id='bb9'></td></tr>
+<tr><td id='b5'></td><td id='bb5'></td><td id='b10'></td><td id='bb10'></td></tr>
+
+
+
+
+</table>
+
+
+<script>
+var n=0;var m1=0; var s="";var m2=0;
+function frac1(){
+n++;if(n>10){n=1;}
+m1=1+Math.floor(Math.random()*(100));
+m2=Math.floor(Math.random()*(10));
+s=new Array(10,100,10,1000,10,100,1000,10,100,1000)
+
+var fr1='\\frac{'+m1+'}{'+s[m2]+'}';
+katex.render(algebra.toTex(fr1),eval('b'+n));
+var fr2= ' = '+(m1/s[m2]);
+katex.render(algebra.toTex(fr2),eval('bb'+n));
+
+
+
+}
+
+</script>
+
+</body>

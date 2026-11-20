@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+span{font-size:18px; }
+
+
+</style>
+
+<h2> දශම සංඛ්‍යා ගුණකරමු.</h2>
+
+<p>10, 100, 1000, 10000... න් ගුණවෙන විට සංඛ්‍යාවේ ස්ථානීය අගය වෙනස්වන ආකාරය හොඳින් බලන්න.</p>
+<table border=0 width='' height='' style='font-size:18px'> 
+<tr>
+<th></th><th>පූර්ණ කොටස</th><th></th><th>දශම කොටස</th><td></td></tr>
+<tr><th><button  onclick='nxt()' style=''>වෙනත් </button></th> <th id='box1' style='text-align:right' >2</th><th>.</th><th id='box2' style='text-align:left' >354</th><td>&times; &nbsp; <select id='sel' onchange='change()' style='font-size:16px'>
+<option>?</option>
+<option>10</option>
+<option>100</option>
+<option>1000</option>
+<option>10000</option>
+</select>
+</td></tr>
+
+<tr><th></th> <th  style='text-align:right' ><span id='box3' ></span></th><th id='dt'>.</th><th  style='text-align:left' ><span id='box4'></span></th><td>&nbsp; </td></tr>
+
+
+</table>
+
+
+
+
+
+<script>
+function change(){
+var t1=(box1.innerHTML);
+var t2=(box2.innerHTML);
+var t3=t1+'.'+t2;
+var t4=t3*sel.value;
+var t5=(t4+'').split('.')[0];
+var t6=(t4+'').split('.')[1];
+
+box3.innerHTML=t5;
+box4.innerHTML=t6;
+if(box4.innerHTML=='undefined'){box4.innerHTML=0;}
+
+
+box3.style.borderBottom='double';
+box4.style.borderBottom='double';
+dt.style.borderBottom='double';
+if(sel.selectedIndex=='0'){box3.innerHTML='';box4.innerHTML='';
+dt.style.borderBottom='';
+}
+
+}
+
+var n=0;
+function nxt(){
+n++;if(n>10){n=1};
+var a1=new Array('5','24','38','8','56','235','100','5081','870','2');
+var a2=new Array('3','05','0034','041','472','483','0043','287','0','354');
+
+box1.innerHTML=a1[n-1];box3.innerHTML='';
+box2.innerHTML=a2[n-1];box4.innerHTML='';
+sel.selectedIndex='0';
+
+box3.style.borderBottom='';
+box4.style.borderBottom='';
+dt.style.borderBottom='';
+
+}
+
+</script>
+<p>දශම සංඛ්‍යාවක් පූර්ණ සංඛ්‍යාවකින් ගුණකරමු.</p>
+<table border=0 width='' height='' style='font-size:18px'> 
+
+<tr><th><button  onclick='nxt2()' style=''>වෙනත් </button>&nbsp; &nbsp; </th> <th id='box21' style='text-align:right' >2</th><th>.</th><th id='box22' style='text-align:left' >354</th><td>&times; &nbsp; <select id='sel2' onchange='change2()' style='font-size:16px'>
+<option>?</option>
+<option>5</option><option>8</option>
+<option>25</option><option>43</option>
+<option>50</option><option>74</option>
+<option>87</option>
+</select>
+</td></tr>
+
+<tr><th id='nm1' style='text-align:right'></th> <th id='box23' style='text-align:right' ></th><th></th><th id='box24' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th id='nm2' style='text-align:right'></th> <th id='box25' style='text-align:right' ></th><th></th><th id='' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th></th> <th id='box26' style='text-align:right' ></th><th></th><th id='' style='text-align:left' ></th><td>&nbsp; </td></tr>
+<tr><th></th> <th id='box27' style='text-align:right' ></th><th id='dot'>.</th><th id='box28' style='text-align:left' ></th><td>&nbsp; </td></tr>
+</table>
+<p style='color:blue'>දශම ගැන නොසිතා ගුණකරන්න. <u>පසුව ගුණ කළ සංඛ්‍යාවේ ඇති දශමස්ථාන ගණන පිළිතුරෙහි වෙන් කර ගන්න.</u></p>
+<script>
+function change2(){
+var t21=(box21.innerHTML);
+var t22=(box22.innerHTML);
+var t23=t21+''+t22;
+var num1=sel2.value%10;
+var num2=parseInt(sel2.value/10)*10;
+
+var t24=t23*num1;
+var t25=t23*num2;
+
+var d=(t22+"").length;
+nm1.innerHTML=t23 +' &times;'+num1 +' =';
+nm2.innerHTML=t23 +' &times; '+num2 +' =';
+
+box23.innerHTML=t24;
+box25.innerHTML=t25;
+if(num2==0){nm2.innerHTML='';box25.innerHTML='';}
+var ans=t24+t25;
+box26.innerHTML=ans;
+box27.innerHTML=parseInt(ans/Math.pow(10,d));
+box28.innerHTML=(ans/Math.pow(10,d)+'').split('.')[1];
+
+
+if(box28.innerHTML=='undefined'){box28.innerHTML=0;}
+box27.style.borderBottom='double';
+box28.style.borderBottom='double';
+dot.style.borderBottom='double';
+if(sel2.selectedIndex=='0'){box27.innerHTML='';box28.innerHTML='';
+box23.innerHTML='';
+box24.innerHTML='';
+box25.innerHTML='';
+box26.innerHTML='';
+nm1.innerHTML='';
+nm2.innerHTML='';
+box27.style.borderBottom='';
+box28.style.borderBottom='';
+dot.style.borderBottom='';
+}
+
+
+}
+
+var n2=0;
+function nxt2(){
+n2++;if(n2>10){n2=1};
+var a21=new Array('5','24','38','8','56','235','100','5081','870','2');
+var a22=new Array('3','05','0034','041','472','483','0043','287','0','354');
+
+box21.innerHTML=a21[n2-1];box23.innerHTML='';
+box22.innerHTML=a22[n2-1];box24.innerHTML='';
+sel2.selectedIndex='0';
+box25.innerHTML='';
+box26.innerHTML='';box27.innerHTML='';box28.innerHTML='';
+nm1.innerHTML='';nm2.innerHTML='';
+box27.style.borderBottom='';
+box28.style.borderBottom='';
+dot.style.borderBottom='';
+}
+
+
+
+
+</script>
+
+</body>

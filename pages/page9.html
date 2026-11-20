@@ -1,0 +1,132 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+
+
+<h2> භාග නිරූපණයට පුහුණු වෙමු.</h2>
+<p>&nbsp; &nbsp; &nbsp;භාග සංඛ්‍යාවක් ලබා ගන්න. කොටස් මත ක්ලික් කරමින්  එම භාගය නිරූපණය කර හරි වැරදි බලන්න.</p>
+<table border=0 width='370px' height='300px' style='border-collapse:collapse'>
+<tr> <th width='60px' height='200px' id='fract' style='font-size:30px'>&nbsp</th>
+<td width='220'>
+<svg width='200px' height='200px' style='position:absolute;top:170px' >
+
+
+<g transform='scale(1)'  id='g1'></g>
+
+
+<circle cx=100 cy=100 r=55 stroke='white' style='stroke-width:15px' fill='none' />
+<circle cx=100 cy=100 r=47 stroke='black' style='stroke-width:1px' fill='none' />
+
+
+<script>
+
+</script>
+
+</svg>
+</td><th id='mark' width='100px'>&nbsp</th>
+</tr>
+<tr><th><button class='btn2' onclick='nxt()'>භාගය</button></th><td >&nbsp;</td><th><button class='btn2' onclick='check()' id='but1'>හරි වැරදි</button></th></tr>
+<tr><td colspan=3 id='box' style='color:blue;font-size:20px'></td></tr>
+
+</table>
+
+<script>
+var c,w; 
+c="<svg width='40px' height='40px'><g transform='translate(5,5)scale(1.3)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='40px' height='40px'><g transform='translate(5,5)scale(1.3)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>"
+var m=0;var m1=0;
+
+var n1=0;
+function frac1(me){
+if(me.getAttribute('fill')=="white"){n1++;
+me.setAttribute("fill","black");
+}else{n1--;
+me.setAttribute("fill","white");
+}
+}
+var n2=0;
+function frac2(me){
+if(me.getAttribute('fill')=="white"){n2++;
+me.setAttribute("fill","black");
+}else{n2--;
+me.setAttribute("fill","white");
+}
+}
+var n3=0;
+function frac3(me){
+if(me.getAttribute('fill')=="white"){n3++;
+me.setAttribute("fill","black");
+}else{n3--;
+me.setAttribute("fill","white");
+}
+}
+
+
+var num=0;var f1=0; var f2=0; var f3=0;
+function nxt(){
+num++; if(num>3){num=1}
+mark.innerHTML="&nbsp";
+but1.disabled=false;
+n1=0;n2=0;n3=0;
+f1=0;f2=0;f3=0;
+if(num==1){
+f1=1+Math.floor(Math.random()*5);
+fract.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>"+f1+"</td></tr><tr><td>6</td></tr></table>";
+
+for(i=0;i<6;i++){
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');
+b.setAttribute("d",'M100,100 160,100 129,153Z');
+b.setAttribute("fill","white");
+b.setAttribute("stroke","gray");
+b.setAttribute("transform","rotate("+60*i+",100,100)");
+b.setAttribute("onclick","frac1(this)");
+b.setAttribute("cursor","pointer");
+g1.appendChild(b);
+}}
+if(num==2){
+f2=1+Math.floor(Math.random()*7);
+fract.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>"+f2+"</td></tr><tr><td>8</td></tr></table>";
+for(i=0;i<8;i++){
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');
+b.setAttribute("d",'M100,100 160,100 142,142Z ');
+b.setAttribute("fill","white");
+b.setAttribute("stroke","gray");
+b.setAttribute("transform","rotate("+45*i+",100,100)");
+b.setAttribute("onclick","frac2(this)");
+b.setAttribute("cursor","pointer");
+g1.appendChild(b);
+}
+}
+if(num==3){
+f3=1+Math.floor(Math.random()*11);
+fract.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>"+f3+"</td></tr><tr><td>12</td></tr></table>";
+for(i=0;i<12;i++){
+var b=document.createElementNS('http://www.w3.org/2000/svg','path');
+b.setAttribute("d",'M100,100 160,100 152,130Z ');
+b.setAttribute("fill","white");
+b.setAttribute("stroke","gray");
+b.setAttribute("transform","rotate("+30*i+",100,100)");
+b.setAttribute("onclick","frac3(this)");
+b.setAttribute("cursor","pointer");
+g1.appendChild(b);
+}
+}
+}
+
+function check(){
+but1.disabled=true;
+if(num==1 && f1==n1){mark.innerHTML=c;m++;}
+else if(num==2 && n2==f2){mark.innerHTML=c;m++;}
+else if(num==3 && n3==f3){mark.innerHTML=c;m++;}else{mark.innerHTML=w; m1++;}
+
+box.innerHTML=" &nbsp; &nbsp; හරි ගණන : &nbsp; &nbsp; " +m + " &nbsp; &nbsp; වැරදි ගණන : &nbsp; &nbsp;  "+m1;
+}
+</script>
+
+
+
+
+
+</body>

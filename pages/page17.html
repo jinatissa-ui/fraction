@@ -1,0 +1,57 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+<style>button{width:140px}</style>
+
+
+<h2>භාග සංසන්දනය කරමු.</h2>
+
+<p >හරය අසමාන වූ  භාග සංසන්දනය</p>
+
+
+<center>
+<span style='font-size:20'>විශාල භාගය සොයමු.</span><br><br>
+<button class='btn2' onclick='frac2()'>හරය අසමාන භාග</button><br><br>
+<span id='box1' style='font-size:18'></span>
+
+<span id='box2' style='font-size:18'></span>
+<span id='box3' style='font-size:18'></span>
+<span id='box4' style='font-size:18'></span>
+<br>
+
+
+</center>
+
+<script>
+
+var u1=0; var d1=0; var u2=0; var d2=0;var m;
+var n=0;var sl=''; var ss='';
+function frac2(){
+n++;if(n>14){n=0}
+u1=new Array(1,1,2,1,3,1,2,3,4,1,5,2,3,4,5);
+d1=new Array(2,3,3,4,4,5,5,5,5,6,6,7,8,8,9);
+
+u2=new Array(1,2,5,3,5,3,4,7,9,2,5,3,5,7,7);
+d2=new Array(6,9,12,8,12,10,15,10,20,18,12,14,16,24,18);
+m=new Array(3,3,4,2,3,2,3,2,4,3,2,2,2,3,2)
+
+box1.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>"+u1[n]+"</td> <td rowspan=2>, &nbsp</td><td style='border-bottom:solid thin'>"+u2[n]+"</td> </tr><tr><td>"+d1[n]+"</td> <td >"+d2[n]+"</td></tr></table>හරය සමාන කිරීමට පළමු භාගය "+m[n]+"න් ගුණකරමු";
+
+box2.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:16px'><tr><td style='border-bottom:solid thin'>"+u1[n]+"&times;"+m[n]+"</td> <td rowspan=2>, &nbsp</td><td style='border-bottom:solid thin'>"+u2[n]+"</td> </tr><tr><td>"+d1[n]+"&times;"+m[n]+"</td> <td >"+d2[n]+"</td></tr></table>හරය සමාන නිසා ලවය විශාල වූ භාගය විශාලය";
+
+
+
+
+if((u1[n]*m[n])>(u2[n])){sl='>';ss='විශාලයි'}else{sl='<';ss=' කුඩයි';}
+box3.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:16px'><tr><td style='border-bottom:solid thin'>"+u1[n]*m[n]+"</td> <td rowspan=2>"+sl+" </td><td style='border-bottom:solid thin'>"+u2[n]+"</td> </tr><tr><td>"+d1[n]*m[n]+"</td> <td >"+d2[n]+"</td></tr></table>  <table border=0 cellpadding=0 style='text-align:center;font-size:16px'><tr><td rowspan=2>ඒ නිසා</td><td style='border-bottom:solid thin'>"+u1[n]+"</td> <td rowspan=2>"+ss+" </td><td style='border-bottom:solid thin'>"+u2[n]+"</td><td rowspan=2>ට වඩා</td> </tr><tr><td>"+d1[n]+"</td> <td >"+d2[n]+"</td></tr></table> ";
+
+box4.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>"+u1[n]+"</td> <td rowspan=2>"+sl+"</td><td style='border-bottom:solid thin'>"+u2[n]+"</td> </tr><tr><td>"+d1[n]+"</td> <td >"+d2[n]+"</td></tr></table>";
+
+
+
+}
+</script>
+
+</body>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:16px; text-align:justify}
+
+td{-webkit-writing-mode: vertical-rl;transform:rotate(-90deg); transform-origin: 30% 6%;}
+th{font-size:20px}
+</style>
+
+<h2> දශමවල ස්ථානීය අගය වටහා ගනිමු.</h2>
+
+<br><br>
+<table border=0 width='300px' height='' style='font-size:14px'> 
+<tr>
+
+
+
+
+
+<td>දසස්ථානය</td><td >එකස්ථානය</td><td id=''></td>
+<td >පළමු දශමස්ථානය</td><td >දෙවන දශමස්ථානය</td><td s>තෙවන දශමස්ථානය</td></tr>
+<tr><th id='t2'>4</th><th id='t3'>3</th><th id=''>.</td>
+<th id='tx1'>5</th><th id='tx2'>7</th><th id='tx3'>2</th></tr>
+</table>
+<script>
+
+
+
+katex.render(algebra.toTex('3\\frac {2}{9}'),tx4);
+
+
+
+
+katex.render(algebra.toTex('1.\\dot 3'),tt2);
+katex.render(algebra.toTex('0.28571\\dot4'),tt3);
+katex.render(algebra.toTex('3.\\dot2'),tt4);
+
+</script>
+
+<p>100 ට අඩු  දශමස්ථාන 3ක් සහිත දශම සංඛ්‍යා යොදන්න. එවායේ ස්ථානීය අගය වටහා ගන්න.</p>
+
+
+
+<script>
+
+</script>
+
+
+<button  onclick='nxt()' style=''>වෙනත් සංඛ්‍යා</button>
+&nbsp; &nbsp; &nbsp;
+<input type='text' id='box' maxlength=6  style='font-size:20px;width:70px' value= 24.517 />&nbsp; &nbsp; &nbsp;<button  onclick='des()' style=''>ස්ථානීය අගය</button>
+ <h3>වැටයීම</h3>
+ <p style='font-size:18px'>&nbsp; &nbsp; &nbsp;දශම සංඛ්‍යාව ආසන්න දශමස්ථාන එකකට, දෙකකට ... ආදී වශයෙන් වටයා තැබිය හැක. මෙහිදී ඉලක්කමේ අගය 5 හෝ ඊට වැඩි නම්  වැටයූ ස්ථානයට 1ක් එකතුවේ.</p>
+<table border=1 style='border-collapse:collapse'>
+<tr><th>ආසන්න පූර්ණ සංඛ්‍යාවට</th><th>ආසන්න පළමු දශමස්ථානයට</th><th>ආසන්න දෙවන දශමස්ථානයට</th></tr>
+<tr><th id='b1'>&nbsp;</th><th id='b2'></th><th id='b3'></th></tr></table>
+
+
+
+<script>
+
+function nxt(){
+var a1=1+Math.floor(Math.random()*(98));
+var a2=1+Math.floor(Math.random()*(998));
+box.value= a1+'.'+a2;
+t2.innerHTML='';t3.innerHTML='';
+tx1.innerHTML='';tx2.innerHTML='';tx3.innerHTML='';
+b1.innerHTML='';b2.innerHTML='';b3.innerHTML='';
+}
+function des(){
+var nm=0;var n1=0;var n2=0 ;var n3=0; var num=0;
+var dm=0;var d1=0;var d2=0 ;var d3=0;
+t2.innerHTML='';t3.innerHTML='';
+
+ num=box.value;if(box.value==''){num=0}
+ nm=parseInt(num);
+
+ n2=parseInt(nm/10); 
+ n3=parseInt(nm);
+ 
+if(nm>9){t2.innerHTML=n2;t3.innerHTML=nm-(n2*10);}
+else if(nm>9){t2.innerHTML=n2;t3.innerHTML=nm-(n2*10)}
+else {t3.innerHTML=n3}
+
+dm=(num-nm).toFixed(3);
+tx1.innerHTML=parseInt(dm*10);
+tx2.innerHTML=parseInt(dm*100)-parseInt(tx1.innerHTML*10);
+tx3.innerHTML=parseInt(parseInt(dm*1000)-(parseInt(dm*10)*10)*10-(tx2.innerHTML)*10);
+if(tx3.innerHTML==0){tx3.innerHTML=''}
+b1.innerHTML=eval(box.value).toFixed(0);
+b2.innerHTML=eval(box.value).toFixed(1);
+b3.innerHTML=eval(box.value).toFixed(2);
+}
+
+
+
+</script>
+
+</body>

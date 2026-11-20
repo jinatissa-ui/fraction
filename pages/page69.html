@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+span{font-size:24px; cursor:pointer}
+
+
+</style>
+
+<h2> දශම පුහුණුවට.</h2>
+<p>දශමවලට හරවන්න.</p>
+
+
+<table border=0 width='' style='font-size:24px'>
+<tr><td width='80px' height='70px'><button onclick='nxt()' id='bt1' disabled=true>වෙනත්</button></td><th id='q1' width='70px'></th><th width='20px'>=</th><th id='ans' width='70px'></th><th id='cw1' width='50px'></th><td width='80px'><button onclick='check()' id='bt2'>හරි වැරදි</button></td></tr>
+<tr><th colspan=2> පිළිතුර තෝරන්න  </th><th colspan=3>
+<div style='overflow:auto;height:35px;width:80px;background:lightblue;border:solid thin' id='box' >
+<span id='bx1' >?</span><br>
+<span id='bx1' onclick='des(this)'>2.5</span><br>
+<span id='bx1' onclick='des(this)'>0.25</span><br>
+<span id='bx1' onclick='des(this)'>0.125</span><br>
+<span id='bx1' onclick='des(this)'>0.5</span><br>
+<span id='bx1' onclick='des(this)'>2.05</span><br>
+<span id='bx1' onclick='des(this)'>1.5</span><br>
+<span id='bx1' onclick='des(this)'>0.15</span><br>
+<span id='bx1' onclick='des(this)'>0.025</span><br>
+<span id='bx1' onclick='des(this)'>0.05</span><br>
+<span id='bx1' onclick='des(this)'>1.25</span><br>
+</div>
+</th><th id='mark' style='color:red'></th></tr></table>
+<script>
+katex.render(algebra.toTex('\\cfrac{5}{10}'),q1);
+var n=0;
+function nxt(){
+bt2.disabled=false;bt1.disabled=true;
+box.style.display='block';
+n++; if(n>9){n=0;ma=0}
+var ar=new Array('\\cfrac{5}{10}','\\cfrac{25}{100}','\\cfrac{25}{10}','2\\cfrac{5}{100}','\\cfrac{25}{1000}','1\\cfrac{1}{4}','\\cfrac{1}{8}','\\cfrac{3}{2}','\\cfrac{1.5}{10}','\\cfrac{1}{20}'  );
+katex.render(algebra.toTex(ar[n]),q1);
+
+box.scrollTop=0;cw1.innerHTML='';ans.innerHTML='';
+mark.innerHTML='';
+}
+function des(me){ans.innerHTML=me.innerHTML}
+var ma=0;
+function check(){
+bt1.disabled=false;bt2.disabled=true;
+box.style.display='none';
+if(n==0 && ans.innerHTML=='0.5'){
+cw1.innerHTML=c;ma+=10;
+}
+else if(n==1 && ans.innerHTML=='0.25'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==2 && ans.innerHTML=='2.5'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==3 && ans.innerHTML=='2.05'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==4 && ans.innerHTML=='0.025'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==5 && ans.innerHTML=='1.25'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==6 && ans.innerHTML=='0.125'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==7 && ans.innerHTML=='1.5'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==8 && ans.innerHTML=='0.15'){
+cw1.innerHTML=c;ma+=10;
+}else if(n==9 && ans.innerHTML=='0.05'){
+cw1.innerHTML=c;ma+=10;
+mark.innerHTML=ma+'%'
+}else{cw1.innerHTML=w;
+if(n==9){mark.innerHTML=ma+'%'}
+}
+
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+<script>
+
+</script>
+
+
+<hr>
+<p> සංඛ්‍යා අතරට යෙදිය යුතු  ලකුණ තෝරා හරි වැරදි බලන්න.</p>
+<table  style='font-size:24px'><tr><td>
+<button  onclick='nxt2()' style='' id='bt3' disabled=true>වෙනත් සංඛ්‍යා</button>
+&nbsp; &nbsp; </td><td id='tt1' width='70px'  >12.25</td><td width='30px' ><select id='sel' style='font-size:20px'>
+<option>?</option>
+<option>=</option>
+<option>></option>
+<option><</option>
+</select>
+</td><td width='80px' id='tt3' >12.3</td><td>
+<button  onclick='check2()' style='' id='bt4'>හරි වැරදි</button>
+ </td></tr><tr><th height='50px' colspan=5 id='cw' ></th></tr>
+ 
+ <tr><th colspan=3 id='c1' style='color:red;text-align:left'></th><th colspan=2 id='w1' style='color:red;text-align:left'></th></tr>
+ 
+ </table>
+<script>
+
+
+var m=0;
+function nxt2(){
+bt4.disabled=false;bt3.disabled=true;
+sel.disabled=false;
+m++;if(m>10)m=1;
+var a1=1+Math.floor(Math.random()*(98));
+var a2=1+Math.floor(Math.random()*(998));
+
+var b1=1+Math.floor(Math.random()*(98));
+var b2=1+Math.floor(Math.random()*(998));
+if(m%3==0){b1=a1}
+tt1.innerHTML= a1+'.'+a2;
+tt3.innerHTML= b1+'.'+b2;
+
+sel.selectedIndex='0';cw.innerHTML='';
+}
+var mc=0; var mw=0;
+function check2(){
+bt3.disabled=false;bt4.disabled=true;
+sel.disabled=true;
+var num1=eval(tt1.innerHTML); var num2=eval(tt3.innerHTML)
+if( num1 > num2  && sel.selectedIndex=='2'){cw.innerHTML=c; mc++;c1.innerHTML= 'නිවැරදි  ගණන '+mc}else if( num1 < num2  && sel.selectedIndex=='3'){cw.innerHTML=c; mc++;c1.innerHTML= 'නිවැරදි ගණන  '+mc} else {cw.innerHTML=w; mw++;w1.innerHTML='වැරදි ගණන  '+mw}
+}
+var c="<svg width='20px' height='20px' ><line x1=2 y1=10 x2=10 y2=20 stroke='red' stroke-width='2px' /><line x1=20 y1=0 x2=10 y2=20 stroke='red' stroke-width='2px' /></svg>";
+
+var w="<svg width='20px' height='20px' ><line x1=0 y1=3 x2=20 y2=20 stroke='red' stroke-width='2px' /><line x1=20 y1=0 x2=0 y2=20 stroke='red' stroke-width='2px' /></svg>";
+
+
+
+</script>
+
+</body>

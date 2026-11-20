@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+
+button{width:30px}
+td{vertical-align:top}
+
+</style>
+  <body style='margin:20px' >
+ <script>
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
+    </script>
+	
+<h2>භාග සහිත ප්‍රකාශන සුළුකිරීම .</h2>
+
+
+
+
+<table border=0 style='font-size:14px'>
+<tr><th width='50px'>&nbsp;</th><th width=''><button onclick='frac1()' style='width:100px' id='btn1'>උදාහරණ</button> </th><td>&nbsp;</td></tr>
+
+<tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr>
+<tr><td>&nbsp;</td><td id='box1'></td><td id='msg1' style='color:blue' ></td></tr>
+
+<tr><td><button onclick='frac2()' id='btn2' style='display:none'>1 </button></td><td id='box2'></td><td id='msg2' style='color:blue'></td></tr>
+
+<tr><td><button onclick='frac3()' id='btn3' style='display:none'>2 </button></td><td id='box3'></td><td id='msg3' style='color:blue'></td></tr>
+
+<tr><td><button onclick='frac4()' id='btn4' style='display:none'>3</button></td><td id='box4'></td><td id='msg4' style='color:blue' rowspan=4></td></tr>
+<tr><td><button onclick='frac5()' id='btn5' style='display:none'>4</button></td><td id='box5'></td><td id='msg5' style='color:blue' rowspan=4></td></tr>
+<tr><td>&nbsp;</td><td id='box6'></td></tr>
+<tr><td>&nbsp;</td><td id='box7'></td></tr>
+<tr><td>&nbsp;</td><td id='box8'></td></tr>
+</table>
+<script>
+
+var n=0;
+function frac1(){
+n++;if(n>7){n=1}
+btn1.innerHTML="වෙනත්";
+btn2.style.display='block';
+btn3.style.display='none';
+btn4.style.display='none';
+if(n==1){
+var f1='2\\cfrac{1}{6} + 1\\cfrac{1}{2} \\div \\cfrac{5}{6}';
+katex.render(algebra.toTex(f1),box1);}
+if(n==2){
+var f1='(2\\cfrac{1}{6} + 1\\cfrac{1}{2}) \\div \\cfrac{5}{6}';
+katex.render(algebra.toTex(f1),box1);}
+
+if(n==3){
+
+box1.innerHTML="<span id='bx1'></span> න්  <span id='bx2'></span>";
+
+var fx1='1\\cfrac{1}{3} ';
+var fx2='\\cfrac{1}{4}+ 2\\cfrac{1}{3} \\div 1\\cfrac{3}{4} ';
+katex.render(algebra.toTex(fx1),bx1);
+katex.render(algebra.toTex(fx2),bx2);
+}
+
+if(n==4){
+
+box1.innerHTML="<span id='bx1'></span> න්  <span id='bx2'></span>";
+
+var fx1='\\cfrac{1}{4}+\\cfrac{5}{6}\\times \\cfrac{1}{2}\\div 1\\cfrac{1}{2} ';
+var fx2='1\\cfrac{1}{3}  ';
+katex.render(algebra.toTex(fx1),bx1);
+katex.render(algebra.toTex(fx2),bx2);
+}
+
+if(n==5){
+var f1='2\\cfrac{2}{3} \\times (1\\cfrac{1}{4} - \\cfrac{1}{12}) \\div 2\\cfrac{1}{3}';
+katex.render(algebra.toTex(f1),box1);}
+
+if(n==6){
+box1.innerHTML="මිනිසෙක් තම වැටුපෙන් <span id='bx1'></span> ක් කෑම සඳහාද <span id='bx2'></span> ක් වෙනත් දේ සඳහාද වියදම් කරයි. ඉතිරි මුදලින් <span id='bx3'></span> ක් බැංකුවක තැන්පත් කළ පසු අතේ ඉතිරිවන්නේ වැටුපෙන් කිනම් භාගයක්ද?"
+katex.render(algebra.toTex('\\frac {1}{2}'),bx1);
+katex.render(algebra.toTex('\\frac {1}{4}'),bx2);
+katex.render(algebra.toTex('\\frac {2}{3}'),bx3);
+}
+if(n==7){
+box1.innerHTML="මිනිසෙක් තම ඉඩමෙන් <span id='bx1'></span> ක් බිරිඳට දී  ඉතිරියෙන්<span id='bx3'></span> ක් පුන්‍යායතනයකට පූජා කරයි. බිරිඳ ද තමාට ලැබුණු කොටසින් හරි අඩක් එම පුන්‍යායතනයටම පූජා කරයි. පූන්‍යායතනයට ලැබුණු සම්පූර්ණ කොටස මුලු ඉඩමෙන් කුමන භාගයක්ද?"
+katex.render(algebra.toTex('\\frac {1}{4}'),bx1);
+
+katex.render(algebra.toTex('\\frac {1}{2}'),bx3);
+}
+box2.innerHTML='';box3.innerHTML='';box4.innerHTML='';
+box5.innerHTML='';box6.innerHTML='';box7.innerHTML='';
+box8.innerHTML='';
+msg2.innerHTML='';msg3.innerHTML='';msg4.innerHTML='';
+msg5.innerHTML='';msg6.innerHTML='';msg7.innerHTML='';
+}
+
+function frac2(){
+btn3.style.display='block';
+btn2.style.display='none';
+if(n==1){
+var f2='=\\cfrac{13}{6} + \\cfrac{3}{2} \\div \\cfrac{5}{6}';
+katex.render(algebra.toTex(f2),box2);
+msg2.innerHTML="";
+}
+if(n==2){
+var f2='=(\\cfrac{13}{6} + \\cfrac{3}{2}) \\div \\cfrac{5}{6}';
+katex.render(algebra.toTex(f2),box2);
+msg2.innerHTML="";
+}
+if(n==3){
+
+box2.innerHTML="<span id='bx3'></span> න්  <span id='bx4'></span>";
+
+var fx1='=\\cfrac{4}{3} ';
+var fx2='\\cfrac{1}{4}+ \\cfrac{7}{3} \\div \\cfrac{7}{4} ';
+katex.render(algebra.toTex(fx1),bx3);
+katex.render(algebra.toTex(fx2),bx4);}
+
+if(n==4){
+
+box2.innerHTML="<span id='bx3'></span> න්  <span id='bx4'></span>";
+
+var fx1='=\\cfrac{1}{4}+\\cfrac{5}{6}\\times \\cfrac{1}{2}\\div \\cfrac{3}{2} ';
+var fx2='\\cfrac{4}{3}  ';
+katex.render(algebra.toTex(fx1),bx3);
+katex.render(algebra.toTex(fx2),bx4);
+}
+if(n==5){
+var f2='=\\cfrac{8}{3} \\times (\\cfrac{5}{4} - \\cfrac{1}{12}) \\div \\cfrac{7}{3}';
+katex.render(algebra.toTex(f2),box2);}
+if(n==6){
+box2.innerHTML=" වියදම් සියල්ල <span id='b1'></span><br><span id='b2'></span>";
+var f21='=\\frac{1}{2} + \\frac{1}{4}=\\frac{2}{4} + \\frac{1}{4} ';
+katex.render(algebra.toTex(f21),b1);
+var f22=' = \\frac{3}{4}';
+katex.render(algebra.toTex(f22),b2);
+
+
+}
+if(n==7){
+box2.innerHTML=" මිනිසා පූජා කළ කොටස <span id='b1'></span>න්<span id='b2'></span>";
+var f21='=(1 - \\frac{1}{4}) ';
+katex.render(algebra.toTex(f21),b1);
+var f22=' \\frac{1}{2}\\newline =\\frac{3}{4}\\times \\frac{1}{2}\\newline =\\frac{3}{8}';
+katex.render(algebra.toTex(f22),b2);
+
+
+}
+}
+function frac3(){
+btn4.style.display='block';
+btn3.style.display='none';
+
+
+if(n==1){
+var f3='=\\cfrac{13}{6} + \\cfrac{3}{2} \\times \\cfrac{6}{5}';
+katex.render(algebra.toTex(f3),box3);
+msg3.innerHTML=" ";
+}
+if(n==2){
+var f3='=(\\cfrac{13}{6} + \\cfrac{9}{6}) \\times \\cfrac{6}{5}';
+katex.render(algebra.toTex(f3),box3);
+msg3.innerHTML="";
+}
+
+if(n==3){
+var f3='=\\cfrac{4}{3}\\times \\cfrac{1}{4}+ \\cfrac{7}{3} \\times \\cfrac{4}{7}';
+katex.render(algebra.toTex(f3),box3);
+msg3.innerHTML=" ";
+}
+
+if(n==4){
+
+var f3='=\\cfrac{1}{4}+\\cfrac{5}{6}\\times \\cfrac{1}{2}\\div \\cfrac{3}{2}\\times \\cfrac{4}{3}';
+
+katex.render(algebra.toTex(f3),box3);
+
+}
+if(n==5){
+var f3='=\\cfrac{8}{3} \\times (\\cfrac{15}{12} - \\cfrac{1}{12}) \\times \\cfrac{3}{7}';
+katex.render(algebra.toTex(f3),box3);}
+
+if(n==6){
+box3.innerHTML=" වියදමෙන් පසු ඉතිරි <span id='bb1'></span>";
+var f31='= 1 -\\frac{3}{4} =\\frac{1}{4}';
+katex.render(algebra.toTex(f31),bb1);
+
+
+
+}
+
+if(n==7){
+box3.innerHTML=" බිරිද පූජා කළ කොටස <span id='bb1'></span>න්<span id='bb2'></span>";
+var f31='=\\frac{1}{4} ';
+katex.render(algebra.toTex(f31),bb1);
+var f32=' \\frac{1}{2}\\newline =\\frac{1}{4}\\times \\frac{1}{2}\\newline =\\frac{1}{8}';
+katex.render(algebra.toTex(f32),bb2);
+
+
+}
+
+
+
+
+}
+
+function frac4(){
+btn4.style.display='none';
+btn5.style.display='block';
+if(n==1){
+var f4='=\\cfrac{13}{6} + \\cfrac{9}{5} ';
+katex.render(algebra.toTex(f4),box4);
+msg4.innerHTML=" .";
+}
+if(n==2){
+var f4='=\\cfrac{22}{6}  \\times \\cfrac{6}{5}';
+katex.render(algebra.toTex(f4),box4);
+msg4.innerHTML=" ";
+}
+if(n==3){
+var f4='=\\cfrac{1}{3}  + \\cfrac{4}{3}';
+katex.render(algebra.toTex(f4),box4);
+msg4.innerHTML=" ";
+}
+
+if(n==4){
+
+var f4='=\\cfrac{1}{4}+\\cfrac{5}{12}\\div \\cfrac{4}{2}';
+
+katex.render(algebra.toTex(f4),box4);
+
+}
+if(n==5){
+var f4='=\\cfrac{8}{3} \\times \\cfrac{14}{12} \\times \\cfrac{3}{7}';
+katex.render(algebra.toTex(f4),box4);}
+
+if(n==6){
+box4.innerHTML=" තැන්පත් කළ මුදල <span id='bc1'></span>න්<span id='bc2'></span>";
+var f41='= \\frac{1}{4}  ';
+katex.render(algebra.toTex(f41),bc1);
+var f42='\\frac{2}{3} = \\frac{1}{4} \\times \\frac{2}{3}\\newline =\\frac{2}{12}' ;
+katex.render(algebra.toTex(f42),bc2);
+
+
+}
+
+if(n==7){
+box4.innerHTML=" දෙදෙනාම පූජා කළ කොටස <span id='bbb1'></span>";
+var f331='=\\frac{3}{8} +\\frac{1}{8}\\newline= \\frac{4}{8}';
+katex.render(algebra.toTex(f331),bbb1);
+
+
+
+}
+
+
+
+
+}
+
+function frac5(){
+btn5.style.display='none';
+if(n==1){
+var f5='=\\cfrac{65}{30} + \\cfrac{54}{30} ';
+katex.render(algebra.toTex(f5),box5);
+var f6='=\\cfrac{119}{30}';
+katex.render(algebra.toTex(f6),box6);
+var f7='=3\\cfrac{29}{30}';
+katex.render(algebra.toTex(f7),box7);
+}
+if(n==2){
+var f5='=\\cfrac{22}{5}  ';
+katex.render(algebra.toTex(f5),box5);
+var f6='=4\\cfrac{2}{5}  ';
+katex.render(algebra.toTex(f6),box6);
+}
+if(n==3){
+var f5='=\\cfrac{5}{3}  ';
+katex.render(algebra.toTex(f5),box5);
+var f6='=1\\cfrac{2}{3}  ';
+katex.render(algebra.toTex(f6),box6);
+}
+
+if(n==4){
+
+var f5='=\\cfrac{1}{4}+\\cfrac{5}{12}\\times \\cfrac{2}{4}';
+
+katex.render(algebra.toTex(f5),box5);
+var f6='=\\cfrac{1}{4}+\\cfrac{5}{24}';
+katex.render(algebra.toTex(f6),box6);
+var f7='=\\cfrac{6}{24}+\\cfrac{5}{24}';
+katex.render(algebra.toTex(f7),box7);
+var f8='=\\cfrac{11}{24}';
+katex.render(algebra.toTex(f8),box8);
+}
+
+if(n==5){
+var f5='=\\cfrac{8}{3} \\times \\cfrac{\\cancel{14}2}{\\cancel{12}4} \\times \\cfrac{\\cancel{3}1}{\\cancel{7}1}';
+katex.render(algebra.toTex(f5),box5);
+
+var f6='=\\cfrac{8}{3} \\times \\cfrac{2}{4} ';
+katex.render(algebra.toTex(f6),box6);
+var f7='=\\cfrac{\\cancel{8}2}{3} \\times \\cfrac{2}{\\cancel{4}1} ';
+katex.render(algebra.toTex(f7),box7);
+var f8='=\\cfrac{4}{3} = 1\\cfrac{1}{3} ';
+katex.render(algebra.toTex(f8),box8);
+}
+if(n==6){
+box5.innerHTML=" අත ඉතිරි මුදල <span id='bd1'></span><br><span id='bd2' ></span>";
+var f51='= \\frac{1}{4} - \\frac{2}{12}=\\frac{3}{12} - \\frac{2}{12} ';
+katex.render(algebra.toTex(f51),bd1);
+var f52=' = \\frac{1}{12}' ;
+katex.render(algebra.toTex(f52),bd2);
+
+
+}
+if(n==7){
+box5.innerHTML=" පුන්‍යයාතනයට ලැබුණු කොටස <span id='bc1'></span>";
+var f441='=\\frac{\\cancel 4 1}{\\cancel8 2} \\newline= \\frac{1}{2}';
+katex.render(algebra.toTex(f441),bc1);
+
+
+
+}
+}
+
+
+
+</script>
+
+
+<script>
+
+
+
+</script>
+
+  </body></html>

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+span{font-size:24px;}
+
+
+</style>
+
+<h2> දශම සංඛ්‍යා අඩුකරමු.</h2>
+
+<p>එකම ස්ථානීය අගයන් අඩුවෙන ආකාරය බලන්න.</p>
+
+
+
+
+
+
+<script>
+
+
+
+//katex.render(algebra.toTex('3\\frac {2}{9}'),tx4);
+
+
+
+
+</script>
+
+
+
+
+
+<script>
+
+</script>
+
+
+<button  onclick='nxt()' style=''>වෙනත් සංඛ්‍යා</button>
+&nbsp; &nbsp; &nbsp;
+<span id='box1'>12.3</span> <span> - </span> <span id='box2'>8.75</span>
+<br><br>
+<button  onclick='down()' style=''>පහළට ලියන්න</button>
+<br>
+
+<table style='font-size:24px' height='120px'>
+<tr><td id='bx1' style='text-align:right;width:40px' ></td><td width='5px'>.</td><td id='bx2' width=40px'></td><td>&nbsp;</td></tr>
+<tr><td id='bx3' style='text-align:right;border-bottom:solid thin'></td><td style='border-bottom:solid thin;'>.</td><td id='bx4' style='border-bottom:solid thin'></td><td>&nbsp;  &nbsp;<button  onclick='add()' id='btn3' disabled=disabled >-</button></td></tr>
+<tr><td id='bx5' style='text-align:right;border-bottom:double'></td><td style='border-bottom:double'>.</td><td id='bx6' style='border-bottom:double'></td><td>&nbsp;</td></tr>
+</table>
+
+
+
+<script>
+var a1=12; var a2=3; var a3=8; var a4=75;
+function nxt(){
+btn3.disabled=true;
+a1=40+Math.floor(Math.random()*(58));
+a2=10+Math.floor(Math.random()*(87));
+if(a2%10==0){a2=a2/10}
+box1.innerHTML= a1+'.'+a2;
+
+a3=a1-(1+Math.floor(Math.random()*(38)));
+a4=1+Math.floor(Math.random()*(98));
+if(a4%10==0){a4=a4/10}
+box2.innerHTML= a3+'.'+a4;
+bx1.innerHTML='';bx2.innerHTML='';
+bx3.innerHTML='';bx4.innerHTML='';
+bx5.innerHTML='';bx6.innerHTML='';
+}
+function down(){
+bx1.innerHTML=a1;bx2.innerHTML=a2;
+bx3.innerHTML=a3;bx4.innerHTML=a4;
+btn3.disabled=false;
+}
+//-------------
+function add(){
+
+var num1=parseInt((eval(box1.innerHTML)-eval(box2.innerHTML)).toFixed(2))
+var num2=(eval(box1.innerHTML)-eval(box2.innerHTML)).toFixed(2);
+bx5.innerHTML=num1;
+bx6.innerHTML=num2.substr(-2)
+ 
+}
+
+
+</script>
+<hr>
+
+<button  onclick='nxt2()' style=''>වෙනත් සංඛ්‍යා</button>
+&nbsp; &nbsp; &nbsp;
+<span id='box21'>812.37</span> <span> - </span> <span id='box22'>98.758</span>
+<br><br>
+<button  onclick='down2()' style=''>පහළට ලියන්න</button>
+<br>
+
+<table style='font-size:24px' height='120px'>
+<tr><td id='bx21' style='text-align:right;width:50px' ></td><td width='5px'>.</td><td id='bx22' width=50px'></td><td>&nbsp;</td></tr>
+<tr><td id='bx23' style='text-align:right;border-bottom:solid thin'></td><td style='border-bottom:solid thin;'>.</td><td id='bx24' style='border-bottom:solid thin'></td><td>&nbsp;  &nbsp;<button  onclick='add2()' id='btn23' disabled=disabled >-</button></td></tr>
+<tr><td id='bx25' style='text-align:right;border-bottom:double'></td><td style='border-bottom:double'>.</td><td id='bx26' style='border-bottom:double'></td><td>&nbsp;</td></tr>
+</table>
+
+
+
+<script>
+var a21=812; var a22=37; var a23=98; var a24=758;
+function nxt2(){
+btn23.disabled=true;
+a21=400+Math.floor(Math.random()*(598));
+a22=1+Math.floor(Math.random()*(987));
+if(a22%10==0){a22=a22/10}
+if(a22%100==0){a22=a22/100}
+box21.innerHTML= a21+'.'+a22;
+
+a23=a21-(1+Math.floor(Math.random()*(398)));
+a24=100+Math.floor(Math.random()*(698));
+if(a24%10==0){a24=(a24/10)+111}
+if(a24%100==0){a24=(a22/100)+111}
+box22.innerHTML= a23+'.'+a24;
+bx21.innerHTML='';bx22.innerHTML='';
+bx23.innerHTML='';bx24.innerHTML='';
+bx25.innerHTML='';bx26.innerHTML='';
+}
+function down2(){
+bx21.innerHTML=a21;bx22.innerHTML=a22;
+bx23.innerHTML=a23;bx24.innerHTML=a24;
+btn23.disabled=false;
+}
+//-------------
+function add2(){
+
+var num21=parseInt((eval(box21.innerHTML)-eval(box22.innerHTML)).toFixed(3))
+var num22=(eval(box21.innerHTML)-eval(box22.innerHTML)).toFixed(3);
+bx25.innerHTML=num21;
+bx26.innerHTML=num22.substr(-3)
+ 
+}
+
+
+</script>
+
+</body>
+</body>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style></style>
+  <body style='margin:20px' >
+
+
+<h2 >මිශ්‍ර සංඛ්‍යා.</h2>
+
+<p>&nbsp; &nbsp; &nbsp; තත්‍ය භාග(සාමාන්‍ය භාග), පූර්ණ සංඛ්‍යා සහ මිශ්‍ර සංඛ්‍යා නිරූපණය වන ආකාරය හොඳින් බලන්න.</p>
+
+<svg width='380px' height='100px'>
+<rect x=10 y=10 width=100 height=40 fill='none' stroke='black' />
+<rect x=140 y=10 width=100 height=40 fill='none' stroke='black' />
+<rect x=270 y=10 width=100 height=40 fill='none' stroke='black' />
+
+<g id='g2'>
+<line x1=60 y1=10 x2=60 y2=50 stroke='black' />
+<line x1=190 y1=10 x2=190 y2=50 stroke='black' />
+<line x1=320 y1=10 x2=320 y2=50 stroke='black' />
+
+</g> 
+<g id='g3'></g><g id='g4'></g><g id='g5'></g>
+</svg>
+<br>
+<button onclick='test2()' id='btn'> අරඹන්න. </button>
+<span id='box2' style='display:none'>  </span>
+<br><br><br><span id='box1' style='color:red'>  </span> &nbsp; &nbsp; <span id='box' style='color:red'>  </span> <br><br><br>
+
+<span id='box3' style='color:blue;font-size:24px'>
+
+<script>
+var n=0;
+var n1=0;var n2=0;var n3=0;
+var m1=0;var m2=0;var m3=0;
+var p1=0;var p2=0;var p3=0;
+var q1=0;var q2=0;var q3=0;
+var ar=new Array('එකයි දෙකෙන් එක','දෙකයි දෙකෙන් එක','එකයි තුනෙන් එක','එකයි තුනෙන් දෙක','දෙකයි තුනෙන් එක ','දෙකයි තුනෙන් දෙක','එකයි හතරෙන් එක','එකයි හතරෙන් දෙක','එකයි හතරෙන් තුන','දෙකයි හතරෙන් එක','දෙකයි හතරෙන් දෙක','දෙකයි හතරෙන් තුන','එකයි  පහෙන් එක','එකයි පහෙන් දෙක','එකයි පහෙන් තුන','එකයි පහෙන් හතර','දෙකයි පහෙන් එක','දෙකයි පහෙන් දෙක','දෙකයි පහෙන් තුන','දෙකයි පහෙන් හතර');
+  function  test2(){
+  btn.innerHTML='නැවත';
+n++;
+
+if(n<3){n1++;
+g2.innerHTML+="<rect x="+(-40+(n1*50))+" y=10 width=50 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+n1+'}{'+2+'}}'
+}
+
+else if(n<5){n2++;n1=0
+g2.innerHTML+="<rect x="+(90+(n2*50))+" y=10 width=50 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(2+n2)+'}{'+2+'}}'
+}
+
+else if(n<7){n3++;n2=0;n1=0
+g2.innerHTML+="<rect x="+(220+(n3*50))+" y=10 width=50 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(4+n3)+'}{'+2+'}}'
+}
+else if(n==7){g2.innerHTML='';n3=0;n2=0;n1=0
+for(i=0;i<3;i++){g3.innerHTML+="<line x1="+(10+(i*33.3))+" y1=10 x2="+(10+(i*33.3))+" y2=50 stroke='black' />" }
+for(i=0;i<3;i++){g4.innerHTML+="<line x1="+(140+(i*33.3))+" y1=10 x2="+(140+(i*33.3))+" y2=50 stroke='black' />" }
+for(i=0;i<3;i++){g5.innerHTML+="<line x1="+(270+(i*33.3))+" y1=10 x2="+(270+(i*33.3))+" y2=50 stroke='black' />" }
+
+f1=''}
+
+else if(n<11){m1++;
+g3.innerHTML+="<rect x="+(-23.3+(m1*33.3))+" y=10 width=33.3 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(0+m1)+'}{'+3+'}}'
+}
+
+else if(n<14){m2++;m1=0;
+g4.innerHTML+="<rect x="+(106.7+(m2*33.3))+" y=10 width=33.3 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(3+m2)+'}{'+3+'}}'
+}
+
+else if(n<17){m3++;m1=0;m2=0;
+g5.innerHTML+="<rect x="+(236.7+(m3*33.3))+" y=10 width=33.3 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(6+m3)+'}{'+3+'}}'
+}
+
+else if(n==17){
+g2.innerHTML='';
+g3.innerHTML='';
+g4.innerHTML='';
+g5.innerHTML='';
+m3=0;m2=0;m1=0
+for(i=0;i<4;i++){g3.innerHTML+="<line x1="+(10+(i*25))+" y1=10 x2="+(10+(i*25))+" y2=50 stroke='black' />" }
+for(i=0;i<4;i++){g4.innerHTML+="<line x1="+(140+(i*25))+" y1=10 x2="+(140+(i*25))+" y2=50 stroke='black' />" }
+for(i=0;i<4;i++){g5.innerHTML+="<line x1="+(270+(i*25))+" y1=10 x2="+(270+(i*25))+" y2=50 stroke='black' />" }
+
+f1=''}
+else if(n<22){p1++;
+g3.innerHTML+="<rect x="+(-15+(p1*25))+" y=10 width=25 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(0+p1)+'}{'+4+'}}'
+}
+else if(n<26){p2++;p1=0;
+g4.innerHTML+="<rect x="+(115+(p2*25))+" y=10 width=25 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(4+p2)+'}{'+4+'}}'
+}
+else if(n<30){p3++;p1=0;p2=0;
+g5.innerHTML+="<rect x="+(245+(p3*25))+" y=10 width=25 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(8+p3)+'}{'+4+'}}'
+}
+else if(n==30){
+g2.innerHTML='';
+g3.innerHTML='';
+g4.innerHTML='';
+g5.innerHTML='';
+p3=0;p2=0;p1=0
+for(i=0;i<5;i++){g3.innerHTML+="<line x1="+(10+(i*20))+" y1=10 x2="+(10+(i*20))+" y2=50 stroke='black' />" }
+for(i=0;i<5;i++){g4.innerHTML+="<line x1="+(140+(i*20))+" y1=10 x2="+(140+(i*20))+" y2=50 stroke='black' />" }
+for(i=0;i<5;i++){g5.innerHTML+="<line x1="+(270+(i*20))+" y1=10 x2="+(270+(i*20))+" y2=50 stroke='black' />" }
+
+f1=''}
+else if(n<36){q1++;
+g3.innerHTML+="<rect x="+(-10+(q1*20))+" y=10 width=20 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(0+q1)+'}{'+5+'}}'
+}
+else if(n<41){q2++;q1=0;
+g4.innerHTML+="<rect x="+(120+(q2*20))+" y=10 width=20 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(5+q2)+'}{'+5+'}}'
+}
+else if(n<46){q3++;q1=0;q2=0;
+g5.innerHTML+="<rect x="+(250+(q3*20))+" y=10 width=20 height=40 fill='red' stroke='white' />" ; 
+f1='\\LARGE{\\cfrac{'+(10+q3)+'}{'+5+'}}'
+}
+else if(n==46){
+g2.innerHTML='';
+g3.innerHTML='';
+g4.innerHTML='';
+g5.innerHTML='';
+q3=0;q2=0;q1=0 ;n=0;
+g2.innerHTML="<line x1=60 y1=10 x2=60 y2=50 stroke='black' /><line x1=190 y1=10 x2=190 y2=50 stroke='black' /><line x1=320 y1=10 x2=320 y2=50 stroke='black' />";
+f1='';
+}
+
+
+
+//-------------------
+
+
+box2.innerHTML=n
+var f2;
+if(n==2){f2= '\\LARGE{= \\space 1}';box3.innerHTML=''}
+else if(n==3){f2= '\\LARGE{= \\space 1 \\cfrac 1 2}';box3.innerHTML=ar[0]}
+else if(n==4){f2= '\\LARGE{= \\space 2 }';box3.innerHTML=''}
+else if(n==5){f2= '\\LARGE{= \\space 2 \\cfrac 1 2}';box3.innerHTML=ar[1]}
+else if(n==6){f2= '\\LARGE{= \\space 3}';box3.innerHTML=''}
+else if(n==10){f2= '\\LARGE{= \\space 1}';box3.innerHTML=''}
+else if(n==11){f2= '\\LARGE{= \\space 1 \\cfrac 1 3}';box3.innerHTML=ar[2]}
+else if(n==12){f2= '\\LARGE{= \\space 1 \\cfrac 2 3}';box3.innerHTML=ar[3]}
+else if(n==13){f2= '\\LARGE{= \\space 2}';box3.innerHTML=''}
+else if(n==14){f2= '\\LARGE{= \\space 2 \\cfrac 1 3}';box3.innerHTML=ar[4]}
+else if(n==15){f2= '\\LARGE{= \\space 2 \\cfrac 2 3}';box3.innerHTML=ar[5]}
+else if(n==16){f2= '\\LARGE{= \\space 3}';box3.innerHTML=''}
+else if(n==17){f2= '';box3.innerHTML=''}
+else if(n==21){f2= '\\LARGE{= \\space 1}';box3.innerHTML=''}
+else if(n==22){f2= '\\LARGE{= \\space 1 \\cfrac 1 4}';box3.innerHTML=ar[6]}
+else if(n==23){f2= '\\LARGE{= \\space 1 \\cfrac 2 4}';box3.innerHTML=ar[7]}
+else if(n==24){f2= '\\LARGE{= \\space 1 \\cfrac 3 4}';box3.innerHTML=ar[8]}
+else if(n==25){f2= '\\LARGE{= \\space 2}';box3.innerHTML=''}
+else if(n==26){f2= '\\LARGE{= \\space 2 \\cfrac 1 4}';box3.innerHTML=ar[9]}
+else if(n==27){f2= '\\LARGE{= \\space 2 \\cfrac 2 4}';box3.innerHTML=ar[10]}
+else if(n==28){f2= '\\LARGE{= \\space 2 \\cfrac 3 4}';box3.innerHTML=ar[11]}
+else if(n==29){f2= '\\LARGE{= \\space 3}';box3.innerHTML=''}
+else if(n==35){f2= '\\LARGE{= \\space 1}';box3.innerHTML=''}
+
+else if(n==36){f2= '\\LARGE{= \\space 1 \\cfrac 1 5}';box3.innerHTML=ar[12]}
+else if(n==37){f2= '\\LARGE{= \\space 1 \\cfrac 2 5}';box3.innerHTML=ar[13]}
+else if(n==38){f2= '\\LARGE{= \\space 1 \\cfrac 3 5}';box3.innerHTML=ar[14]}
+else if(n==39){f2= '\\LARGE{= \\space 1 \\cfrac 4 5}';box3.innerHTML=ar[15]}
+else if(n==40){f2= '\\LARGE{= \\space 2}';box3.innerHTML=''}
+
+else if(n==41){f2= '\\LARGE{= \\space 2 \\cfrac 1 5}';box3.innerHTML=ar[16]}
+else if(n==42){f2= '\\LARGE{= \\space 2 \\cfrac 2 5}';box3.innerHTML=ar[17]}
+else if(n==43){f2= '\\LARGE{= \\space 2 \\cfrac 3 5}';box3.innerHTML=ar[18]}
+else if(n==44){f2= '\\LARGE{= \\space 2 \\cfrac 4 5}';box3.innerHTML=ar[19]}
+else if(n==45){f2= '\\LARGE{= \\space 3}';box3.innerHTML=''}
+
+
+else if(n==62){f2= '\\LARGE{= \\space 1}';box3.innerHTML=''}
+else{f2='';box3.innerHTML=''}
+katex.render(algebra.toTex(f1),box1);
+katex.render(algebra.toTex(f2),box);
+
+
+}
+</script>
+<span id='t1'></span>
+<span id='t2'></span><span id='t3'></span>
+</body></html>

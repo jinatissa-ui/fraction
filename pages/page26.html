@@ -1,0 +1,75 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+<style>button{width:150px}</style>
+<h2>සමූහයකින් කොටසක් </h2>
+
+<p >&nbsp; &nbsp; &nbsp; සජාතීය සමූහයකින් කොටසක් භාග ලෙස හඳුනා ගනිමු.</p>
+
+
+<div id='box1' style='width:300px;height:80px;border:solid thin'></div>
+
+<br>
+<p>මෙම මල් ගොඩෙහි එක සමාන මල්  <span id='t1'>0</span> කි.</p>
+<p>එහි රෝස පාට මල් <span id='t2'>0</span> කි. </p>
+<p>එහි කහ පාට මල් <span id='t3'>0</span> කි.</p>
+<span id='t4'></span> 
+<span id='t5'></span>
+
+
+<br>
+<button class='btn2' onclick='frac1()'>මුලු ගොඩෙන් භාග</button>
+<br>
+
+<script>
+var n=0;var m=0; var s="";var s1='';var s2="";
+
+
+
+
+function frac1(){
+n=1+Math.floor(Math.random()*7);
+m=1+Math.floor(Math.random()*7);
+s="";box1.innerHTML="";s1="";
+s="<svg width='40px' height='40px' >";
+for(j=0; j<6;j++){s+="<path d='M20,20 Q10,10 20,0 Q30,10 20,20' fill='pink' stroke='red' transform='rotate("+60*j+",20,20)' /><circle cx=20 cy=20 r=3 fill='gold' stroke='red'/>";
+}
+s+="</svg>"
+s2="";
+s2="<svg width='40px' height='40px' >";
+for(j=0; j<6;j++){s2+="<path d='M20,20 Q10,10 20,0 Q30,10 20,20' fill='gold' stroke='red' transform='rotate("+60*j+",20,20)' /><circle cx=20 cy=20 r=3 fill='pink' stroke='red'/>";
+}
+s2+="</svg>"
+
+for(i=0;i<n;i++){
+s1+="<span>"+s+"</span>"
+}
+for(i=0;i<m;i++){
+s1+="<span>"+s2+"</span>"
+}
+
+
+
+box1.innerHTML=s1;
+t1.innerHTML=n+m;
+t2.innerHTML=n;
+t3.innerHTML=m;
+
+
+
+
+t4.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td rowspan=2>රෝස පාට මල්  මුලු ගොඩෙන්  &nbsp </td><td style='border-bottom:solid thin'>"+n+"</td><td rowspan=2>&nbspකි.</td></tr><tr><td>"+(m+n)+"</td></tr></table>";
+
+
+t5.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td rowspan=2>කහ පාට මල්  මුලු ගොඩෙන් &nbsp </td><td style='border-bottom:solid thin'>"+m+"</td><td rowspan=2>&nbspකි.</td></tr><tr><td>"+(m+n)+"</td></tr></table>";
+
+
+
+
+}
+
+</script>
+
+</body>

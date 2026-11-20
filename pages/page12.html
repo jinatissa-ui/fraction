@@ -1,0 +1,115 @@
+﻿<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<style>
+button{width:130px}
+</style>
+
+</head>
+
+
+<h2>භාගයකට තුල්‍ය භාග ලබා ගනිමු.</h2>
+<table border=0 width='350px' height='220px' style='font-size:20px'>
+<tr>
+<td>
+<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin' id='fr1'>1</td></tr><tr><td id='fr2'>2</td></tr></table>
+ </td><td>ට තුල්‍ය භාග</td>   <td>&nbsp</td></tr>
+<tr><td>=</td><td>
+<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin' id='fra1'>1&times;2</td></tr><tr><td id='fra2'>2&times;2</td></tr></table>
+</td><td>&nbsp</td></tr>
+<tr><td>=</td><td>
+<table border=0 cellpadding=0 style='text-align:center;font-size:20px;color:red'><tr><td style='border-bottom:solid thin' id='frac1'>2</td></tr><tr><td id='frac2'>4</td></tr></table>
+
+</td><td>&nbsp</td></tr>
+<tr>
+<td colspan=2>
+<button class='btn2' onclick='fract1()'>වෙනත් භාගයක්</button></td><td><button class='btn2' onclick='fract2()'>තුල්‍ය භාග</button></td>
+</tr></table>
+
+
+<script>
+var n=2;var m=1;
+function fract1(){
+n=2+Math.floor(Math.random()*5);
+m=1+Math.floor(Math.random()*(n-1));
+fr1.innerHTML=m;
+fr2.innerHTML=n;
+num=1;
+fra1.innerHTML="";
+fra2.innerHTML="";
+frac1.innerHTML="";
+frac2.innerHTML="";
+
+}
+var num=1;
+function fract2(){
+num++;
+fra1.innerHTML=m +" &times; "+ num;
+fra2.innerHTML=n +" &times; "+ num;
+frac1.innerHTML=m * num;
+frac2.innerHTML=n * num;
+
+}
+var n2=2;var m2=1; var ar=new Array(4,6,8,10);var rand=4;
+function fract21(){
+rand=Math.floor(Math.random()*4);
+n2=2+Math.floor(Math.random()*10);
+m2=1+Math.floor(Math.random()*(n2-1));
+fr21.innerHTML=m2*ar[rand];
+fr22.innerHTML=n2*ar[rand];
+num=1;but1.disabled=false;
+fra21.innerHTML="";
+fra22.innerHTML="";
+frac21.innerHTML="";
+frac22.innerHTML="";
+
+}
+function fact2() {
+var a, b, c;
+b = m2*ar[rand]
+c = n2*ar[rand]
+while (c != 0) {
+a = b % c;
+b = c;
+c = a;
+}
+return b;
+}
+function fract22(){
+var fact=fact2();
+fra21.innerHTML=m2*ar[rand] +" &divide; "+ fact;
+fra22.innerHTML=n2*ar[rand] +" &divide; "+ fact;
+frac21.innerHTML=m2*ar[rand] / fact;
+frac22.innerHTML=n2*ar[rand] / fact;
+
+}
+
+</script>
+<br>
+<hr>
+<table border=0>
+<tr>
+<td colspan=6><span style='font-size:18'>තුල්‍ය භාගයක් ලැබෙන සේ භාගය සරල කරමු.</span></td>
+</tr>
+<tr>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='fr21'>8</td></tr><tr><td id='fr22'>12</td></tr></table></td>
+<td>සරල කරමු</td>
+<td>=</td>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='fra21'>8&divide;4</td></tr><tr><td id='fra22'>12&divide;4</td></tr></table></td>
+<td>=</td>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='frac21'>2</td></tr><tr><td id='frac22'>3</td></tr></table></td>
+</tr>
+<tr><td colspan=2>&nbsp;</td></tr>
+<tr>
+<td colspan=2><button class='btn2' onclick='fract21()'>වෙනත් භාගයක්</button></td>
+<td colspan=2><button id='but1' class='btn2' onclick='fract22()' disabled='disabled'>සරල තුල්‍ය භාගය</button></td>
+</tr>
+<tr><td colspan=2>&nbsp;</td></tr>
+<tr>
+<td colspan=6><span style='font-size:18;color:blue'>&nbsp; &nbsp; භාගයක හරය ලවය එකම සංඛ්‍යාවකින් බෙදීමෙන් ද තුල්‍ය භාග ලැබේ.</span></td>
+</tr></table>
+
+
+ 
+
+
+     

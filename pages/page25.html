@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+
+
+td{font-size:14px}
+
+</style>
+  <body style='margin:20px' >
+ <script>
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
+    </script>
+	
+	<h2> භාග  එකතුකරමු, අඩු කරමු.</h2>
+<p>ඔබ කැමැති භාග යොදමින් එකතු වීම හා අඩු වීම සිදුවන ආකාරය බලන්න.</p>
+
+<table border=0 width='380px'>
+<tr><td>
+
+	
+<table>
+<tr><td>
+<input type="text" id="t1" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " />
+</td><td rowspan=2>+</td><td><input type="text" id="t3" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td></tr>
+<tr><td>
+<input type="text" id="t2" value="2" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " />
+</td><td><input type="text" id="t4" value="3" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td></tr>
+</table>
+<br>
+<button onclick='test()'>එකතුකරමු</button>
+</td><td>
+<table>
+<tr><td>
+<input type="text" id="tt1" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " />
+</td><td rowspan=2>-</td><td><input type="text" id="tt3" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td></tr>
+<tr><td>
+<input type="text" id="tt2" value="2" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " />
+</td><td><input type="text" id="tt4" value="3" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td></tr>
+</table>
+<br>
+<button onclick='test2()'>අඩුකරමු</button>
+
+</td></tr>
+<tr><td>
+<span id='box1'></span>
+<span id='op1'></span>
+<span id='box2'></span>
+<br><br>
+<span id='box3'></span>
+<span id='op2'></span>
+<span id='box4'></span>
+<br><br>
+<span id='box5'></span>
+<br><br>
+<span id='box6'></span>
+<br><br>
+<span id='box7'></span>
+
+</td>
+<td>
+
+
+<span id='boxx1'></span>
+<span id='opp1'></span>
+<span id='boxx2'></span>
+<br><br>
+<span id='boxx3'></span>
+<span id='opp2'></span>
+<span id='boxx4'></span>
+<br><br>
+<span id='boxx5'></span>
+<br><br>
+<span id='boxx6'></span>
+<br><br>
+<span id='boxx7'></span>
+
+
+
+</td></tr></table>
+<script>
+
+function fact() {
+var w, x, y;
+x = t2.value;
+y = t4.value;
+while (y != 0) {
+w = x % y;
+x = y;
+y = w;
+}
+return x;
+}
+function fact2() {
+var a, b, c;
+b = t2.value;
+c = t4.value;
+while (c != 0) {
+a = b % c;
+b = c;
+c = a;
+}
+return b;
+}
+
+
+
+
+
+
+function test(){
+box1.innerHTML='';box2.innerHTML='';
+box3.innerHTML='';box4.innerHTML='';
+box5.innerHTML='';box6.innerHTML='';
+box7.innerHTML='';
+var a1 = (t1.value);var a2 = (t2.value);
+var a3 = (t3.value);var a4 = (t4.value);
+
+
+
+var f1='=\\cfrac{'+a1+'}{'+a2+'}';
+var f2='\\cfrac{'+a3+'}{'+a4+'}';
+katex.render(algebra.toTex(f1),box1);
+katex.render(algebra.toTex('+'),op1);
+katex.render(algebra.toTex(f2),box2);
+//-----
+var fac = fact();
+var mal = ( t2.value * t4.value) / fac;
+var a5=(mal/t2.value)*t1.value;
+var a6=(mal/t4.value)*t3.value;
+var f3='={\\cfrac{'+a5+'}{'+mal+'}}';
+var f4='{\\cfrac{'+a6+'}{'+mal+'}}';
+
+katex.render(algebra.toTex(f3),box3);
+katex.render(algebra.toTex('+'),op2);
+katex.render(algebra.toTex(f4),box4);
+
+//------------
+var a7=a5+a6;
+var a8=mal;
+
+var f5='={\\cfrac{'+a7+'}{'+a8+'}}';
+katex.render(algebra.toTex(f5),box5);
+
+
+var a, b, c;
+b = a7;
+c = a8;
+while (c != 0) {
+a = b % c;
+b = c;
+c = a;
+}
+
+var a9=a7/b ;
+var a10=a8/b ;
+if(b!=1 && a7%b==0 && a8%b==0){
+var f6='={\\cfrac{'+a9+'}{'+a10+'}}';
+katex.render(algebra.toTex(f6),box6);
+}else{var f6=''}
+
+if(a9>a10){
+var a11=parseInt(a9/a10); var a12=parseInt(a9%a10)
+var f7='='+a11+'{\\cfrac{'+a12+'}{'+a10+'}}';
+katex.render(algebra.toTex(f7),box7);
+}else{var f7='';}
+
+
+
+
+}
+//-----------------
+
+function fact3() {
+var w3, x3, y3;
+x3 = tt2.value;
+y3 = tt4.value;
+while (y3 != 0) {
+w3 = x3 % y3;
+x3 = y3;
+y3 = w3;
+}
+return x3;
+}
+function fact4() {
+var a4, b4, c4;
+b4 = tt2.value;
+c4 = tt4.value;
+while (c4 != 0) {
+a4 = b4 % c4;
+b4 = c4;
+c4 = a4;
+}
+return b4;
+}
+
+
+
+
+
+
+
+
+function test2(){
+boxx1.innerHTML='';boxx2.innerHTML='';
+boxx3.innerHTML='';boxx4.innerHTML='';
+boxx5.innerHTML='';boxx6.innerHTML='';
+boxx7.innerHTML='';
+var aa1 = (tt1.value);var aa2 = (tt2.value);
+var aa3 = (tt3.value);var aa4 = (tt4.value);
+
+
+
+var ff1='=\\cfrac{'+aa1+'}{'+aa2+'}';
+var ff2='\\cfrac{'+aa3+'}{'+aa4+'}';
+katex.render(algebra.toTex(ff1),boxx1);
+katex.render(algebra.toTex('-'),opp1);
+katex.render(algebra.toTex(ff2),boxx2);
+//-----
+var fac = fact3();
+var mal = ( tt2.value * tt4.value) / fac;
+var aa5=(mal/tt2.value)*tt1.value;
+var aa6=(mal/tt4.value)*tt3.value;
+var ff3='={\\cfrac{'+aa5+'}{'+mal+'}}';
+var ff4='{\\cfrac{'+aa6+'}{'+mal+'}}';
+
+katex.render(algebra.toTex(ff3),boxx3);
+katex.render(algebra.toTex('-'),opp2);
+katex.render(algebra.toTex(ff4),boxx4);
+
+//------------
+var aa7=aa5-aa6;
+var aa8=mal;
+
+var ff5='={\\cfrac{'+aa7+'}{'+aa8+'}}';
+katex.render(algebra.toTex(ff5),boxx5);
+
+
+
+
+
+var a, b, c;
+b = aa7;
+c = aa8;
+while (c != 0) {
+a = b % c;
+b = c;
+c = a;
+}
+
+
+var aa9=aa7/b ;
+var aa10=aa8/b ;
+if(b!=1 && aa7%b==0 && aa8%b==0){
+var ff6='={\\cfrac{'+aa9+'}{'+aa10+'}}';
+katex.render(algebra.toTex(ff6),boxx6);
+}else{var ff6=''}
+
+if(aa9>aa10){if(aa7<0){boxx7='';}
+var aa11=parseInt(aa9/aa10); var aa12=parseInt(aa9%aa10)
+var ff7='='+aa11+'{\\cfrac{'+aa12+'}{'+aa10+'}}';
+katex.render(algebra.toTex(ff7),boxx7);
+}else{var ff7='';}
+
+
+
+
+}
+
+
+
+</script>
+
+
+<script>
+
+
+
+</script>
+
+  </body></html>

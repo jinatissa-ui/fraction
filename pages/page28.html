@@ -1,0 +1,151 @@
+﻿<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body onload='lod()'>
+
+<h2 >&nbsp &nbsp &nbsp ඇගයීම 2.</h2>
+<table border=0 width='380px' height='380px' >
+<tr><td colspan=3>
+</td></tr>
+<tr><td colspan=2 ><p>හිස් තැන් පුරවන්න.</p></td><td><span id='mark' style='font-size:24px;color:red'></span></td>
+</tr>
+<tr>
+<td><table style='font-size:18px;'>
+<tr><td rowspan=2>1). &nbsp;</td><th style='border-bottom:solid thin'>1</th><th rowspan=2> + </th><th style='border-bottom:solid thin'>1</th><td rowspan=2> අගය සොයන්න. </td>
+</tr>
+
+<tr><th>3</th><th>3</th></tr>
+
+</table> 
+
+</td>
+<td>
+<table>
+<tr>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu11' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind11' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box11'></span></td>
+</tr>
+<tr>
+<td><table style='font-size:18px;'>
+<tr><td rowspan=2>2). &nbsp;</td><th style='border-bottom:solid thin'>1</th><th rowspan=2> + </th><th style='border-bottom:solid thin'>1</th><td rowspan=2> අගය සොයන්න. </td>
+</tr>
+
+<tr><th>2</th><th>4</th></tr>
+
+</table> 
+
+</td>
+<td>
+<table>
+<tr>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu1' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind1' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box1'></span></td>
+</tr>
+
+<tr>
+
+<td><table style='font-size:18px;'>
+<tr><td rowspan=2>3). &nbsp;</td><th style='border-bottom:solid thin'>3</th><th rowspan=2> + </th><th style='border-bottom:solid thin'>2</th><td rowspan=2> අගය සොයන්න.  </td>
+</tr>
+
+<tr><th>12</th><th>3</th></tr>
+
+</table> 
+
+<td>
+<table>
+<tr>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu2' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind2' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box2'></span></td>
+</tr>
+
+<tr>
+<td>
+
+<table style='font-size:18px;'>
+<tr><td rowspan=2>4). &nbsp;</td><th style='border-bottom:solid thin'>3</th><th rowspan=2>-</th><th style='border-bottom:solid thin'>1</th><td rowspan=2> අගය සොයන්න. </td>
+</tr>
+
+<tr><th>4</th><th>2</th></tr>
+
+</table> 
+
+
+
+<td>
+<table>
+<tr>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu3' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true  bgcolor='#fee' id='ind3' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box3'></span></td>
+</tr>
+<tr>
+
+<td><table style='font-size:18px;'>
+<tr><td rowspan=2>5). &nbsp;</td><th style='border-bottom:solid thin'>2</th><th rowspan=2> - </th><th style='border-bottom:solid thin'>1</th><td rowspan=2>   අගය සොයන්න. </td>
+</tr>
+
+<tr><th>3</th><th>12</th></tr>
+
+</table> 
+<td>
+<table>
+<tr>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu4' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind4' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box4'></span></td>
+</tr>
+
+
+
+</table>
+<br>
+<button title="Check"  onclick='check()' id='but' style=''>හරි වැරදි</button>
+
+<script>
+var c,w; var m=0
+c="<svg width='20px' height='20px'><g transform='scale(0.6)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='20px' height='20px'><g transform='scale(0.7)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>"
+//-------------------
+
+var x; var dat;
+function lod(){
+
+}
+//--------------
+function check(){m=0;
+inu11.disabled='disabled';ind11.disabled='disabled';
+but.disabled='disabled';inu1.disabled='disabled';inu2.disabled='disabled';inu3.disabled='disabled';inu4.disabled='disabled';ind1.disabled='disabled';ind2.disabled='disabled';ind3.disabled='disabled';ind4.disabled='disabled';
+if(inu11.innerHTML==2 && ind11.innerHTML==3){box11.innerHTML=c;m+=20;}else{box11.innerHTML=w}
+if(inu1.innerHTML==3 && ind1.innerHTML==4){box1.innerHTML=c;m+=20;}else{box1.innerHTML=w}
+if(inu2.innerHTML==11 && ind2.innerHTML==12){box2.innerHTML=c;m+=20;}else{box2.innerHTML=w}
+if(inu3.innerHTML==1 && ind3.innerHTML==4){box3.innerHTML=c;m+=20;}else{box3.innerHTML=w}
+if(inu4.innerHTML==7 && ind4.innerHTML==12){box4.innerHTML=c;m+=20;}else{box4.innerHTML=w}
+
+mark.innerHTML=m+'%';
+
+
+
+
+}
+
+</script>
+</body>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+
+
+td{vertical-align:top}
+
+</style>
+  <body style='margin:20px' >
+ <script>
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
+    </script>
+	
+	<h2>භාග ගුණ කරමු.</h2>
+
+<img src='../images/frac7.gif'  />
+<p>&nbsp; &nbsp; &nbsp; භාග ගුණකිරීමේදී එහි ලවය ලවයෙන්ද, හරය හරයෙන්ද ගුණ කරනු ලැබේ. මිශ්‍ර සංඛ්‍යා විෂම භාගවලට හරවා ගෙන එසේ ගුණ කරනු ලබයි. </p>
+<button onclick='frac()'>උදාහරණ</button><br><br>
+<span id='box1'></span><br>
+<span id='box2'></span><br>
+<span id='box3'></span><span id='box4'></span>
+<span id='box5'></span>
+<script>
+var ar1,ar2,ar3,arr1,arr2,arr3;
+var a1,a2,a3,aa1,aa2,aa3;
+var gcd;var up;var first;
+var n=0;
+function frac(){
+n++;if(n>10){n=1}
+box1.innerHTML='';box2.innerHTML='';
+box3.innerHTML='';box4.innerHTML='';
+box5.innerHTML='';
+ar1=new Array('','',1,3,2,4,3,2,2,1);
+ar2=new Array(2,1,2,3,1,4,1,3,4,5);
+ar3=new Array(3,4,5,4,2,5,3,4,5,7);
+
+arr1=new Array('','',2,1,2,2,1,1,'',2);
+arr2=new Array(1,3,2,1,1,3,5,3,2,4);
+arr3=new Array(6,4,3,2,3,4,6,4,5,5);
+
+a1=ar1[n-1];a2=ar2[n-1];a3=ar3[n-1];
+aa1=arr1[n-1];aa2=arr2[n-1];aa3=arr3[n-1];
+
+
+var f1=a1+'\\cfrac{'+a2+'}{'+a3+'} \\times'+ aa1+'\\cfrac{'+aa2+'}{'+aa3+'}';
+katex.render(algebra.toTex(f1),box1);
+var up1=(a1*a3)+a2;var up2=(aa1*aa3)+aa2;
+var f2= '= \\cfrac{'+up1+'}{'+ a3+'} \\times\\cfrac{'+up2+'}{'+aa3+'}';;
+katex.render(algebra.toTex(f2),box2);
+
+
+var f3= '= \\cfrac{'+up1*up2+'}{'+ a3*aa3+'}';
+katex.render(algebra.toTex(f3),box3);
+
+
+var b2=up1*up2; var d=a3*aa3;
+var a, b, c;
+b = b2;c = d;
+while (c != 0) {
+a = b % c;b = c;c = a;
+}
+var a9=b2/b ;
+var a10=d/b ;
+
+if(b!=1 && b2%b==0 && d%b==0){
+
+var f4=' = \\cfrac{'+a9+'}{'+a10+'}';
+katex.render(algebra.toTex(f4),box4);
+
+}
+if(a9>a10){
+
+
+var f5= ' = '+parseInt(a9/a10) +'\\cfrac{'+a9%a10+'}{'+a10+'}';katex.render(algebra.toTex(f5),box5);}
+
+
+}
+
+
+
+
+</script>
+
+
+<script>
+
+
+
+</script>
+
+  </body></html>

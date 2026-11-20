@@ -1,0 +1,77 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+
+
+
+<h2>තුල්‍ය භාග හඳුනා ගනිමු.</h2>
+
+
+<p> &nbsp; &nbsp; &nbsp;  ලැබෙන භාග නිරූපණ අනුව භාගවල වටිනාකමේ සමානකම විමසා බලන්න. </p>
+
+<center>
+<table height='200px'><tr><td>
+<span id='box1'></span></td><td><span id='bx1'></span></td></tr>
+
+<tr><td>
+<span id='box2'></span></td><td><span id='bx2'></span></td></tr>
+</table>
+
+<span id='box3' style='font-size:30px'></span>
+
+
+<button class='btn2' onclick='frac2()'>තුල්‍ය භාග</button>
+</center>
+<p style='color:blue;font-size:18'>
+පළමු භාගයේ ලවය හා හරය එකම සංඛ්‍යාවකින් ගුණ වීමෙන් දෙවන   භාගය  ලැබී ඇති බව දැක ගන්න.
+</p>
+
+<span id='f1'></span></span>
+
+<script>
+
+var n1=0;var n2=0;var m1=0; var s1="";var s2="";
+function frac2(){
+n2=2+Math.floor(Math.random()*3);
+n1=2+Math.floor(Math.random()*4);
+m1=1+Math.floor(Math.random()*(n1-1));
+s1="";box1.innerHTML="";
+s1="<svg width='240px' height='50px'>";
+
+for(i=0;i<n1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=30 stroke='black' fill='none' />";
+}
+for(i=0;i<m1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=30 stroke='black' fill='gold' />";
+}
+
+box1.innerHTML=s1+"</svg>";
+
+s2="";box2.innerHTML="";
+s2="<svg width='240px' height='50px'>";
+
+for(i=0;i<(n1*n2);i++){
+s2+="<rect x="+(((200/(n1*n2))*i)+10)+" y=10 width="+(200/(n1*n2))+" height=30 stroke='black' fill='none' />";
+}
+for(i=0;i<(m1*n2);i++){
+s2+="<rect x="+(((200/(n1*n2))*i)+10)+" y=10 width="+(200/(n1*n2))+" height=30 stroke='black' fill='gold' />";
+}
+
+box2.innerHTML=s2+"</svg>";
+
+
+
+
+box3.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>"+m1+"</td> <td rowspan=2>=</td><td style='border-bottom:solid thin'>"+(m1*n2)+"</td> </tr><tr><td>"+(n1)+"</td> <td >"+(n1*n2)+"</td></tr></table>";
+
+bx1.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>"+m1+"</td></tr><tr><td>"+n1+"</td></tr></table>";
+bx2.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>"+(m1*n2)+"</td></tr><tr><td>"+(n1*n2)+"</td></tr></table>";
+
+
+f1.innerHTML="<table border=0><tr><td><table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>"+m1+"</td></tr><tr><td>"+n1+"</td></tr></table></td><td> යන භාගයේ හරය හා ලවය "+ n2+"  න් ගුණ වීමෙන්   </td><td><table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>"+(m1*n2)+"</td></tr><tr><td>"+(n1*n2)+"</td></tr></table></td><td> යන තුල්‍ය භාගය ලැබී ඇත.</td></tr></table>"
+}
+</script>
+
+</body>

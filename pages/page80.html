@@ -1,0 +1,147 @@
+﻿<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body onload='lod()'>
+
+<h2 >&nbsp &nbsp &nbsp ඇගයීම 2.</h2>
+<table border=0 width='380px' height='380px' >
+<tr><td colspan=3>
+</td></tr>
+<tr><td colspan=2 ><p>හිස් තැන් පුරවන්න.</p></td><td><span id='mark' style='font-size:24px;color:red'></span></td>
+</tr>
+<tr>
+<td><table style='font-size:18px;'>
+<tr><td rowspan=2>1). &nbsp;</td><th style=''>5.3 + 2.76</th><td rowspan=2>&nbsp;  අගය සොයන්න. </td>
+</tr>
+
+
+
+</table> 
+
+</td>
+<td>
+<table>
+<tr><th  contentEditable=true bgcolor='#fee' id='inn1' width='60px' height='30px'>?</th>
+</tr>
+
+</table>
+</td>
+<td><span id='box1'></span></td>
+</tr>
+<tr>
+<td><table style='font-size:18px;'>
+<tr><td>2). &nbsp;</td><th>35.3 - 12.94 </th><td > &nbsp;  අගය සොයන්න. </td>
+</tr>
+
+
+
+</table> 
+
+</td>
+<td>
+<table>
+<tr><th  contentEditable=true bgcolor='#fee' id='inn2' width='60px' height='30px'>?</th>
+
+</tr>
+</table>
+</td>
+<td><span id='box2'></span></td>
+</tr>
+
+<tr>
+
+<td><table style='font-size:18px;'>
+<tr><td >3). &nbsp;</td><th >3.5 &times; 4.23 </th><td> &nbsp;අගය සොයන්න.  </td>
+</tr>
+
+
+
+</table> 
+
+<td>
+<table>
+<tr><th  contentEditable=true bgcolor='#fee' id='inn3' width='60px' height='30px'>?</th>
+</tr>
+
+</table>
+</td>
+<td><span id='box3'></span></td>
+</tr>
+
+<tr>
+<td>
+
+<table style='font-size:18px;'>
+<tr><td >4). &nbsp;</td><th > 11.96 &divide; 5.2 </th><td > අගය සොයන්න. </td>
+</tr>
+
+
+
+</table> 
+
+
+
+<td>
+<table>
+<tr><th  contentEditable=true bgcolor='#fee' id='inn4' width='60px' height='30px'>?</th>
+</tr>
+
+</table>
+</td>
+<td><span id='box4'></span></td>
+</tr>
+<tr>
+
+<td><table style='font-size:18px;'>
+<tr><td rowspan=2>5). &nbsp;</td><th style='border-bottom:solid thin'> 3.5 &times; 0.22 </th><td rowspan=2>   අගය සොයන්න. </td>
+</tr>
+
+<tr><th > 0.7 </th>
+</tr>
+
+</table> 
+<td>
+<table>
+<tr><th  contentEditable=true bgcolor='#fee' id='inn5' width='60px' height='30px'>?</th>
+</tr>
+
+</table>
+</td>
+<td><span id='box5'></span></td>
+</tr>
+
+
+
+</table>
+<br>
+<button title="Check"  onclick='check()' id='but' style=''>හරි වැරදි</button>
+
+<script>
+var c,w; var m=0
+c="<svg width='20px' height='20px'><g transform='scale(0.6)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='20px' height='20px'><g transform='scale(0.7)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>"
+//-------------------
+
+var x; var dat;
+function lod(){
+
+}
+//--------------
+function check(){m=0;
+
+but.disabled='disabled';
+if(inn1.innerHTML==8.06){box1.innerHTML=c;m+=20;}else{box1.innerHTML=w}
+if(inn2.innerHTML==22.36){box2.innerHTML=c;m+=20;}else{box2.innerHTML=w}
+if(inn3.innerHTML==14.805){box3.innerHTML=c;m+=20;}else{box3.innerHTML=w}
+if(inn4.innerHTML==2.3){box4.innerHTML=c;m+=20;}else{box4.innerHTML=w}
+if(inn5.innerHTML==1.1){box5.innerHTML=c;m+=20;}else{box5.innerHTML=w}
+
+mark.innerHTML=m+'%';
+
+
+
+
+}
+
+</script>
+</body>

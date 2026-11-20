@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+
+<script src="../js/d3.v4.min.js"></script>
+
+</head>
+    <body>
+	<style>
+	 
+     table{font-size:18px} 
+
+
+	</style>
+	
+	
+	
+     <h2> ප්‍රතිශත නිරූපණය.</h2> 
+           
+    <p>එක්තරා ගම් කීපයක ජන වර්ගය මෙසේ දැක්වේ.</p>   
+<button  onclick='nxt()' style='' id='btn1' >අරඹන්න </button><br><br>
+	<table border=1 style='border-collapse:collapse' width='370px' height='100px'>
+	<tr><th colspan=5 id='t1'></th></tr>
+	<tr><th></th><th>සිංහල</th><th>ද්‍රවිඩ</th><th>මුස්ලිම්</th><th>මුළු ජනගහණය</th></tr>
+	
+	<tr><th>සංඛ්‍යාව</th></th></th><th id='t3'></th><th id='t4'></th><th id='t5'></th><th id='t2'></tr>
+	
+	<tr><th>භාගය</th></th><th id='tt3'></th><th id='tt4'></th><th id='tt5'></th><th id='tt2'></tr>
+	
+	<tr><th>ප්‍රතිශතය</th><th id='ttt3'></th><th id='ttt4'></th><th id='ttt5'></th><th id='ttt2'></th></tr>
+	</table><br>
+	<table border=0 height='230px'>
+	<tr><td rowspan=4>
+       <svg width="200" height="200" style=''> <g id='g1'></g></svg>  
+	   
+	   </td><td>&nbsp; &nbsp; </td><td height='30px'><div style='width:20px;height:20px;background:#5f5'></div> </td><td > සිංහල  </td><td id='p1'>  </td></tr>
+	   
+	   <tr><td>&nbsp; &nbsp; </td><td height='30px'> <div style='width:20px;height:20px;background:#f55'></div> </td><td > ද්‍රවිඩ  </td><td id='p2'>  </td></tr>
+	   
+	   <tr><td>&nbsp; &nbsp; </td><td height='30px'> <div style='width:20px;height:20px;background:#55f'></div> </td><td >මුස්ලිම්  </td><td id='p3'> </td></tr>
+	   
+	   <tr><td></td><td colspan=3>
+<table border=0 width='102px' cellspacing=0 style='border:solid thin gray'>
+<tr>
+<td>
+<div id='b1' style='background:#5f5;height:20px;width:0px'></div>
+</td>
+</tr><tr>
+<td>
+<div id='b2' style='background:#f55;height:20px;width:0px'></div>
+</td></tr><tr>
+<td>
+<div id='b3' style='background:#55f;height:20px;width:0px'></div>
+</td>
+</tr>
+
+</table>
+	   </td></tr>
+	   
+	   </table>
+    </body>
+    <script>
+	var ar1=new Array(750,800,400,50,20,150,1200,250,80,900);
+	var ar2=new Array(50,120,500,800,10,400,200,200,80,550);
+	var ar3=new Array(200,80,700,40,600,650,100,180,840,25);
+	var n=0;
+  function nxt(){
+  n++;if(n>10)n=1;
+  btn1.innerHTML="නැවත";
+  var tot=ar1[n-1]+ar2[n-1]+ar3[n-1];
+  var per1='';var per2='';var per3='';
+  if((ar1[n-1]*100 % tot) == 0){per1=((ar1[n-1]/tot)*100)}else{per1=((ar1[n-1]/tot)*100).toFixed(2)}
+  if((ar2[n-1]*100 % tot) == 0){per2=((ar2[n-1]/tot)*100)}else{per2=((ar2[n-1]/tot)*100).toFixed(2)}
+  if((ar3[n-1]*100 % tot) == 0){per3=((ar3[n-1]/tot)*100)}else{per3=((ar3[n-1]/tot)*100).toFixed(2)}
+  t1.innerHTML="අංක "+n+ " ගම";
+  t2.innerHTML=tot;
+  t3.innerHTML=ar1[n-1];
+  t4.innerHTML=ar2[n-1];
+  t5.innerHTML=ar3[n-1];
+  
+  katex.render(algebra.toTex('\\frac {'+tot+'}{'+tot+'}'),tt2);
+  katex.render(algebra.toTex('\\frac {'+ar1[n-1]+'}{'+tot+'}'),tt3);
+  katex.render(algebra.toTex('\\frac {'+ar2[n-1]+'}{'+tot+'}'),tt4);
+  katex.render(algebra.toTex('\\frac {'+ar3[n-1]+'}{'+tot+'}'),tt5);
+  ttt2.innerHTML=100 +"%";
+  ttt3.innerHTML=per1+'%';
+  ttt4.innerHTML=per2+'%';
+  ttt5.innerHTML=per3+'%';
+  
+  b1.style.width=per1+'px'
+  b2.style.width=per2+'px'
+  b3.style.width=per3+'px'
+  p1.innerHTML=ttt3.innerHTML;
+   p2.innerHTML=ttt4.innerHTML ; 
+	p3.innerHTML=ttt5.innerHTML;
+  
+    
+		var data = [ar1[n-1], ar2[n-1],ar3[n-1]];
+
+		var svg = d3.select("svg"),
+			width = svg.attr("width"),
+			height = svg.attr("height"),
+			radius = Math.min(width, height) / 2,
+			g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+		var color = d3.scaleOrdinal(['#5f5','#f55','#55f']);
+
+		// Generate the pie
+		var pie = d3.pie();
+
+		// Generate the arcs
+		var arc = d3.arc()
+					.innerRadius(0)
+					.outerRadius(radius);
+
+		//Generate groups
+		var arcs = g.selectAll("arc")
+					.data(pie(data))
+					.enter()
+					.append("g")
+					.attr("class", "arc")
+
+		//Draw arc paths
+		arcs.append("path")
+			.attr("fill", function(d, i) {
+				return color(i);
+			})
+			.attr("d", arc);
+			
+		
+			
+			}
+	</script>
+  
+</html>

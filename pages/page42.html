@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+
+button{width:30px}
+div{
+   width:200px;
+   height:150px;
+   background:#ffd;
+   text-align:center;
+   border-radius:10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+td{font-size:16px}
+</style>
+  <body style='margin:20px' >
+ <script>
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
+    </script>
+	
+	<h2>මිශ්‍ර සංඛ්‍යා    එකතුකරන ගණකය.</h2>
+
+
+
+<table border=0 >
+<tr><th width='50px'>&nbsp;</th><th><button onclick='frac1()' style='width:120px' id='btn1'>අරඹන්න</button> </th></tr>
+<tr><td>&nbsp;</td><td >&nbsp;</td>&nbsp;<td ></tr>
+<tr><td  id='num' >&nbsp;</td><td id='box1'></td><td id='msg1'></td></tr>
+
+<tr><td><button onclick='frac2()' id='btn2' style='display:none'>1 </button></td><td id='box2'></td><td id='msg2' style='color:blue'></td></tr>
+
+<tr><td><button onclick='frac3()' id='btn3' style='display:none'>2 </button></td><td id='box3'></td><td id='msg3' style='color:blue'></td></tr>
+
+<tr><td><button onclick='frac4()' id='btn4' style='display:none'>3</button></td><td id='box4'></td><td id='msg4' style='color:blue'></td></tr>
+<tr><td>&nbsp;</td><td id='box5'></td><td id='msg5'></td></tr>
+<tr><td>&nbsp;</td><td id='box6'></td><td id='msg6'></td></tr>
+<tr><td>&nbsp;</td><td id='box7'></td><td id='msg7'></td></tr>
+</table>
+<center>
+<div id='ex' style='display:none'>
+<center><br>
+<span>කැමති සංඛ්‍යා යොදන්න.</span>
+<table border=0>
+
+<tr>
+<td 
+rowspan=2 ><input type="text" id="tf1" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td>
+<td>
+<input type="text" id="t1" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " />
+</td><td rowspan=2>+</td>
+<td 
+rowspan=2 ><input type="text" id="tf2" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td>
+<td><input type="text" id="t3" value="1" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td></tr>
+
+
+<tr><td>
+<input type="text" id="t2" value="2" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " />
+</td><td><input type="text" id="t4" value="3" 
+style=" width:20px; height:20px; text-align:center;  font-size:20px " /></td></tr>
+
+
+</table><br>
+<button onclick='put1()' style='width:100px'>යොදන්න</button><center>
+</div></center>
+<script>
+
+var a3,a2,aa2,aa3; 
+var a1=''; var aa1='';
+var aa='';
+var gcd;var up;
+var n=0;
+function frac1(){
+
+ex.style.display='block';
+btn1.innerHTML="වෙනත්";
+
+btn3.style.display='none';
+btn4.style.display='none';
+num.innerHTML='';
+box1.innerHTML='';
+box2.innerHTML='';box3.innerHTML='';box4.innerHTML='';
+box5.innerHTML='';box6.innerHTML='';box7.innerHTML='';
+msg2.innerHTML='';msg3.innerHTML='';msg4.innerHTML='';
+msg5.innerHTML='';msg6.innerHTML='';msg7.innerHTML='';
+}
+
+function put1(){
+
+if(t1.value=='' || t2.value=='' || t3.value=='' || t4.value==''){alert('භාග කොටස් සම්පූර්ණ කරන්න')}else{
+n++;num.innerHTML=num.innerHTML=n+'). ';
+
+btn2.style.display='block';
+ex.style.display='none';
+a1=eval(tf1.value);a2=eval(t1.value);a3=eval(t2.value);
+aa1=eval(tf2.value);aa2=eval(t3.value);aa3=eval(t4.value);
+if(tf1.value==''){a1=''}
+if(tf2.value==''){aa1=''}
+
+var f1=a1+'\\cfrac{'+a2+'}{'+a3+'} + '+ aa1+'\\cfrac{'+aa2+'}{'+aa3+'}';
+katex.render(algebra.toTex(f1),box1);
+}
+}
+
+function frac2(){
+
+btn3.style.display='block';
+btn2.style.display='none';
+var f2= ' = '+(a1+aa1)+'\\cfrac{'+a2+'}{'+a3+'} + \\cfrac{'+aa2+'}{'+aa3+'}';
+katex.render(algebra.toTex(f2),box2);
+msg2.innerHTML="පූර්ණ සංඛ්‍යා එකතු කරන්න.";
+}
+function frac3(){
+btn4.style.display='block';
+btn3.style.display='none';
+//--------------
+var s1='';var s2='';var s3='';var lcm='';
+
+for(i=1;i<=a3;i++){
+for(k=1;k<=aa3;k++){
+if((a3%i)==0){s1=i;
+if((aa3%k)==0){s2=k;
+if(s1==s2){s3=s1
+gcd=(a3*aa3)/s3;
+}}}}}
+
+var ns1=parseInt(a3/s3);
+var ns2=parseInt(aa3/s3);
+msg3.innerHTML="<table><tr><td>"+s3+"</td><td style='border-left:solid thin;border-bottom:solid thin'>"+a3+", "+aa3+"</td></tr><tr><td>&nbsp;</td><td>"+ns1+" , "+ns2+"</td></tr></table>"+ "කු.පො.ගු.  " +s3+" &times; "+ns1+ " &times; "+ns2+" = "+ (s3*ns1*ns2);
+
+
+//-------------
+
+var f3= ' = '+(a1+aa1)+'\\cfrac{'+(a2*(gcd/a3))+'}{'+gcd+'} + \\cfrac{'+(aa2*(gcd/aa3))+'}{'+gcd+'}';
+katex.render(algebra.toTex(f3),box3);
+}
+
+//--------------------
+
+function frac4(){
+
+btn4.style.display='none';
+up=(a2*(gcd/a3))+(aa2*(gcd/aa3));
+var f4= ' = '+(a1+aa1)+'\\cfrac{'+up+'}{'+gcd+'} ';
+katex.render(algebra.toTex(f4),box4);
+//------------
+if(up>gcd){
+var b1=eval(parseInt(up/gcd)); var b2=parseInt(up%gcd)
+ aa=eval(a1+aa1)+b1; var p1='+';
+ try{if(a1==''&& aa1==''){aa=eval(a1+aa1+b1); p1=''}}catch(er){alert(er);}
+ 
+ 
+var f5=' = '+(a1+aa1)+p1+b1+'{\\cfrac{'+b2+'}{'+gcd+'}}';
+katex.render(algebra.toTex(f5),box5);
+var f6=' = '+((aa))+'{\\cfrac{'+b2+'}{'+gcd+'}}';
+katex.render(algebra.toTex(f6),box6);
+
+var a, b, c;
+b = b2;c = gcd;
+while (c != 0) {
+a = b % c;b = c;c = a;
+}
+
+var a9=b2/b ;
+var a10=gcd/b ;
+if(b!=1 && b2%b==0 && gcd%b==0){
+var f7=' = '+((aa))+'\\cfrac{'+a9+'}{'+a10+'}';
+katex.render(algebra.toTex(f7),box7);
+}
+
+
+}else{var a, b, c;
+b = up;c = gcd;
+while (c != 0) {
+a = b % c;b = c;c = a;
+}
+
+var a9=up/b ;
+var a10=gcd/b ;
+if(b!=1 && up%b==0 && gcd%b==0){
+var f7=' = '+((a1+aa1))+'\\cfrac{'+a9+'}{'+a10+'}';
+katex.render(algebra.toTex(f7),box7);
+}
+ }
+
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+<script>
+
+
+
+</script>
+
+  </body></html>

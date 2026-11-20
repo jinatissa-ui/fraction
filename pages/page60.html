@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:18px; text-align:justify}</style>
+
+<h2>දශම හඳුනා ගනිමු.</h2>
+
+<p>&nbsp; &nbsp; &nbsp;හරය 10 වූ භාග. <span id='bx1'></span>&nbsp; &nbsp; ලෙස දැක්විය හැක. එය <b>බිංදුවයි දශම දෙක </b>ලෙස කියවනු ලැබේ.</p>
+<script>
+
+var fr='\\frac {1}{10},\\frac {2}{10},\\frac {3}{10},\\frac {4}{10}...... \\newline \\cfrac {2}{10} = 0.2';
+katex.render(algebra.toTex(fr),bx1);</script>
+<center>
+<div style='height:250px'>
+<div id='box1' ></div>
+
+
+<span id='box2' style='font-size:40;'></span>
+
+</div>
+<button class='btn2' onclick='frac1()'>දශම</button>
+</center>
+
+<br>
+<p style='color:blue' >&nbsp; &nbsp; &nbsp; ඉහත ලැබෙන දශම සංඛ්‍යා කියවන්න.</p>
+<script>
+var n=0;var m=0; var s="";
+function frac1(){
+n=10;
+m=1+Math.floor(Math.random()*(10));
+s="";box1.innerHTML="";
+s="<svg width='300px' height='100px'>";
+
+for(i=0;i<n;i++){
+s+="<rect x="+(((250/n)*i)+10)+" y=10 width="+(250/n)+" height=50 stroke='black' fill='none' />";
+}
+for(i=0;i<m;i++){
+s+="<rect x="+(((250/n)*i)+10)+" y=10 width="+(250/n)+" height=50 stroke='black' fill='gold' />";
+}
+
+box1.innerHTML=s+"</svg>";
+var num= ' = '+(m/n) ;
+var msg='';
+if(m==10){msg='එකයි'}else{msg='බිංදුවයි දශම  ' +m;}
+box2.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:30px'><tr><td style='border-bottom:solid thin'>"+m+"</td><td rowspan=2> "+num+"</td></tr><tr><td>"+n+"</td></tr> <tr><td colspan=2 style='color:blue'>"+msg+"</td></table>";
+}
+
+</script>
+
+</body>

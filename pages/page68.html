@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:16px; text-align:justify}
+
+
+</style>
+
+<h2> දශම සංඛ්‍යා සංසන්දනය.</h2>
+
+<p>1.23 හා 1.3 යන සංඛ්‍යා දෙක අතරින් විශාල සංඛ්‍යාව සොයන්න. <br>ඒවා භාග ලෙස දක්වමු.<br>
+<span id='box1'></span>  හරය සමාන කරමු. <span id='box2'></span><br>එවිට විශාල භාගය වන්නේ <span id='box3'></span>  නිසා <br>
+<b><u>1.3 > 1.23  ලෙස දැක්විය හැක.</u></b></p>
+
+
+<p><font color='blue'>
+පහසු ක්‍රමයක් -  පළමුව පූර්ණ සංඛ්‍යාව බලන්න. එය විශාල නම් එම සංඛ්‍යාව විශාලය. එය සම නම් පළමු දශමස්ථානය විශාල වන සංඛ්‍යාව විශාලය. මෙසේ දෙවන තෙවන දශමස්ථාන බලා විශාල සංඛ්‍යාව තෝරන්න.</font>
+</p>
+
+
+
+
+
+
+<script>
+
+
+
+katex.render(algebra.toTex('1\\frac {23}{100},1\\frac {3}{10}'),box1);
+katex.render(algebra.toTex('1\\frac {23}{100},1\\frac {30}{100}'),box2);
+katex.render(algebra.toTex('1\\frac {30}{100}'),box3);
+
+
+
+
+</script>
+
+<p>ලැබෙන සංඛ්‍යා දෙක බලන්න.  පසුව සසඳන්න. ඔබටද සංඛ්‍යා යෙදිය හැක</p>
+
+
+
+<script>
+
+</script>
+
+<table  style='font-size:24px'><tr><td>
+<button  onclick='nxt()' style=''>වෙනත් </button>
+&nbsp; &nbsp; </td><td id='t1' width='80px' contenteditable=true >12.347</td><td width='30px' id='t2'></td><td width='80px' id='t3' contenteditable=true>12.35</td><td>
+<button  onclick='check()' style=''>සසඳන්න</button>
+ </td></tr>
+ </table>
+
+<script>
+var n=0;
+function nxt(){
+n++;if(n>10)n=1;
+var a1=1+Math.floor(Math.random()*(98));
+var a2=1+Math.floor(Math.random()*(998));
+
+var b1=1+Math.floor(Math.random()*(98));
+var b2=1+Math.floor(Math.random()*(998));
+if(n%3==0){b1=a1}
+t1.innerHTML= a1+'.'+a2;
+t3.innerHTML= b1+'.'+b2;
+
+
+
+t2.innerHTML='';
+}
+function check(){
+if(eval(t1.innerHTML)>eval(t3.innerHTML)){t2.innerHTML='&gt;'}else{t2.innerHTML='&lt;'}
+}
+
+
+
+
+</script>
+
+</body>

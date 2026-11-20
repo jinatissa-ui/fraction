@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+
+
+
+
+</style>
+  <body style='margin:20px' >
+ <script>
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
+    </script>
+	
+	<h2>මිශ්‍ර සංඛ්‍යා සන්සන්දනය.</h2>
+<p>&nbsp; &nbsp; &nbsp; මිශ්‍ර සංඛ්‍යාවල පූර්ණ සංඛ්‍යාව විශාලවන මිශ්‍ර සංඛ්‍යාව අනෙකට වඩා විශාල වේ. <span id='ex' style='color:blue' ></span>&nbsp; &nbsp; &nbsp; පූර්ණ සංඛ්‍යා සමාන අවස්ථාවලදී විශම භාගවලට හරවමින් පොදු හරයක් ගෙන සසඳන ආකාරය බලන්න.</p>
+
+<button onclick='test1()' id='bt1'>අරඹන්න</button><br><br>
+<span id='txt1'></span><br><br>
+<button onclick='test2()' disabled=disabled id='bt2'>සසඳන්න</button><br><br>
+<span id='box1'></span>&nbsp; &nbsp; &nbsp;<span id='arrow'></span>
+<span id='box2'></span><br><br>
+<span id='box3'></span><br><br>
+<div id='bx' style='width:80px'></div>
+
+<script>
+var n1=0;var n2=0;var n3=1;var n4=0;
+var nn1=0;var nn2=0;var nn3=1;var nn4=0;
+var ar1=new Array(1,3,2,4,3,5,7,6,3,5)
+var ar2=new Array(2,4,3,5,7,6,8,7,5,6)
+var arr1=new Array(2,5,3,4,7,5,2,4,2,7)
+var arr2=new Array(3,6,4,5,8,7,3,7,5,8)
+
+var n=0;
+function test1(){n++;if(n>10){n=1}
+bt2.disabled=false;bt1.innerHTML="වෙනත්";
+box1.innerHTML='';box2.innerHTML='';
+box3.innerHTML='';arrow.innerHTML=''
+bx.style.borderBottom='';
+
+n1=1+Math.floor(Math.random()*5); 
+n3=ar2[n-1];
+n2=ar1[n-1];
+
+n4=(n1*n3)+n2;
+
+nn3=arr2[n-1];
+nn2=arr1[n-1];
+
+nn4=(n1*nn3)+nn2;
+
+var frac= n1+'\\cfrac{'+n2+'}{'+n3+'}\\space,\\space  '+n1+'\\cfrac{'+nn2+'}{'+nn3+'}';
+katex.render(algebra.toTex(frac),txt1);
+
+}
+
+//--------
+function fact() {
+var w, x, y;
+x = n3;
+y = nn3
+while (y != 0) {
+w = x % y;
+x = y;
+y = w;
+}
+return x;
+}
+function fact2() {
+var a, b, c;
+b = n3
+c = nn3
+while (c != 0) {
+a = b % c;
+b = c;
+c = a;
+}
+return b;
+}
+
+
+
+function test2(){
+arrow.innerHTML='&rarr;'
+//-----
+var frac2= '\\cfrac{'+n4+'}{'+n3+'}\\space,\\space  \\cfrac{'+nn4+'}{'+nn3+'}';
+katex.render(algebra.toTex(frac2),box1);
+
+var fac = fact();
+var mal = ( n3 * nn3) / fac;
+var a5=(mal/n3)*n4;
+var a6=(mal/nn3)*nn4;
+var f3='{\\cfrac{'+a5+'}{'+mal+'}}';
+var f4='{\\cfrac{'+a6+'}{'+mal+'}}';
+var fr1= '\\therefore '+n1+'\\cfrac{'+n2+'}{'+n3+'}';
+var fr2= n1+'\\cfrac{'+nn2+'}{'+nn3+'}';
+
+if(a5>a6){
+katex.render(algebra.toTex(f3+' > '+f4),box2);
+katex.render(algebra.toTex(fr1+' > '+fr2),box3);
+bx.style.borderBottom='double';
+}
+else if(a5<a6){
+katex.render(algebra.toTex(f3+' < '+f4),box2);
+katex.render(algebra.toTex(fr1+' < '+fr2),box3);
+bx.style.borderBottom='double';
+}
+else{
+katex.render(algebra.toTex(f3+' = '+f4),box2);
+katex.render(algebra.toTex(fr1+' = '+fr2),box3);
+bx.style.borderBottom='double';
+}
+//------------
+
+
+
+}
+//-----------------
+
+katex.render(algebra.toTex('3\\frac 1 4 > 2\\frac 1 2'),ex);
+</script>
+
+
+<script>
+
+
+
+</script>
+
+  </body></html>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+</style>
+
+<h2>ප්‍රතිශත හඳුනා ගනිමු.</h2>
+
+<p>ගණන් 10 න් 5ක් හරි.  ලකුණු සියයට පනහයි.  50%<br>පන්තියෙ ළමයි 20. අද ඔක්කොම ඇවිල්ලා.පැමිණීම සීයට සීයයි.  100% <br><font color='blue'>මෙසේ දැක්වන්නේ හඳුන්වන ප්‍රමාණය මුලු ප්‍රමාණයේ ප්‍රතිශතයක් ලෙස ය. </font><br>
+<span id='bx1'></span>= 50%<br><br>
+<span id='bx2'></span>= 100%</p>
+<script>
+
+var fr1='\\frac {5}{10} = \\frac {50}{100} ';
+katex.render(algebra.toTex(fr1),bx1);
+var fr2='\\frac {20}{20} = \\frac {100}{100} ';
+katex.render(algebra.toTex(fr2),bx2);
+
+</script>
+
+
+<p>හරය 100 වූ භාගයකි.</p>
+
+
+<button class='btn2' onclick='frac1()'>ප්‍රතිශත</button> <br><br><p><span id='box2'></span></p>
+
+<center>
+<span id='box1'></span>
+
+</center>
+
+
+
+<script>
+var n=0;var m1=0; var s="";var m2=0;
+function frac1(){
+n=10;
+m1=1+Math.floor(Math.random()*(10));
+m2=1+Math.floor(Math.random()*(10));
+s="";box1.innerHTML="";
+s="<svg width='100px' height='100px' style='border:solid thin'> ";
+
+for(i=0;i<10;i++){
+
+for(k=0;k<10;k++){
+s+="<rect x="+(((10)*i))+" y="+(((10)*k))+" width=10 height=10 stroke='gray' fill='none' />";
+
+
+}
+
+}
+
+for(i=0;i<m1;i++){
+for(k=0;k<m2;k++){
+s+="<rect x="+(((10)*i))+" y="+(((10)*k))+" width=10 height=10 stroke='gray' fill='skyblue' />";
+}
+}
+box1.innerHTML=s+"</svg>";
+var num= ' '+(m1*m2)+'%' ;
+var msg='';
+
+
+box2.innerHTML="නිල් පැහැයෙන් ඇත්තේ මුලු කොටුවෙන්  "+num+" කි.";
+}
+
+</script>
+
+</body>

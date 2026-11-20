@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>
+
+button{width:30px}
+td{vertical-align:top}
+
+</style>
+  <body style='margin:20px' >
+ <script>
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
+    </script>
+	
+	<h2>මිශ්‍ර සංඛ්‍යා  අඩුකරමු.</h2>
+
+
+
+<table border=0 >
+<tr><th width='50px'>&nbsp;</th><th width='140px'><button onclick='frac1()' style='width:100px' id='btn1'>අරඹන්න</button> </th><td>&nbsp;</td></tr>
+
+<tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr>
+<tr><td>&nbsp;</td><td id='box1'></td><td id='msg1' style='color:blue' ></td></tr>
+
+<tr><td><button onclick='frac2()' id='btn2' style='display:none'>1 </button></td><td id='box2'></td><td id='msg2' style='color:blue'></td></tr>
+
+<tr><td><button onclick='frac3()' id='btn3' style='display:none'>2 </button></td><td id='box3'></td><td id='' s></td></tr>
+
+<tr><td><button onclick='frac4()' id='btn4' style='display:none'>3</button></td><td id='box4'></td><td id='msg3' style='color:blue' rowspan=4></td></tr>
+<tr><td>&nbsp;</td><td id='box5'></td></tr>
+<tr><td>&nbsp;</td><td id='box6'></td></tr>
+<tr><td>&nbsp;</td><td id='box7'></td></tr>
+</table>
+<script>
+var ar1,ar2,ar3,arr1,arr2,arr3;
+var a1,a2,a3,aa1,aa2,aa3;
+var gcd;var up;var first;
+var n=0;
+function frac1(){
+n++;if(n>10){n=1}
+btn1.innerHTML="වෙනත්";up='';first='';up3='';
+btn2.style.display='block';
+btn3.style.display='none';
+btn4.style.display='none';
+ar1=new Array(2,5,5,3,5,4,9,5,6,8);
+ar2=new Array(2,1,2,3,1,4,5,3,4,5);
+ar3=new Array(3,4,5,7,8,5,8,12,5,6);
+
+arr1=new Array(1,3,2,1,4,4,7,1,'',5);
+arr2=new Array(1,3,2,1,4,3,5,7,5,4);
+arr3=new Array(6,8,3,14,5,10,12,8,15,9);
+a1=ar1[n-1];a2=ar2[n-1];a3=ar3[n-1];
+aa1=arr1[n-1];aa2=arr2[n-1];aa3=arr3[n-1];
+var f1=a1+'\\cfrac{'+a2+'}{'+a3+'} - '+ aa1+'\\cfrac{'+aa2+'}{'+aa3+'}';
+katex.render(algebra.toTex(f1),box1);
+box2.innerHTML='';box3.innerHTML='';box4.innerHTML='';
+box5.innerHTML='';box6.innerHTML='';box7.innerHTML='';
+msg2.innerHTML='';msg3.innerHTML='';msg4.innerHTML='';
+msg5.innerHTML='';msg6.innerHTML='';msg7.innerHTML='';
+}
+
+function frac2(){
+btn3.style.display='block';
+btn2.style.display='none';
+first=(a1-aa1);if(first<1){first='';}
+var f2= ' = '+(first)+'\\cfrac{'+a2+'}{'+a3+'} - \\cfrac{'+aa2+'}{'+aa3+'}';
+katex.render(algebra.toTex(f2),box2);
+msg1.innerHTML="පූර්ණ සංඛ්‍යා අඩුකරන්න.";
+}
+function frac3(){
+btn4.style.display='block';
+btn3.style.display='none';
+//--------------
+var s1='';var s2='';var s3='';var lcm='';
+
+for(i=1;i<=a3;i++){
+for(k=1;k<=aa3;k++){
+if((a3%i)==0){s1=i;
+if((aa3%k)==0){s2=k;
+if(s1==s2){s3=s1
+gcd=(a3*aa3)/s3;
+}}}}}
+
+var ns1=parseInt(a3/s3);
+var ns2=parseInt(aa3/s3);
+msg2.innerHTML="<table><tr><td>"+s3+"</td><td style='border-left:solid thin;border-bottom:solid thin'>"+a3+", "+aa3+"</td></tr><tr><td>&nbsp;</td><td>"+ns1+" , "+ns2+"</td></tr></table>"+ "කු.පො.ගු.  " +s3+" &times; "+ns1+ " &times; "+ns2+" = "+ (s3*ns1*ns2);
+
+
+//-------------
+var f3= ' = '+(first)+'\\cfrac{'+(a2*(gcd/a3))+'}{'+gcd+'} - \\cfrac{'+(aa2*(gcd/aa3))+'}{'+gcd+'}';
+katex.render(algebra.toTex(f3),box3);
+
+
+}
+
+function frac4(){
+btn4.style.display='none';
+//var first=(a1-aa1);
+var up1= a2*(gcd/a3) ; var up2=aa2*(gcd/aa3);
+if(up1<up2){
+msg3.innerHTML= " <span id='tx'></span><br>අඩුකරීමට බැරි නිසා පූර්ණ සංඛ්‍යාෙවන් 1ක් ගත්විට මුල් භාගය  <br><br><span id='tx2'></span>  වේ.";
+katex.render(algebra.toTex('\\frac{'+up1+'}{'+gcd+'}-\\frac{'+up2+'}{'+gcd+'}'),tx);
+katex.render(algebra.toTex('\\frac{'+(gcd)+'}{'+gcd+'} + \\frac{'+up1+'}{'+gcd+'}=\\frac{'+(up1+gcd)+'}{'+gcd+'}'),tx2);
+
+up1=(up1+gcd);first=first-1;if(first<1){first='';}
+var f4= ' = '+(first)+'\\cfrac{'+up1+'}{'+gcd+'}- \\cfrac{'+up2+'}{'+gcd+'}' ;
+katex.render(algebra.toTex(f4),box4);
+up=(up1)-(up2);
+var f5= ' = '+(first)+'\\cfrac{'+up+'}{'+gcd+'}' ;
+katex.render(algebra.toTex(f5),box5);
+
+
+var b1=eval(parseInt(up/gcd)); var b2=parseInt(up%gcd)
+var a, b, c;
+b = b2;c = gcd;
+while (c != 0) {
+a = b % c;b = c;c = a;
+}
+var a9=b2/b ;
+var a10=gcd/b ;
+if(b!=1 && b2%b==0 && gcd%b==0){
+var f6=' = '+(first)+'\\cfrac{'+a9+'}{'+a10+'}';
+katex.render(algebra.toTex(f6),box6);
+
+}
+
+
+
+}
+
+else if(up1>up2){
+up=(up1)-(up2);
+var f4= ' = '+(first)+'\\cfrac{'+up+'}{'+gcd+'} ';
+katex.render(algebra.toTex(f4),box4);
+}
+
+
+var aa=eval(first);
+
+var b1=eval(parseInt(up/gcd)); var b2=parseInt(up%gcd)
+
+
+var a, b, c;
+b = b2;c = gcd;
+while (c != 0) {
+a = b % c;b = c;c = a;
+}
+
+var a9=b2/b ;
+var a10=gcd/b ;
+if(b!=1 && b2%b==0 && gcd%b==0){
+var f6=' = '+(first)+'\\cfrac{'+a9+'}{'+a10+'}';
+katex.render(algebra.toTex(f6),box6);
+
+}else{ f5='';f6=''}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+<script>
+
+
+
+</script>
+
+  </body></html>

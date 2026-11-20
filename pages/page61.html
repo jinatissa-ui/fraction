@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:18px; text-align:justify}</style>
+
+<h2>දශම ගණක රාමුවක දක්වමු.</h2>
+<div style='position:absolute;top:120px;left:40px;width:200px;height:200px;'>
+
+<div  style='position:absolute;top:150px;left:0px;width:140px;height:32px;border:solid thin;background:gold'></div>
+<span id='t1' style='position:absolute;top:155px;left:20px;font-size:16px'>1 ඒවා</span>
+<span  id='t2' style='position:absolute;top:155px;left:85px;font-size:16px'></span><span  style='position:absolute;top:155px;left:105px;font-size:16px'>ඒවා</span>
+
+<div style='position:absolute;left:100px;top:0px;width:0px;height:150px; border:solid thin'></div>
+<div style='position:absolute;left:40px;top:0px;width:0px;height:150px; border:solid thin'></div>
+<span id="box1"></span><span id="box2"></span>
+</div>
+<span style='position:absolute;left:50px;top:340px;font-size:20px;color:red;text-align:right' id='box'></span>
+<button class='btn2' style='position:absolute;left:150px;top:470px;' onclick='count()'>දශම සංඛ්‍යා</button>
+<script>
+katex.render(algebra.toTex('\\frac{1}{10}'),t2);
+var a=0;var b=0;var num=0;
+function count(){
+a++;num++;
+box.innerHTML="";
+
+
+var c = document.createElement("div");
+c.setAttribute("style", "position:absolute;width:15px;height:15px;border:solid thin red;border-radius:8px;background:radial-gradient(white ,gold,red);left:93px;top:"+(149-(a*16))+"px" );
+
+box1.appendChild(c);
+
+if(a>9){a=0;b++;
+for(i=0;i<10;i++){
+box1.removeChild(box1.lastChild);}
+
+var d = document.createElement("div");
+d.setAttribute("style", "position:absolute;width:15px;height:15px;border:solid thin red;border-radius:8px;background:radial-gradient(white ,gold,red);left:33px;top:"+(149-(b*16))+"px" );
+
+box2.appendChild(d);
+
+if(b>9){b=0;
+for(i=0;i<10;i++){
+box2.removeChild(box2.lastChild);}
+}
+}
+if(num>99){num=0;box.innerHTML="";}
+if(num==0){box.innerHTML="";}else{
+box.innerHTML="<table border=0><tr><td>දහයෙන් එකේ ඒවා " + a+"ක්  "+a+" &times;   <span id='b1'></span>   = </td><td>0</td><td>.&nbsp;" +a +"</td></tr><tr><td> එකේ ඒවා "+ b +"ක්  "+b+" &times;   1    = </td><td>" + (b*1) +"</td><td>&nbsp;</td></tr><tr><td>" + "සංඛ්‍යාව  =</td><td>  "+ (b)+"</td><td>.&nbsp;"+a+"</td></tr></table>";
+katex.render(algebra.toTex('\\frac{1}{10}'),b1);
+}
+}
+</script>
+</body></html>

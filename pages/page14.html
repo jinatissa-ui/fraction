@@ -1,0 +1,74 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+
+
+
+<h2>භාග සංසන්දනය කරමු.</h2>
+
+<p >&nbsp; &nbsp; &nbsp; ලවය 1වූ ඒකක භාග සංසන්දනය</p>
+
+
+<center>
+<table width='260px' height='100px'><tr><td width='220px'>
+<span id='box1'></span></td><td id='bx1' ></td></tr>
+<tr><td><span id='box2'></span></td><td id='bx2'></td></tr></table>
+<br>
+<span id='box4' style='font-size:30'></span>
+
+<br>
+<button class='btn2' onclick='frac2()'>ඒකක භාග</button>
+<br><br>
+</center>
+<table border=0 style='font-size:18px'>
+<tr>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='u1'></td></tr><tr><td id='d1'></td></tr></table></td>
+<td><span id='txt'></span></td>
+<td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin' id='u2'></td></tr><tr><td id='d2'></td></tr></table></td>
+<td><span id='last'></span> </td>
+</tr>
+</table>
+<p style='color:blue'>ඒකක භාගවල කුඩා හරය ඇති භාගය අනෙකට වඩා විශාලය.</p>
+
+
+
+<script>
+
+var n1=0;var n2=0; var s1="";var s2="";var tx,tx2,t;
+function frac2(){
+n1=2+Math.floor(Math.random()*10);
+n2=2+Math.floor(Math.random()*10);
+s1="";box1.innerHTML="";
+s1="<svg width='240px' height='40px'>";
+
+for(i=0;i<n1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=30 stroke='black' fill='none' />";
+}
+for(i=0;i<1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=30 stroke='black' fill='gold' />";
+}
+box1.innerHTML=s1+"</svg>";
+//-----------------------
+s2="";box2.innerHTML="";
+s2="<svg width='240px' height='40px'>";
+
+for(i=0;i<n2;i++){
+s2+="<rect x="+(((200/n2)*i)+10)+" y=10 width="+(200/n2)+" height=30 stroke='black' fill='none' />";
+}
+for(i=0;i<1;i++){
+s2+="<rect x="+(((200/n2)*i)+10)+" y=10 width="+(200/n2)+" height=30 stroke='black' fill='gold' />";
+}
+box2.innerHTML=s2+"</svg>";
+if(n1>n2){tx="<";tx2="කුඩයි"; t=" ට වඩා";}else if(n1<n2){tx=">";tx2="විශාලයි"; t=" ට වඩා";}else{tx="=";tx2="සමානයි"; t="";}
+box4.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>1</td><td rowspan=2>"+tx+"</td><td style='border-bottom:solid thin'>1</td> </tr><tr><td>"+n1+"</td> <td> "+n2+"</td></tr></table>";
+
+bx1.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>1</td></tr><tr><td>"+n1+"</td></tr></table>" ;
+bx2.innerHTML= "<table border=0 cellpadding=0 style='text-align:center;font-size:12px'><tr><td style='border-bottom:solid thin'>1</td></tr><tr><td>"+n2+"</td></tr></table>";
+d1.innerHTML=n1;d2.innerHTML=n2;txt.innerHTML=tx2; u1.innerHTML=1;u2.innerHTML=1;
+last.innerHTML=t;
+}
+</script>
+
+</body>

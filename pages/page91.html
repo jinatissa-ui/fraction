@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+div{font-size:18px;text-align:justify}
+table{font-size:18px;}
+
+
+</style>
+
+<h2>ලාභ අලාභ  ප්‍රතිශතය සෙවීම පුහුණුවට.</h2>
+
+<table border=0>
+<tr><td>ගත් මිල </td><td>= A</td></tr>
+<tr><td>වික්ක මිල </td><td>= B</td></tr>
+
+<tr><th colspan=2>ලාභයක් නම්</th></tr>
+<tr><td>ලාභය</td><td>= B - A</td></tr>
+<tr><td>ලාභ ප්‍රතිශතය</td><td id='b1' style='color:blue'></td></tr>
+
+
+
+<tr><th colspan=2>අලාභයක් නම්</th></tr>
+<tr><td>අලාභය</td><td>= A - B</td></tr>
+<tr><td>අලාභ ප්‍රතිශතය</td><td id='b2' style='color:blue'></td></tr>
+
+
+</table>
+
+
+
+
+<br>
+<button  onclick='nxt()' style='' id='btn1'>වෙනත්</button> &nbsp; &nbsp; <span> ඔබටද අගයන්  යෙදිය හැක.</span>
+
+
+<button  onclick='ans()' style=''    id='btn2'>සොයන්න</button>
+<br><br>
+
+<script>
+katex.render(algebra.toTex('=\\frac {B-A}{A}\\times 100\\%'),b1);
+katex.render(algebra.toTex('=\\frac {A-B}{A}\\times 100\\%'),b2);
+</script>
+
+
+
+<script>
+
+
+
+
+var n=0;
+function nxt(){
+
+
+n++;if(n>10)n=1;
+var a= 50+ Math.floor(Math.random()*200);
+t1.innerHTML=a;
+var b= 100+ Math.floor(Math.random()*200);
+t2.innerHTML=b;
+ t3.innerHTML='';
+ t4.innerHTML=''; t5.innerHTML='';
+  msg1.innerHTML=''; msg2.innerHTML='';
+  t5.style.borderBottom='';
+}
+function ans(){
+var a=eval(t1.innerHTML);var b=eval(t2.innerHTML);
+if(b>a){
+t3.innerHTML= b +' - '+ a + ' = '+ (b-a) ;
+katex.render(algebra.toTex('\\frac {'+ (b-a)+'}{'+a+'}\\times 100\\%'),t4);
+if(((b-a)*100)%a == 0){
+t5.innerHTML=((b-a)/a)*100 +'%';
+}else{t5.innerHTML=(((b-a)/a)*100).toFixed(2) +'%';}
+msg1.innerHTML="ලාභය රු.";
+msg2.innerHTML="ලාභ ප්‍රතිශතය ";
+}
+if(b<a){
+t3.innerHTML= a +' - '+ b + ' = '+ (a-b) ;
+katex.render(algebra.toTex('\\frac {'+ (a-b)+'}{'+a+'}\\times 100\\%'),t4);
+if(((a-b)*100)%a == 0){
+t5.innerHTML=((a-b)/a)*100 +'%';
+}else{t5.innerHTML=(((a-b)/a)*100).toFixed(2) +'%';}
+msg1.innerHTML="අලාභය රු.";
+msg2.innerHTML="අලාභ ප්‍රතිශතය ";
+}
+if(a==b){msg1.innerHTML="ලාභ අලාභ නැත";msg2.innerHTML="";
+t3.innerHTML='';t5.innerHTML='0%';t4.innerHTML='';
+
+}
+t5.style.borderBottom='double';
+}
+//-------------
+
+
+
+
+</script>
+<table border=0>
+<tr><td>ගත් මිල  රු.</td><td>=</td><td id='t1' contenteditable=true  style='background:#ccf ;'> 50</td></tr>
+<tr><td>වික්ක මිල  රු.</td><td>=</td><td id='t2' contenteditable=true  style='background:#ccf ;'>60</td></tr>
+<tr><td id='msg1'></td><td>=</td><td id='t3'></td></tr>
+<tr><td id='msg2'></td><td>=</td><td id='t4'></td></tr>
+<tr><td>&nbsp;</td><td>=</td><td id='t5' style=''></td></tr>
+</table>
+
+</body>
+</body>

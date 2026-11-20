@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:18px; text-align:justify}</style>
+
+<h2>දශම ගණක රාමුවක දක්වමු.</h2>
+<div style='position:absolute;top:280px;left:10px;width:300px;height:200px;'>
+
+<div  style='position:absolute;top:150px;left:0px;width:200px;height:45px;border:solid thin;background:gold'></div>
+<span style='position:absolute;top:155px;left:20px;font-size:14px'>එක<br>ස්ථානය </span>
+<span style='position:absolute;top:155px;left:85px;font-size:14px'>10න් එක<br>ස්ථානය</span>
+<span style='position:absolute;top:155px;left:145px;font-size:14px'>100න් එක<br>ස්ථානය</span>
+
+<div style='position:absolute;left:100px;top:0px;width:0px;height:150px; border:solid thin'></div>
+<div style='position:absolute;left:40px;top:0px;width:0px;height:150px; border:solid thin'></div>
+<div style='position:absolute;left:160px;top:0px;width:0px;height:150px; border:solid thin'></div>
+
+<span id="box1"></span><span id="box2"></span><span id="box3"></span>
+</div>
+<table border=1 style='position:absolute;left:10px;top:100px;font-size:18px;text-align:right;border-collapse:collapse'  width='390px' cellspacing=0>
+<tr><th ><br>1 <br>ඒවා</th><th><span id='tx1'></span><br>0.1 <br>ඒවා</th><th><span id='tx2'></span><br>0.01<br>ඒවා</th><th width='210px'>සංඛ්‍යාව</th></tr>
+
+<tr><td bgcolor='#ccccff'>&nbsp;<span id="t100"/></td><td bgcolor='#ffcccc'><span id="t10"/></td><td bgcolor='#ccffcc'><span id="t1"/></td> <td bgcolor='yellow'><span  id='box'></span></td>
+
+<tr><td colspan=3>සංඛ්‍යා නාමය</td><td bgcolor='yellow'>
+<span  id='layer2'></span></td></tr></table>
+
+<button class='btn2' style='position:absolute;left:250px;top:445px;' onclick='count()'>දශම ගණන්කරමු</button><br><br><br><br><br><br><br><br>
+
+<script>
+katex.render(algebra.toTex('\\frac{1}{10}'),tx1);
+katex.render(algebra.toTex('\\frac{1}{100}'),tx2);
+var n1=0;var n2=0;var num=0;var n3=0;
+var a=0;
+var b=0;
+var c =0;
+var d =0;
+var e =0;var f=0;
+function count(){
+n1++;num++;
+box.innerHTML="";
+
+
+var c1 = document.createElement("div");
+c1.setAttribute("style", "position:absolute;width:15px;height:15px;border:solid thin red;border-radius:8px;background:radial-gradient(white ,gold,red);left:153px;top:"+(149-(n1*16))+"px" );
+
+box1.appendChild(c1);
+
+if(n1>9){n1=0;n2++;
+for(i=0;i<10;i++){
+box1.removeChild(box1.lastChild);}
+
+var c2 = document.createElement("div");
+c2.setAttribute("style", "position:absolute;width:15px;height:15px;border:solid thin red;border-radius:8px;background:radial-gradient(white ,gold,red);left:93px;top:"+(149-(n2*16))+"px" );
+
+box2.appendChild(c2);
+
+if(n2>9){n2=0;n3++;
+for(i=0;i<10;i++){
+box2.removeChild(box2.lastChild);}
+
+
+
+var c3 = document.createElement("div");
+c3.setAttribute("style", "position:absolute;width:15px;height:15px;border:solid thin red;border-radius:8px;background:radial-gradient(white ,gold,red);left:33px;top:"+(149-(n3*16))+"px" );
+
+box3.appendChild(c3);
+
+if(n3>9){n3=0;
+for(i=0;i<10;i++){
+box3.removeChild(box3.lastChild);}
+}
+
+}
+
+}
+//--------------------------
+x= [" ", "එක", "දෙක", "තුන", "හතර", "පහ", "හය", "හත", "අට", "නවය"];
+y= ["එක","එකයි එක","එකයි දෙක", "එකයි තුන", "එකයි හතර", "එකයි පහ", "එකයි හය", "එකයි හත", "එකයි අට", "එකයි නවය"];
+z= ["දෙක", "තුන", "හතර", "පහ", "හය", "හත", "අට", "නවය"];
+w= ["දෙකයි", "තුනයි", "හතරයි", "පහයි", "හයයි", "හතයි", "අටයි", "නවයයි"];
+v= ["එකයි","දෙකයි", "තුනයි", "හතරයි", "පහයි", "හයයි", "හතයි", "අටයි", "නවයයි"]
+a +=1; if(a>1000){a=1}
+document.getElementById("box").innerHTML=a;
+var k = document.getElementById("box").innerHTML;
+var j = document.getElementById("box").innerHTML.length;
+if(j==1){
+    b +=1; if(b>9){b=0}
+        document.getElementById("layer2").innerHTML= "බිංදුවයි දශම බිංදුවයි "+x[b]; 
+        }
+else if(j==2){
+         b +=1; if(b>9){b=0}
+        c  +=1; if(c>10){ c=1; d +=1;}
+        document.getElementById("layer2").innerHTML="බිංදුවයි දශම "+ y[c-1];
+        
+if(k>19 && x[b]==" "){document.getElementById("layer2").innerHTML="බිංදුවයි දශම  "+ z[d-1]+" "+ x[b]}
+else if(k>19){document.getElementById("layer2").innerHTML="බිංදුවයි දශම  "+ w[d-1]+" "+ x[b]}
+        }
+else if(j==3){
+
+b +=1; if(b>9){b=0}
+        c  +=1; if(c>10){ c=1; d +=1;}
+if(d>10){d=1;}
+
+e++;if(e>100){e=1;f++}
+
+if(k==100){layer2.innerHTML="එක";}
+if(k>100){document.getElementById("layer2").innerHTML="එකයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>109){document.getElementById("layer2").innerHTML="එකයි දශම  "+" "+y[b];}
+if(k>119 && x[b]==" "){document.getElementById("layer2").innerHTML="එකයි දශම  "+" "+z[d-1]+" "+ x[b]}
+else if(k>119){document.getElementById("layer2").innerHTML="එකයි දශම  "+" "+w[d-1]+" "+ x[b]} 
+
+
+if(k==200){document.getElementById("layer2").innerHTML="දෙක"}
+if(k>200){document.getElementById("layer2").innerHTML="දෙකයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>209){document.getElementById("layer2").innerHTML="දෙකයි දශම  "+" "+y[b]}
+if(k>219 && x[b]==" "){document.getElementById("layer2").innerHTML="දෙකයි දශම  "+" "+z[d-1]+" "+ x[b]}
+else if(k>219){document.getElementById("layer2").innerHTML="දෙකයි දශම  "+" "+w[d-1]+" "+ x[b]} 
+
+if(k==300){document.getElementById("layer2").innerHTML="තුන"}
+if(k>300){document.getElementById("layer2").innerHTML="තුනයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>309){document.getElementById("layer2").innerHTML="තුනයි දශම  "+y[b]}
+if(k>319 && x[b]==" "){document.getElementById("layer2").innerHTML="තුනයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>319){document.getElementById("layer2").innerHTML="තුනයි දශම  "+w[d-1]+" "+ x[b]} 
+
+if(k==400){document.getElementById("layer2").innerHTML="හතර"}
+if(k>400){document.getElementById("layer2").innerHTML="හතරයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>409){document.getElementById("layer2").innerHTML="හතරයි දශම  "+y[b]}
+if(k>419 && x[b]==" "){document.getElementById("layer2").innerHTML="හතරයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>419){document.getElementById("layer2").innerHTML="හතරයි දශම  "+w[d-1]+" "+ x[b]} 
+
+
+if(k==500){document.getElementById("layer2").innerHTML="පහ"}
+if(k>500){document.getElementById("layer2").innerHTML="පහයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>509){document.getElementById("layer2").innerHTML="පහයි දශම  "+y[b]}
+if(k>519 && x[b]==" "){document.getElementById("layer2").innerHTML="පහයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>519){document.getElementById("layer2").innerHTML="පහයි දශම  "+w[d-1]+" "+ x[b]} 
+
+if(k==600){document.getElementById("layer2").innerHTML="හය"}
+if(k>600){document.getElementById("layer2").innerHTML="හයයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>609){document.getElementById("layer2").innerHTML="හයයි දශම  "+y[b]}
+if(k>619 && x[b]==" "){document.getElementById("layer2").innerHTML="හයයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>619){document.getElementById("layer2").innerHTML="හයයි දශම  "+w[d-1]+" "+ x[b]} 
+
+if(k==700){document.getElementById("layer2").innerHTML="හත"}
+if(k>700){document.getElementById("layer2").innerHTML="හතයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>709){document.getElementById("layer2").innerHTML="හතයි දශම  "+y[b]}
+if(k>719 && x[b]==" "){document.getElementById("layer2").innerHTML="හතයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>719){document.getElementById("layer2").innerHTML="හතයි දශම  "+w[d-1]+" "+ x[b]} 
+
+if(k==800){document.getElementById("layer2").innerHTML="අට"}
+if(k>800){document.getElementById("layer2").innerHTML="අටයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>809){document.getElementById("layer2").innerHTML="අටයි දශම  "+y[b]}
+if(k>819 && x[b]==" "){document.getElementById("layer2").innerHTML="අටයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>819){document.getElementById("layer2").innerHTML="අටයි දශම  "+w[d-1]+" "+ x[b]} 
+
+if(k==900){document.getElementById("layer2").innerHTML="නවය"}
+if(k>900){document.getElementById("layer2").innerHTML="නවයයි දශම  "+"බිංදුවයි "+x[b];}
+if(k>909){document.getElementById("layer2").innerHTML="නවයයි දශම  "+y[b]}
+if(k>919 && x[b]==" "){document.getElementById("layer2").innerHTML="නවයයි දශම  "+z[d-1]+" "+ x[b]}
+else if(k>919){document.getElementById("layer2").innerHTML="නවයයි දශම  "+w[d-1]+" "+ x[b]} 
+
+  
+}
+if(k>999){document.getElementById("layer2").innerHTML="";a=0;b=0;c=0;d=0;e=0;f=0;e=0;} 
+//-----------------------------
+if(num>999){num=0;box.innerHTML="";}
+box.innerHTML= num/100;
+if(j==1){t1.innerHTML=a}
+else if(j==2){t10.innerHTML=parseInt(a/10);
+t1.innerHTML=a%10;
+}else{t100.innerHTML=parseInt(a/100);
+t10.innerHTML=parseInt((a%100)/10);t1.innerHTML=(a%100)%10;
+}
+}
+</script>
+</body></html>

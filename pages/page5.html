@@ -1,0 +1,43 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body onload='lod()'>
+
+
+<h2>භාග හා එහි කොටස්  හඳුනා ගනිමු.</h2>
+
+<center>
+
+
+<span id='box1' style='font-size:30px'></span>
+
+<span id='box2' style='font-size:25px'></span>
+</center>
+<p>මෙහි&nbsp; &nbsp;<span id='box3' style='font-size:20'></span>&nbsp; &nbsp;  යනු ඒකකයක් සමානව බෙදූ කොටස් ගණනය. එය භාගයේ<b><u> හරය </b></u>යනුවෙන් හඳුන්වයි. එය භාගයේ ඉරි සලකුණෙන් යට කොටස ය.<br>
+මෙහි&nbsp; &nbsp;<span id='box4' style='font-size:20'></span>&nbsp; &nbsp;  යනු වෙන් කර ගත් කොටස් ගණනය. එය භාගයේ <b><u>ලවය</b></u> යනුවෙන් හඳුන්වයි. එය භාගයේ ඉරි සලකුණෙන් උඩකොටස ය.</p>
+<table border=0><tr><td width='10px'>
+<table  border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>1</td></tr><tr><td>2</td></tr></table> </td><td>, &nbsp </td><td width='10px'>
+<table border=0 cellpadding=0 style='text-align:center;font-size:18px;'><tr><td style='border-bottom:solid thin'>1</td></tr><tr><td>4</td></tr></table> </td><td>, &nbsp </td><td width='10px'>
+<table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>3</td></tr><tr><td>4</td></tr></table></td></tr></table>
+<p style='color:blue'>&nbsp; &nbsp;&nbsp; &nbsp;දෙකෙන් එක  , <u>බාගය</u>ලෙසද හතරෙන් එක  , <u>කාල</u> ලෙසද හතරෙන් තුන  , <u>තුන්කාල</u> ලෙසද හඳුන්වයි.</p>
+
+<script>
+var n=0;var m=0; var s="";
+function lod(){
+var ar1=new Array('','එක','දෙක','තුන','හතර','පහ','හය','හත','අට','නවය','දහය');
+var ar2=new Array('','','දෙකෙන්','තුනෙන්','හතරෙන්','පහෙන්','හයෙන්','හතෙන්','අටෙන්','නවයෙන්','දහයෙන්');
+n=2+Math.floor(Math.random()*9);
+m=1+Math.floor(Math.random()*(n-1));
+
+
+
+var t=setTimeout('lod()',4000);
+box1.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:30px'><tr><td style='border-bottom:solid thin'>"+m+"</td></tr><tr><td>"+n+"</td></tr></table>";
+box2.innerHTML=ar2[n]+" "+ar1[m];
+box3.innerHTML=n;box4.innerHTML=m;
+}
+
+</script>
+
+</body>

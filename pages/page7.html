@@ -1,0 +1,51 @@
+﻿
+<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body>
+
+
+
+<h2>භාග වර්ග හඳුනා ගනිමු.</h2>
+
+<p style='color:blue'>ඒකක භාග</p>
+<p> &nbsp; &nbsp; &nbsp; නියම භාග හෙවත් තත්‍ය භාග වල ඇති ලවය 1 වූ භාග ඒකක භාග යනුවෙන් හඳුන්වයි. </p>
+
+<center>
+<div style='height:200px'>
+<span id='box3'></span>
+
+
+<span id='box4' style='font-size:30'></span>
+
+</div>
+<button class='btn2' onclick='frac2()'>ඒකක භාග</button>
+</center>
+<p style='color:blue;'>
+අනෙක් භාග සෑදෙන්නේ මෙම ඒකක භාග කීපයක් එකතු වීමෙනි. </p><table><tr><td><table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>3</td></tr><tr><td>5</td></tr></table>
+</td><td> සෑදී ඇත්තේ </td><td> <table border=0 cellpadding=0 style='text-align:center;font-size:18px'><tr><td style='border-bottom:solid thin'>1</td></tr><tr><td>5</td></tr></table>
+</td><td> යන ඒකක භාග 3ක් එකතු වීමෙනි.</td></tr></table>
+<script>
+
+var n1=0;var m1=0; var s1="";
+function frac2(){
+n1=2+Math.floor(Math.random()*10);
+
+s1="";box3.innerHTML="";
+s1="<svg width='240px' height='100px'>";
+
+for(i=0;i<n1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=50 stroke='black' fill='none' />";
+}
+for(i=0;i<1;i++){
+s1+="<rect x="+(((200/n1)*i)+10)+" y=10 width="+(200/n1)+" height=50 stroke='black' fill='gold' />";
+}
+
+box3.innerHTML=s1+"</svg>";
+
+
+box4.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>1</td></tr><tr><td>"+n1+"</td></tr></table>";
+}
+</script>
+
+</body>

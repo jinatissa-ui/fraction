@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+
+
+<style>
+span{font-size:20px; }
+
+
+</style>
+
+<h2> දශම සංඛ්‍යා බෙදමු.</h2>
+
+
+<p>දශම සංඛ්‍යාවක් දශම සංඛ්‍යාවකින් බෙදමු.<br><br><font color='blue'>පළමුව බෙදන දශම සංඛ්‍යාවේ දශම නැති කර එම නැති කළ දශමස්ථාන ගණන බෙදෙන සංඛ්‍යාවේ ද නැති කර බෙදීම කරන්න.</font><br> පිළිතුර දශමස්ථාන දෙකකට වටයා තබන්න.</p>
+<button  onclick='nxt2()' style=''>වෙනත් </button>
+&nbsp; &nbsp; <span id='tx1'>8.5 &divide; 2.5 </span><span id='tx2' style='border-bottom:double'>= 3.4</span>
+<br><br><span id='tx3' style='color:blue'>85 &divide; 25</span>
+<table id='tab1' style='' cellspacing=0>
+<tr><th> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'></th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>25</th><th>8</th><th>5</th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>5</th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''>1</th><th>0</th><th></th><th>0</th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''> </th><th>0</th><th></th></tr>
+   
+   
+</table>
+
+<table id='tab2' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>1</th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>35</th><th>5</th><th>7</th><th>.</th><th>4</th><th>5</th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>5</th><th style=''></th><th style=''></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''>2</th><th>2</th><th></th><th>4</th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th style=''></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th>1</th><th style=''></th><th>4</th><th>5</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>0</th><th style=''></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''> </th><th></th><th>5</th><th>0</th></tr>
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''> </th><th></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>5</th></tr>
+   
+   
+</table>
+<table id='tab3' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>2</th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>24</th><th>3</th><th>0</th><th>.</th><th>5</th><th>5</th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>4</th><th style=''></th><th style=''></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''></th><th>6</th><th></th><th>5</th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>8</th><th style=''></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th>1</th><th style=''></th><th>7</th><th>5</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>8</th><th style=''></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''> </th><th></th><th>7</th><th>0</th></tr>
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''> </th><th style=''></th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>8</th></tr>
+</table>
+
+
+<table id='tab4' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'></th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>45</th><th>1</th><th>6</th><th>6</th><th>.</th><th>5</th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>5</th><th style=''></th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''></th><th>3</th><th>1</th><th></th><th>5</th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>5</th><th></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''></th><th></th><th>0</th><th></th><th></th></tr>
+   
+   
+</table>
+
+<table id='tab5' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>9</th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>145</th><th>2</th><th>3</th><th>4</th><th>.</th><th>8</th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>5</th><th style=''></th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''></th><th>8</th><th>9</th><th></th><th>8</th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>8</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''>2</th><th></th><th>8</th><th>0</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style=''></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>5</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''>1</th><th></th><th>3</th><th>5</th><th>0</th></tr>
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'>5</th></tr>
+</table>
+
+<table id='tab6' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>8</th><th style='border-bottom:solid thin'>8</th><th style='border-bottom:solid thin'>7</th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>16</th><th>4</th><th>4</th><th>6</th><th>.</th><th>2</th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>2</th><th style=''></th><th style=''></th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''>1</th><th>2</th><th>6</th><th></th><th></th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>2</th><th style=''></th><th style=''></th><th></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th>1</th><th style=''>4</th><th></th><th>2</th><th></th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>8</th><th style=''></th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''>1</th><th></th><th>4</th><th>0</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style=''></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>8</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style=''></th><th style=''></th><th style=''></th><th style=''>1</th><th style=''>2</th><th>0</th></tr>
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style=''></th><th style=''></th><th ></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>2</th></tr>
+</table>
+
+<table id='tab7' style='display:none;' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>5</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'>8</th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>365</th><th>5</th><th>6</th><th>2</th><th>4</th><th></th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>5</th><th style=''></th><th></th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''>1</th><th>9</th><th>7</th><th>4</th><th></th><th></th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>8</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>5</th><th style=''></th><th></th><th></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th>1</th><th style=''>4</th><th>9</th><th></th><th>0</th><th></th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th></th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''></th><th>3</th><th></th><th>0</th><th>0</th><th>0</th></tr>
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>9</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>0</th></tr>
+</table>
+
+
+<table id='tab8' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>8</th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>6</th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>965</th><th>8</th><th>3</th><th>5</th><th>.</th><th>6</th><th>9</th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''></th><th>6</th><th>3</th><th></th><th>6</th><th>9</th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>5</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>9</th><th style='border-bottom:solid thin'>0</th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''>5</th><th></th><th>7</th><th>9</th><th>0</th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>5</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>9</th><th style='border-bottom:solid thin'>0</th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''></th><th></th><th></th><th></th><th>0</th></tr>
+   
+</table>
+
+<table id='tab9' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'></th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>325</th><th>6</th><th>9</th><th>.</th><th>0</th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>5</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>0</th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''></th><th>4</th><th></th><th>0</th><th>0</th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'>3</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>5</th><th></th><th></th></tr>
+ 
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''></th><th>7</th><th>5</th><th>0</th><th></th></tr>
+   
+   <tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th style=''></th><th style='border-bottom:solid thin'>6</th><th style='border-bottom:solid thin'>5</th><th style='border-bottom:solid thin'>0</th><th></th></tr>
+   
+   
+   
+</table>
+
+<table id='tab10' style='display:none' cellspacing=0 border=0>
+<tr><th > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'>.</th><th style='border-bottom:solid thin'>0</th><th style='border-bottom:solid thin'>5</th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'></th></tr>
+
+<tr><th style='border-right:solid thin;text-align:right'>85</th><th>4</th><th>.</th><th>5</th><th>0</th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style='border-bottom:solid thin'>4</th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>2</th><th style='border-bottom:solid thin'>5</th><th></th><th></th><th></th></tr>
+
+<tr><th style='border-right:solid thin'></th><th style=''></th><th></th><th>2</th><th>5</th><th>0</th><th></th><th></th></tr>
+
+  <tr><th style='border-right:solid thin'></th><th style=''></th><th style='border-bottom:solid thin'></th><th style='border-bottom:solid thin'>1</th><th style='border-bottom:solid thin'>7</th><th style='border-bottom:solid thin'>0</th><th></th><th></th></tr>
+ 
+   
+   
+   
+</table>
+
+
+<script>
+
+var n2=0;
+function nxt2(){
+n2++;if(n2>10){n2=1;}
+var ar=new Array('5.745 &divide; 3.5 ','0.3055 &divide; 0.24 ','1.665 &divide; 0.45 ','2.348 &divide; 1.45 ','44.62 &divide; 1.6 ','562.4 &divide; 36.5 ','8.3569 &divide; 9.65 ','0.069 &divide; 0.325 ','0.45 &divide; 8.5 ','8.5 &divide; 2.5 ');
+var ar2=new Array(' = 1.64',' = 1.27',' = 3.7',' = 1.62',' = 27.89',' = 15.41',' = 0.87',' = 0.21',' = 0.05',' = 3.4');
+var ar3=new Array('57.45 &divide; 35 ','30.55 &divide; 24 ','166.5 &divide; 45 ','234.8 &divide; 145 ','446.2 &divide; 16 ','5624 &divide; 365 ','835.69 &divide; 965 ','69 &divide; 325 ','4.5 &divide; 85 ','85 &divide; 25 ');
+
+tx1.innerHTML=ar[n2-1];
+tx2.innerHTML=ar2[n2-1];
+tx3.innerHTML=ar3[n2-1];
+eval('tab'+[n2]).style.display='none';
+tab11=tab1
+eval('tab'+[n2+1]).style.display='block';
+
+}
+
+
+
+
+</script>
+
+</body>

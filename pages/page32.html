@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+<style>.sty{ background-image: -moz-radial-gradient(white ,  #ddd 90% );
+    background-image: -webkit-radial-gradient( white ,  #ddd 90% );}</style>
+  <body style='margin:20px' >
+
+
+<h2>මිශ්‍ර සංඛ්‍යා විෂම භාගවලට හැරවීම.</h2>
+
+
+
+
+<center>
+<img src='../images/frac3.gif' />
+</center>
+<p>මෙම ක්‍රියාවේ අදහස පහත ආකාරයට තේරුම් ගන්න.</p>
+<div id='box'></div><br>
+<button onclick='frac()'>උදාහරණ</button>
+<br><br><br><center>
+<div id='box2' style='width:150px;height:60px;border-radius:60px;padding:20px' class='sty' ></div></center>
+<script>
+var f1='2\\cfrac{3}{5}= 2 + \\cfrac{3}{5} =  \\cfrac{10}{5} + \\cfrac{3}{5} = \\cfrac{13}{5}'
+katex.render(algebra.toTex(f1),box);
+function frac(){
+var n1=2+Math.floor(Math.random()*10);
+var n2=2+Math.floor(Math.random()*10);
+var n3=n2-(1+Math.floor(Math.random()*8));
+if(n3<1){n3=1}
+var n4=(n1*n2)+n3 ;
+var f2=''+n1+'\\cfrac{'+n3+'}{'+n2+'}=\\cfrac{'+n4+'}{'+n2+'}'
+katex.render(algebra.toTex(f2),box2);
+}
+</script>
+
+</body>

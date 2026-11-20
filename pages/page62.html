@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+    <script src="../js/algebra-0.2.6.min.js"></script>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/katex.js"></script>
+
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.css'>
+<link type ='text/css' rel= 'stylesheet' href='../katex/katex.min.css'>
+<link type ='text/css' rel= 'stylesheet' href='../css/mycss2.css'>
+<link rel='stylesheet' href='../css/mystyle.css' />
+<script src="../js/showModalDialog.js" ></script>
+  </head>
+  <body>
+<style>
+
+<style>span{font-size:16px; text-align:justify}</style>
+
+<h2>දශම හඳුනා ගනිමු.</h2>
+
+<p>&nbsp; &nbsp; &nbsp;හරය 100 වූ භාග. <span id='bx1'></span>&nbsp; &nbsp; ලෙස දැක්විය හැක. ඒවා පිළිවෙලින්  <b><span style='color:blue'>බිංදුවයි දශම බිංදුවයි දෙක,</span><span style='color:green'> බිංදුවයි දශම තුන </span>සහ <span style='color:red'>බිංදුවයි දශම හතරයි දෙක </span></b>ලෙස කියවනු ලැබේ.</p>
+<script>
+
+var fr='\\frac {1}{100},\\frac {2}{100},\\frac {30}{100},\\frac {42}{100}...... \\newline \\frac {2}{100} = \\textcolor{blue}{0.02}, \\frac {30}{100} = \\textcolor{green}{0.3}, \\frac {42}{100} = \\textcolor{red}{0.42}';
+katex.render(algebra.toTex(fr),bx1);</script>
+<center>
+<table>
+<tr><td colspan=2 id='box1'></td></tr>
+<tr><td ><button class='btn2' onclick='frac1()'>දශම</button> </td><td id='box2'></td></tr>
+</table>
+
+
+
+
+</center>
+
+
+
+<script>
+var n=0;var m1=0; var s="";var m2=0;
+function frac1(){
+n=10;
+m1=1+Math.floor(Math.random()*(10));
+m2=1+Math.floor(Math.random()*(10));
+s="";box1.innerHTML="";
+s="<svg width='265px' height='265px'>";
+
+for(i=0;i<10;i++){
+
+for(k=0;k<10;k++){
+s+="<rect x="+(((25)*i)+10)+" y="+(((25)*k)+10)+" width=25 height=25 stroke='black' fill='none' />";
+
+
+}
+
+}
+
+for(i=0;i<m1;i++){
+for(k=0;k<m2;k++){
+s+="<rect x="+(((25)*i)+10)+" y="+(((25)*k)+10)+" width=25 height=25 stroke='black' fill='gold' />";
+}
+}
+box1.innerHTML=s+"</svg>";
+var num= ' = '+(m1*m2/100) ;
+var msg='';
+
+
+box2.innerHTML="<table border=0 cellpadding=0 style='text-align:center;font-size:20px'><tr><td style='border-bottom:solid thin'>"+m1*m2+"</td><td rowspan=2> "+num+"</td></tr><tr><td>"+100+"</td></tr> <tr><td colspan=2 style='color:blue'>"+msg+"</td></table>";
+}
+
+</script>
+
+</body>

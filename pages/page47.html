@@ -1,0 +1,151 @@
+﻿<head>
+<link rel='stylesheet' href='../css/mystyle.css' />
+</head>
+<body onload='lod()'>
+
+<h2>ඇගයීම 4.</h2>
+<table border=0 width='380px' height='380px' style='font-size:18px' >
+<tr><td colspan=3>
+
+
+</td></tr>
+<tr><td colspan=2 ><p>හිස් තැන් පුරවන්න.</p></td><td><span id='mark' style='font-size:24px;color:red'></span></td>
+</tr>
+
+<tr>
+<td>1). පහත නිරූපණය කර ඇති භාගය කුමක්ද?.<table border=1 cellspacing=0 width='150px' height='20px' style='border-collapse:collapse'>
+<tr><td bgcolor='red'>&nbsp;</td><td bgcolor='red'>&nbsp;</td><td bgcolor='red'>&nbsp;</td><td bgcolor='red'>&nbsp;</td><td bgcolor='red'>&nbsp;</td></tr></table><br>
+<table border=1 cellspacing=0 width='150px' height='20px' style='border-collapse:collapse'>
+<tr><td bgcolor='red'>&nbsp;</td><td bgcolor='red'>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>
+</td>
+<td>
+<table>
+<tr>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu1' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind1' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box1'></span></td>
+</tr>
+
+<tr>
+
+<td><table style='font-size:18px'><tr><td rowspan=2>2). &nbsp;</td><td style='border-bottom:solid thin'>7</td><td rowspan=2>  මිශ්‍ර සංඛාවක් ලෙස තබන්න. </td></tr><tr><td>5</td></tr></table> 
+<td>
+<table>
+<tr><th rowspan=2 contentEditable=true bgcolor='#fee' width='20px' id='inn2'>?</th>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu2' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind2' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box2'></span></td>
+</tr>
+
+<tr>
+<td>
+
+<table style='font-size:18px'>
+<tr><td rowspan=2>3). &nbsp;</td><td rowspan=2>2</td><td style='border-bottom:solid thin'>1</td><td rowspan=2>=</td><td style='border-bottom:solid thin'>?</td><td rowspan=2> මෙහි  ? ට නිවැරදි සංඛ්‍යාව ලියන්න. </td>
+</tr>
+
+<tr><td>3</td><td>3</td></tr>
+
+</table> 
+
+
+
+<td>
+<table>
+<tr>
+<th contentEditable=true  bgcolor='#fee' id='inu3' width='20px' height='20px'>?</th></tr>
+
+</table>
+</td>
+<td><span id='box3'></span></td>
+</tr>
+
+<tr>
+<td>
+
+<table style='font-size:18px'>
+<tr><td rowspan=2>4). &nbsp;</td><td style='border-bottom:solid thin'>9</td><td rowspan=2>=</td><td rowspan=2>2</td><td style='border-bottom:solid thin'>?</td><td rowspan=2> මෙහි  ? ට නිවැරදි සංඛ්‍යාව ලියන්න. </td>
+</tr>
+
+<tr><td>4</td><td>4</td></tr>
+
+</table> 
+
+
+
+<td>
+<table>
+<tr>
+<th contentEditable=true  bgcolor='#fee' id='inu4' width='20px' height='20px'>?</th></tr>
+
+</table>
+</td>
+<td><span id='box34'></span></td>
+</tr>
+
+
+
+<tr>
+
+<td><table style='font-size:18px'>
+<tr><td rowspan=2>5). &nbsp;</td><td rowspan=2>2</td><td style='border-bottom:solid thin'>2</td><td rowspan=2>,</td><td rowspan=2>2</td><td style='border-bottom:solid thin'>3</td><td rowspan=2>   විශාල භාගය කුමක්ද?. </td>
+</tr>
+
+<tr><td>3</td><td>5</td></tr>
+
+</table> 
+<td>
+<table>
+<tr><th rowspan=2 contentEditable=true bgcolor='#fee' id='inn5' width='20px' height='20px'>?</th>
+<th contentEditable=true style='border-bottom:solid thin' bgcolor='#fee' id='inu5' width='20px' height='20px'>?</th></tr>
+<tr>
+<th contentEditable=true bgcolor='#fee' id='ind5' width='20px' height='20px'>?</th></tr>
+</table>
+</td>
+<td><span id='box4'></span></td>
+</tr>
+
+
+
+</table>
+<br><br>
+<button title="Check"  onclick='check()' id='but' style=''>හරි වැරදි</button>
+
+
+<script>
+var c,w; var m=0
+c="<svg width='20px' height='20px'><g transform='scale(0.6)'><path d='M25,0 Q15,12 12,25' fill='none'  stroke='red' style='stroke-width:2px'/><line x1=12 y1=25 x2=5 y2=10 stroke='red' style='stroke-width:2px'/></g></svg>";
+w="<svg width='20px' height='20px'><g transform='scale(0.7)'><path d='M25,0 Q15,12 12,25' fill='none' stroke='red' style='stroke-width:2px'/><line x1=10 y1=5 x2=25 y2=25 stroke='red' style='stroke-width:2px'/></g></svg>"
+//-------------------
+
+var x; var dat;
+function lod(){
+
+}
+//--------------
+function check(){
+m=0;
+
+but.disabled='disabled';
+
+if(inu1.innerHTML==7 && ind1.innerHTML==5){box1.innerHTML=c;m+=20;}else{box1.innerHTML=w}
+if(inn2.innerHTML==1 && inu2.innerHTML==2 && ind2.innerHTML==5){box2.innerHTML=c;m+=20;}else{box2.innerHTML=w}
+if(inu3.innerHTML==7){box3.innerHTML=c;m+=20;}else{box3.innerHTML=w}
+if(inu4.innerHTML==1){box34.innerHTML=c;m+=20;}else{box34.innerHTML=w}
+if(inn5.innerHTML==2 && inu5.innerHTML==2 && ind5.innerHTML==3){box4.innerHTML=c;m+=20;}else{box4.innerHTML=w}
+
+mark.innerHTML=m+'%';
+
+
+
+
+}
+
+</script>
+</body>
